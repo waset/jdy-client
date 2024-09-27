@@ -1,0 +1,37 @@
+name: Check Build
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check:
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+
+      - name: Set node version to ${{ matrix.node_version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node_version }}
+          cache: pnpm
+
+      - name: Install
+        run: pnpm i
+
+      - name: Reset
+        run: pnpm run reset-manifest
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Build
+        run: pnpm run ${{ matrix.build_cmd }}
+
+      - name: Typecheck
+        run: pnpm run type-check
