@@ -8,9 +8,7 @@ export default defineConfig({
   ],
   content: {
     pipeline: {
-      include: [
-        '**/*.{vue,ts}',
-      ],
+      include: ['**/*.{vue,ts}'],
     },
   },
   shortcuts: {

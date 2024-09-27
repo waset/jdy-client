@@ -1,7 +1,9 @@
 {
   "name": "nuxt-app",
   "type": "module",
+  "version": "0.0.1",
   "private": true,
+  "packageManager": "pnpm@9.11.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --host",
