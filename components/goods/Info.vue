@@ -17,7 +17,7 @@
 
 const illData: FinishedProduct = {
   name: 'ill11111111111',
-  image: '/ill1.jpg',
+  image: '/icons/example.svg',
   status: 1,
   info: [
     {
@@ -67,40 +67,30 @@ const illData: FinishedProduct = {
 <template>
   <div class="2xl:w-full w-full bg-white rounded-2xl border-solid border-#EFF0F6">
     <div class="rounded-2xl">
-      <div class="flex flex-row items-center shrink-0 px-4 py-2 rounded-t-3 info">
-        <div class="flex flex-row items-center gap-2 flex-1">
-          <div class="img" style="position: relative">
-            <NuxtImg src="/projection.svg" class="w-8 h-8 relative z-10" />
-            <div
-              class="under" style="
-                                position: absolute;
-                                top: 4px;
-                                left: -4px;
-                                z-index: 5;
-                            "
-            >
-              <NuxtImg src="/example.svg" class="w-8 h-8" />
-            </div>
-          </div>
-          <div class="text-4 font-semibold">
-            {{ illData.name }}
-          </div>
-        </div>
-        <div class="status">
-          <GoodsTags class="text-4" text="调拨在途" color="#FFF4CD" font-color="#DD9200" />
-        </div>
+      <div class="px-4 py-2 rounded-t-2xl info">
+        <CommonThemeColorHeader :title="illData.name" :img-url="illData.image" :is-img="true" :is-tag="true" tag-color="#FFF4CD" tag-text="调拨在途" tag-text-color="#DD9200" />
       </div>
       <div class="flex flex-col gap-3 px-4 py-3">
-        <template v-for="(item, index) in illData.info" :key="index">
-          <div class="flex flex-row justify-between items-center text-sm font-normal">
-            <div class="color-#666666">
-              {{ item.name }}
+        <template v-if="illData.info.length">
+          <template v-for="(item, index) in illData.info" :key="index">
+            <div class="flex flex-row justify-between items-center text-sm font-normal">
+              <div class="color-#666666">
+                {{ item.name }}
+              </div>
+              <div class="color-#333333">
+                {{ item.description }}
+              </div>
             </div>
-            <div class="color-#333333">
-              {{ item.description }}
-            </div>
-          </div>
+          </template>
         </template>
+        <template v-else>
+          <!-- icon="/example.svg" -->
+          <CommonEmpty />
+        </template>
+      </div>
+      <div class="flex flex-row  items-center gap-4 px-4 py-2">
+        <CommonButton content="操作记录" color="#fff" content-color="#3971F3" />
+        <CommonButton content="编辑" content-color="#fff" />
       </div>
     </div>
   </div>
