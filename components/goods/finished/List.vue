@@ -14,13 +14,10 @@ const goodsStatus = {
 <template>
   <div class=" grid-12">
     <div class="2xl:w-full w-full bg-white rounded-2xl border-solid border-#EFF0F6 col-12 lg:col-8 lg:offset-2 sm:col-12">
-      <div class="rounded-2xl">
-        <div class="px-4 py-2 rounded-t-2xl info">
-          <common-header-theme :title="props.productList.name">
-            <common-tags type="orange" :text="goodsStatus[props.productList.status]" />
-          </common-header-theme>
-        </div>
-
+      <div class="rounded-6">
+        <common-header-theme :title="props.productList.name">
+          <common-tags type="orange" :text="goodsStatus[props.productList.status]" />
+        </common-header-theme>
         <div class="flex flex-col gap-3 px-4 py-3">
           <template v-if="props.productList.info.length">
             <template v-for="(item, index) in props.productList.info" :key="index">
@@ -48,9 +45,3 @@ const goodsStatus = {
     </div>
   </div>
 </template>
-
-<style scoped lang="scss">
-.info {
-  background: linear-gradient(to right, #477ef500 0%, #82d0fa 80%);
-}
-</style>
