@@ -3,12 +3,14 @@
 const props = withDefaults(defineProps<{
   text: string
   isFull?: boolean
-  onClick?: () => void
 }>(), {
-  text: '',
   isFull: false,
-  onClick: () => {},
 })
+
+const emit = defineEmits(['click'])
+const handleClick = () => {
+  emit('click')
+}
 
 const colorStyle = props.isFull === true ? '#0068FF' : '#fff'
 </script>
@@ -17,10 +19,8 @@ const colorStyle = props.isFull === true ? '#0068FF' : '#fff'
   <div
     class="flex justify-center items-center px-3 py-0/.75 rounded-1 text-sm"
     :style="{ backgroundColor: colorStyle, border: props.isFull === true ? 'none' : '1px solid #0068FF', color: props.isFull === true ? '#fff' : '#0068FF' }"
+    @click="handleClick"
   >
     {{ props.text }}
   </div>
 </template>
-
-<style scoped lang="scss">
-</style>

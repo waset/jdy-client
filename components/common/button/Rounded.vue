@@ -1,33 +1,32 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
+  content: string
   color?: string
-  content?: string
-  contentColor?: string
   shadow?: boolean
   padding?: string
-  onClick?: () => void
 }>(), {
   color: '',
-  content: '',
+  padding: '',
   shadow: true,
-  onClick: () => {},
 })
 
-// 如果没有传入颜色，则使用默认颜色
-const backgroundStyle = props.color ? props.color : 'linear-gradient(0deg, #6ea6ffbf 11%, #1a6beb)'
-
-// 如果没有设置阴影，则不显示
-const shadowStyle = props.shadow === true ? `0px 5px 10px 0px rgba(57, 113, 243, 0.24)` : ''
-
-// 如果没有设置padding，则使用默认padding
-const paddingStyle = props.padding ? `${props.padding}` : '8px 16px'
+const emit = defineEmits(['click'])
+const handleClick = () => {
+  emit('click')
+}
 </script>
 
 <template>
-  <div class="button flex justify-center items-center font-bold text-4 rounded-3xl" :style="{ color: props.contentColor, background: backgroundStyle, boxShadow: shadowStyle, padding: paddingStyle }" @click="props.onClick">
+  <div
+    class="button flex justify-center items-center font-bold text-4 rounded-3xl"
+    :style="{
+      color: props.color ? '#3971f3' : '#fff',
+      background: props.color ? props.color : 'linear-gradient(0deg, #6ea6ffbf 11%, #1a6beb)',
+      boxShadow: props.shadow === true ? '0px 5px 10px 0px rgba(57, 113, 243, 0.24)' : '',
+      padding: props.padding ? props.padding : '8px 16px',
+    }"
+    @click="handleClick"
+  >
     {{ props.content }}
   </div>
 </template>
-
-<style scoped lang="scss">
-</style>

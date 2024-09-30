@@ -2,11 +2,11 @@
 interface FinishedProduct {
   name: string
   image: string
-  status: Status
+  status: FinishedProductStatus
   info: FinishedProductInfo[]
 }
 
-enum Status {
+enum FinishedProductStatus {
   /**
    * 调拨在途
    */
@@ -35,7 +35,7 @@ interface WarehouseReceipt {
   /**
    * 入库单号
    */
-  number: string
+  num: string
   /**
    * 入库类型
    */
@@ -59,7 +59,7 @@ interface WarehouseReceipt {
   /**
    * 总入网费
    */
-  NetworkAccessFee: number
+  networkAccessFee: number
   /**
    * 备注
    */

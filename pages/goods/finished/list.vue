@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const illData: FinishedProduct = {
   name: 'ill11111111111',
-  image: '/common/example.svg',
+  image: '/icons/example.svg',
   status: 1,
   info: [
     {

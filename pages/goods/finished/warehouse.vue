@@ -4,14 +4,14 @@
 // 测试使用数据。需删除
 const testData: WarehouseReceipt = {
   operator: 'admin',
-  number: '123456789',
+  num: '123456789',
   type: 1,
   status: 1,
   totalCount: 1,
   totalPrice: 200,
   totalWeight: 18,
-  NetworkAccessFee: 30,
-  remark: '',
+  networkAccessFee: 30,
+  remark: '备注啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊',
   createTime: '2022-01-01 12:00:00',
   completeTime: '2022-01-01 12:00:00',
 }
@@ -22,6 +22,3 @@ const testData: WarehouseReceipt = {
     <goods-finished-entry :product-storage-info="testData" />
   </div>
 </template>
-
-<style scoped lang="scss">
-</style>
