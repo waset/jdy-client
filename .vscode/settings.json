@@ -1,7 +1,4 @@
 {
-  "[jsonc]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
   "css.validate": false,
   // Auto fix
   "editor.codeActionsOnSave": {
@@ -38,5 +35,8 @@
   "nuxtr.vueFiles.firstTag": "script",
   "nuxtr.vueFiles.style.alwaysScoped": true,
   "nuxtr.vueFiles.style.defaultLanguage": "scss",
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
 }

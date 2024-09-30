@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+  ssr: false,
   modules: [
     '@pinia/nuxt',
     'pinia-plugin-persistedstate',
@@ -13,6 +14,7 @@ export default defineNuxtConfig({
     '@vant/nuxt',
     '@vueuse/nuxt',
     '@nuxt/eslint',
+    '@nuxt/image',
   ],
   vite: {
     css: {
@@ -27,5 +29,8 @@ export default defineNuxtConfig({
     config: {
       standalone: false,
     },
+  },
+  image: {
+    dir: 'assets/image',
   },
 })
