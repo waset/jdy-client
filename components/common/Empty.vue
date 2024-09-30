@@ -3,7 +3,7 @@ const props = withDefaults(defineProps<{
   icon?: string
   padding?: string
 }>(), {
-  icon: '/assets/compIcon/emptyInfo.svg',
+  icon: '/components/empty.svg',
   padding: '20px 50px 20px 50px',
 })
 </script>
@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<{
     }"
   >
     <div class="icon w-full h-full">
-      <NuxtImg :src="props.icon" />
+      <nuxt-img :src="props.icon" />
     </div>
   </div>
 </template>

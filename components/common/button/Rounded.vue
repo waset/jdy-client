@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// 再接收一个padding
 const props = withDefaults(defineProps<{
   color?: string
   content?: string
@@ -11,7 +10,6 @@ const props = withDefaults(defineProps<{
   color: '',
   content: '',
   shadow: true,
-  shadowColor: '#333',
   onClick: () => {},
 })
 

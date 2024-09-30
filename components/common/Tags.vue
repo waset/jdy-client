@@ -17,7 +17,7 @@ const borderStyle = props.isOval === true ? '100px 10px / 120px' : '8px'
 
 <template>
   <div
-    class="tag flex-center px-[8px]"
+    class="tag flex-start px-[8px]"
     :style="{ backgroundColor: props.color, color: props.fontColor, borderRadius: borderStyle }"
   >
     {{ props.text }}

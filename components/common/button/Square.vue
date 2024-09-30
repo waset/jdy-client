@@ -14,7 +14,10 @@ const colorStyle = props.isFull === true ? '#0068FF' : '#fff'
 </script>
 
 <template>
-  <div class="flex justify-center items-center px-4 py-2" :style="{ backgroundColor: colorStyle, border: props.isFull === true ? 'none' : '1px solid #0068FF' }">
+  <div
+    class="flex justify-center items-center px-3 py-0/.75 rounded-1 text-sm"
+    :style="{ backgroundColor: colorStyle, border: props.isFull === true ? 'none' : '1px solid #0068FF', color: props.isFull === true ? '#fff' : '#0068FF' }"
+  >
     {{ props.text }}
   </div>
 </template>

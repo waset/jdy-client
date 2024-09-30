@@ -16,8 +16,6 @@ const props = withDefaults(defineProps<{
   isTag: false,
   isDownIcon: false,
 })
-
-console.log(props)
 </script>
 
 <template>
@@ -25,7 +23,7 @@ console.log(props)
     <div class="flex flex-row items-center gap-2 flex-1 rounded-t-2xl">
       <template v-if="props.isImg === true">
         <div class="img" style="position: relative">
-          <NuxtImg :src="props.imgUrl" class="w-8 h-8 relative z-10" />
+          <nuxt-img :src="props.imgUrl" class="w-8 h-8 relative z-10" />
           <div
             class="under" style="
                                     position: absolute;
@@ -35,7 +33,7 @@ console.log(props)
                                 "
           >
             <!-- 阴影 -->
-            <NuxtImg src="/icons/projection.svg" class="w-8 h-8" />
+            <nuxt-img src="/common/projection.svg" class="w-8 h-8" />
           </div>
         </div>
       </template>
@@ -45,12 +43,12 @@ console.log(props)
     </div>
     <div class="tag">
       <template v-if="props.isTag">
-        <CommonTags :text="props.tagText" :color="props.tagColor" :font-color="props.tagTextColor" :is-oval="props.tagIsOval" />
+        <common-tags :text="props.tagText" :color="props.tagColor" :font-color="props.tagTextColor" :is-oval="props.tagIsOval" />
       </template>
     </div>
     <div class="downList flex items-center justify-center">
       <template v-if="props.isDownIcon === true">
-        <NuxtImg src="/icons/down.svg" class="w-6 h-6" />
+        <nuxt-img src="/common/down.svg" class="w-6 h-6" />
       </template>
     </div>
   </div>
