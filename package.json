@@ -12,6 +12,7 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
+    "@nuxt/image": "^1.8.0",
     "nuxt": "^3.13.2",
     "vue": "latest",
     "vue-router": "latest"
@@ -30,7 +31,8 @@
     "pinia-plugin-persistedstate": "^4.0.2",
     "sass": "^1.79.3",
     "simple-git-hooks": "^2.11.1",
-    "unocss": "^0.62.4"
+    "unocss": "^0.62.4",
+    "vant": "^4.9.7"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
