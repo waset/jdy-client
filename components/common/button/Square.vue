@@ -12,7 +12,7 @@ const handleClick = () => {
   emit('click')
 }
 
-const colorStyle = props.isFull === true ? '#0068FF' : '#fff'
+const colorStyle = props.isFull ? '#0068FF' : '#fff'
 </script>
 
 <template>
