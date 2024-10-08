@@ -21,6 +21,7 @@ enum FinishedProductStatus {
   Repairing = 3,
 }
 
+// 成品详情
 interface FinishedProductInfo {
   name: string
   description: string
@@ -96,4 +97,76 @@ enum WarehouseReceiptStatus {
    * 草稿
    */
   Draft = 3,
+}
+
+// 盘点单
+interface InventorySheet {
+  /**
+   * 盘点单号
+   */
+  num: string
+  /**
+   * 所属门店
+   */
+  store: string
+  /**
+   * 盘点范围
+   */
+  scope: string
+  /**
+   * 盘点仓库
+   */
+  wareHouse: string
+  /**
+   * 盘点品牌
+   */
+  brand: string
+  /**
+   * 盘点人
+   */
+  operator: string
+  /**
+   * 监盘人
+   */
+  supervisor: string
+  /**
+   * 应盘数量
+   */
+  shouldCount: number
+  /**
+   * 盘亏数量
+   */
+  lossCount: number
+  /**
+   * 盘盈数量
+   */
+  profitCount: number
+  /**
+   * 状态
+   */
+  InventoryStatus: InventorySheetStatus
+  /**
+   * 创建时间
+   */
+  createTime: string
+}
+
+// 盘点单状态
+enum InventorySheetStatus {
+  /**
+   * 已完成
+   */
+  Completed = 1,
+  /**
+   * 已撤销
+   */
+  Cancelled = 2,
+  /**
+   * 草稿
+   */
+  Draft = 3,
+  /**
+   * 盘点中
+   */
+  InProgress = 4,
 }
