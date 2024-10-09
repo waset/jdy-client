@@ -144,11 +144,39 @@ interface InventorySheet {
   /**
    * 状态
    */
-  InventoryStatus: InventorySheetStatus
+  inventoryStatus: InventorySheetStatus
   /**
    * 创建时间
    */
   createTime: string
+  /**
+   * 备注
+   */
+  remark: string
+  /**
+   * 总件数
+   */
+  totalCount: number
+  /**
+   * 总标价
+   */
+  totalPrice: number
+  /**
+   * 总金重
+   */
+  totalWeight: number
+  /**
+   * 大类
+   */
+  category: string
+  /**
+   * 品类
+   */
+  refinement: string
+  /**
+   * 工艺
+   */
+  technique: string
 }
 
 // 盘点单状态

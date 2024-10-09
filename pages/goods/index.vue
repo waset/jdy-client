@@ -10,6 +10,9 @@
     <NuxtLink to="/goods/finished/warehouse">
       入库单详情
     </NuxtLink>
+    <NuxtLink to="/goods/finished/stocktaking">
+      盘点单详情
+    </NuxtLink>
   </div>
 </template>
 
