@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// 方角按钮
+// 方形按钮组件
 const props = withDefaults(defineProps<{
   text: string
   isFull?: boolean

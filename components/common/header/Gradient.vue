@@ -6,8 +6,8 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="flex justify-between items-center px-4 py-2 rounded-t-6 box">
-    <div class="font-extrabold text-#333333 italic">
+  <div class="flex justify-between items-center px-4 py-2 rounded-t-3 box">
+    <div class="font-extrabold text-#333333 italic text-14px">
       {{ props.title }}
     </div>
     <slot />
