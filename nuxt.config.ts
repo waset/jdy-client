@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@vant/nuxt',
     '@vueuse/nuxt',
     '@nuxt/eslint',
+    '@nuxt/image',
   ],
   vite: {
     css: {
@@ -27,5 +28,8 @@ export default defineNuxtConfig({
     config: {
       standalone: false,
     },
+  },
+  image: {
+    dir: 'assets',
   },
 })
