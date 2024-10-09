@@ -5,44 +5,44 @@
 <template>
   <div>
     <div
-      class=" text-black dark:text-#FFF  pos-fixed bottom-0 w-full px-16px py-10px box-border bg-#FFFFFF80 dark:bg-#0000001A  border-t border-#E6E6E8 dark:border-#0000001A   b-t-solid">
+      class="text-black dark:text-[#FFF] pos-fixed bottom-0 w-full px-[16px] py-[10px] box-border blur-bgc border-t border-[#E6E6E8] border-solid dark:border-[#0000001A] b-t-solid">
       <van-row justify="space-between">
         <van-col span="6">
-          <div class="text-start">
-            <div class="text-size-12px">
+          <div class=" item">
+            <div class="title">
               总入网
             </div>
-            <div class="text-size-14px">
+            <div class="number">
               181231
             </div>
           </div>
         </van-col>
         <van-col span="6">
-          <div class="text-start">
-            <div class="text-size-12px">
+          <div class=" item">
+            <div class="title">
               总入网费
             </div>
-            <div class="text-size-14px">
+            <div class="number">
               181231
             </div>
           </div>
         </van-col>
         <van-col span="6">
-          <div class="text-start">
-            <div class="text-size-12px">
+          <div class=" item">
+            <div class="title">
               总入网费
             </div>
-            <div class="text-size-14px">
+            <div class="number">
               181231
             </div>
           </div>
         </van-col>
         <van-col span="6">
-          <div class="text-start">
-            <div class="text-size-12px">
+          <div class=" item">
+            <div class="title">
               总入网费
             </div>
-            <div class="text-size-14px">
+            <div class="number">
               181231
             </div>
           </div>
@@ -51,3 +51,15 @@
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+  .item {
+  --uno: 'text-start';
+  .title {
+    --uno: 'text-size-[12px]';
+  }
+  .number {
+    --uno: 'text-size-[14px]';
+  }
+}
+</style>
