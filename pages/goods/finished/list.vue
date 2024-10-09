@@ -1,4 +1,7 @@
 <script setup lang="ts">
+// 成品列表详情
+
+// 成品列表详情测试使用数据。需删除
 const illData: FinishedProduct = {
   name: 'ill11111111111',
   image: '/icons/example.svg',

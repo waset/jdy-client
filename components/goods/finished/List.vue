@@ -12,7 +12,7 @@ const goodsStatus = {
 </script>
 
 <template>
-  <div class=" grid-12">
+  <div class="grid-12">
     <div class="2xl:w-full w-full bg-white rounded-2xl border-solid border-#EFF0F6 col-12 lg:col-8 lg:offset-2 sm:col-12">
       <div class="rounded-6">
         <common-header-theme :title="props.productList.name">
