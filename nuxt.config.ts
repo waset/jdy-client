@@ -4,8 +4,9 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: {
-    enabled: true,
+    enabled: false,
   },
+  ssr: false,
   modules: [
     '@pinia/nuxt',
     'pinia-plugin-persistedstate',
@@ -13,7 +14,9 @@ export default defineNuxtConfig({
     '@vant/nuxt',
     '@vueuse/nuxt',
     '@nuxt/eslint',
+    '@nuxt/image',
   ],
+  css: ['~/assets/css/main.scss'],
   vite: {
     css: {
       preprocessorOptions: {
@@ -27,5 +30,8 @@ export default defineNuxtConfig({
     config: {
       standalone: false,
     },
+  },
+  image: {
+    dir: 'assets/image',
   },
 })
