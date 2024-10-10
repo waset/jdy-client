@@ -7,7 +7,7 @@ onMounted(() => {
 <template>
   <div
     class="body min-h-screen box-border   ;">
-    <div :style="{ background: `url(/background/bg.png)`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }" class="min-h-screen pt-[60px]">
+    <div :style="{ background: `url(/background/bg.png)`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }" class="min-h-screen ">
       <slot />
     </div>
   </div>

@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
   ],
+  css: ['~/assets/css/main.scss'],
   vite: {
     css: {
       preprocessorOptions: {
