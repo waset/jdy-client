@@ -1,9 +1,12 @@
-import { defineConfig, presetMini, transformerDirectives, transformerVariantGroup } from 'unocss'
+import { defineConfig, presetAttributify, presetMini, transformerDirectives, transformerVariantGroup } from 'unocss'
 
 export default defineConfig({
   presets: [
     presetMini({
       dark: 'class',
+    }),
+    presetAttributify({
+      prefix: 'un-',
     }),
   ],
   transformers: [

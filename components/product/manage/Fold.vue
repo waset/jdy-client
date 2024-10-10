@@ -14,7 +14,16 @@ const toggleOpen = () => {
           <div class=" rounded-[24px] overflow-hidden ">
             <div class="bg-[#F1F5FE] px-[16px] py-[12px] grid-12">
               <div class="col-1 flex-center-row mr-[8px]">
-                123
+                <template v-if="index > 1">
+                  <div class="flex-center-row">
+                    <nuxt-img src="/product/selected.svg" width="18" height="18" />
+                  </div>
+                </template>
+                <template v-else>
+                  <div class="flex-center-row">
+                    <div class="wh-[18px] border-2 b-solid b-color-[#BEC0C4] rounded-[4px] box-border" />
+                  </div>
+                </template>
               </div>
               <div class="col-10 flex-start">
                 <div class="mr-[20px] color-[#CC00B8] text-size-[12px] line-height-[20px] px-[8px] bg-[#FBE2FF] rd-tl-[8px] rd-br-[8px]">
@@ -38,18 +47,15 @@ const toggleOpen = () => {
             </div>
             <div class="bg-[#FFFFFF] grid-12 px-[16px]" :class="[isOpen ? 'block1' : 'hidden1']">
               <div class="col-1" />
-              <div class="col-11 pt-[12px] pb-[16px]" :class="[isOpen ? 'block2' : 'hidden2']">
-                <div class="flex-between">
-                  <div class="">
-                    <span>条码 </span><span>s12312313</span>
-                  </div>
-                  <div class="">
-                    工艺 3D
-                  </div>
+              <div class="col-11 pt-[12px] pb-[16px] text-size-[14px]" :class="[isOpen ? 'block2' : 'hidden2']">
+                <div class="flex-between mb-[8px]">
+                  <product-line-one />
+                  <product-line-two />
                 </div>
-                <div>12312321</div>
-                <div>12312321</div>
-                <div>12312321</div>
+                <div class="flex-between">
+                  <product-line-one />
+                  <product-line-three />
+                </div>
               </div>
             </div>
           </div>
