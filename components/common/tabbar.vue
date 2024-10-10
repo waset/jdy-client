@@ -4,7 +4,7 @@
     un-lg=" h-full w-auto">
     <div
       class="w-full bg-[#fff] text-[12px] pt-[12px] pb-[4px] px-[40px] box-border flex-between"
-      un-lg="w-auto px-8px py-12px block rounded-8px "
+      un-lg="w-auto px-8px py-12px flex-center-col rounded-8px "
     >
       <div class=" flex-center-col">
         <div class="wh-[24px] bg-cyan mb-[4px]" />
