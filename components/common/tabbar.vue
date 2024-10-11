@@ -7,19 +7,19 @@
       class="w-full blur-bgc text-[12px] pt-[12px] pb-[4px] px-[40px] box-border flex-between"
       un-lg="w-auto px-8px py-12px flex-center-col rounded-8px "
     >
-      <div class=" flex-center-col">
+      <div class="flex-center-col">
         <div class="wh-[24px] bg-cyan mb-[4px]" />
         <div class="line-height-[20px] dark:color-[#FFF]">
           我的待办
         </div>
       </div>
-      <div class=" flex-center-col" un-lg="py-18px">
+      <div class="flex-center-col" un-lg="py-18px">
         <div class="wh-[24px] bg-cyan mb-[4px]" />
         <div class="line-height-[20px] dark:color-[#FFF]">
           工作台
         </div>
       </div>
-      <div class=" flex-center-col">
+      <div class="flex-center-col">
         <div class="wh-[24px] bg-cyan mb-[4px]" />
         <div class="line-height-[20px] dark:color-[#FFF]">
           个人中心

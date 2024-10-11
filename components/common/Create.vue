@@ -12,7 +12,7 @@
 </template>
 
 <style lang="scss" scoped>
-  .createbox {
+.createbox {
   --uno: 'pos-fixed bottom-[77px] right-[14px] wh-[56px] bg-gradient-linear-[40deg,#236CFA,#0085FFC3,#59C6E5] rounded-full flex justify-center items-center';
 }
 .create2 {
