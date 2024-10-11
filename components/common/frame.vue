@@ -23,12 +23,7 @@ const onInput = (e: any) => {
 <template>
   <div class="row" :class="props.disable ? 'disable' : 'nodisable'" :style="{ fontSize }">
     <div class="row-left">
-      <template v-if="props.disable">
-        <input disabled="true" class="row-input dis" :type="props.type" :placeholder="props.name" @input="onInput">
-      </template>
-      <template v-else>
-        <input :disabled="disable" class="row-input nodis" :type="props.type" :placeholder="props.name" @input="onInput">
-      </template>
+      <input :disabled="props.disable" :class="props.disable ? 'row-input dis' : 'row-input nodis'" :type="props.type" :placeholder="props.name" @input="onInput">
     </div>
 
     <div class="row-right">
@@ -47,10 +42,10 @@ const onInput = (e: any) => {
   padding: 6px 12px;
   border-radius: 36px;
   &.disable {
-    --uno: 'flex-between bg-[rgba(230,230,232,0.5)] border-[#e6e6e8] border-1px border-solid dark:bg-[rgba(230,230,232,0.3)] dark:border-[rgba(230,230,232,0.2)] ';
+    --uno: 'flex-between bg-[rgba(230,230,232,0.5)] border-[#e6e6e8] border-1px border-solid dark:bg-[rgba(230,230,232,0.3)] dark:border-[rgba(230,230,232,0.2)]';
   }
   &.nodisable {
-    --uno: 'flex-between bg-#fff border-[#e6e6e8] border-1px border-solid dark:bg-[rgba(255,255,255,0.2)] dark:border-[rgba(230,230,232,0.2)] ';
+    --uno: 'flex-between bg-#fff border-[#e6e6e8] border-1px border-solid dark:bg-[rgba(255,255,255,0.2)] dark:border-[rgba(230,230,232,0.2)]';
   }
   &-input {
     background: transparent;

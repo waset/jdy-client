@@ -59,7 +59,6 @@ function toggleShow() {
 .collapse-item {
   --uno: 'flex flex-col overflow-hidden';
   border-radius: 24px;
-  border: 1px solid #eff0f6;
   .title {
     --uno: 'flex justify-between items-center py-8px px-16px text-14px font-600 text-#333333 dark:text-#FFFFFF';
   }
