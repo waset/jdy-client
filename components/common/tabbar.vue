@@ -3,6 +3,7 @@
     class="fixed bottom-0 left-0 flex-center-row w-full"
     un-lg=" h-full w-auto">
     <div
+
       class="w-full blur-bgc text-[12px] pt-[12px] pb-[4px] px-[40px] box-border flex-between"
       un-lg="w-auto px-8px py-12px flex-center-col rounded-8px "
     >
