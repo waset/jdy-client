@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const props = withDefaults(defineProps<{
+interface FoldProps {
   title?: string
   // 标题字体大小
   size?: string
@@ -9,7 +9,9 @@ const props = withDefaults(defineProps<{
   toColor?: string
   // 是否展开折叠
   isCollapse?: boolean
-}>(), {
+}
+
+const props = withDefaults(defineProps<FoldProps>(), {
   title: '',
   size: '14px',
   direction: 'left',
@@ -29,7 +31,7 @@ function toggleShow() {
 
 <template>
   <div class="collapse-item">
-    <div class="title" :style="`background: linear-gradient(to ${direction}, ${fromColor}, ${toColor});size:${size};`" @click="toggleShow">
+    <div class="title" :style="`background: linear-gradient(to ${direction}, ${fromColor}, ${toColor});font-size:${size};`" @click="toggleShow">
       <template v-if="$slots.title">
         <slot name="title" />
       </template>

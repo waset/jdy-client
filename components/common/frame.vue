@@ -1,17 +1,20 @@
 <script lang="ts" setup>
-const props = withDefaults(defineProps<{
+interface Props {
   name?: string
   bgColor?: string
   color?: string
   disable?: boolean
   type?: 'text' | 'password' | 'number' | 'tel' | 'email' | 'url' | 'date' | 'time' | 'datetime-local' | 'month' | 'week' | 'search' | 'color'
-}>(), {
+}
+
+const props = withDefaults(defineProps<Props>(), {
   name: '名称',
-  bgColor: '',
+  bgColor: '#FFF',
   color: '',
   disable: false,
   type: 'text',
 })
+
 const emit = defineEmits(['changeValue'])
 const onInput = (e: any) => {
   emit('changeValue', e.target.value)
@@ -19,7 +22,7 @@ const onInput = (e: any) => {
 </script>
 
 <template>
-  <div :style="`${props.bgColor ? `background:${bgColor}` : ''}`" class="row  dark:bg-[red]">
+  <div :style="`${props.bgColor ? `background:${bgColor}` : ''}`" class="row dark:bg-[red]">
     <div class="row-left">
       <input :disabled="disable" class="row-input" :type="props.type" :placeholder="props.name" @input="onInput">
     </div>

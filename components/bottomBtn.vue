@@ -1,8 +1,10 @@
 <script setup lang="ts">
-const props = withDefaults(defineProps<{
+interface Props {
   cancelText?: string
   confirmText?: string
-}>(), {
+}
+
+const props = withDefaults(defineProps<Props>(), {
   cancelText: '取消',
   confirmText: '确认',
 })
@@ -24,7 +26,7 @@ const props = withDefaults(defineProps<{
   --uno: 'fixed bottom-0 left-0 right-0 blur-bga p-[12px_16px] text-[16px] font-bold';
   &-left {
     background: #ffffff;
-    box-shadow: rgba(110, 166, 255, 0.3) 0px 6px 6px;
+    box-shadow: 0px 6px 6px rgba(110, 166, 255, 0.3);
     --uno: 'text-[16px] py-[8px] border-none text-center rounded-[36px] mr-[8px]';
   }
 
