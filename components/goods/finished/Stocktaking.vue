@@ -20,7 +20,7 @@ const realCount = computed(() => {
 })
 
 // 盘点单tab切换选项
-const inventoryOptions = [
+const inventoryOptions = computed(() => [
   {
     label: '应盘',
     count: props.sheet.shouldCount,
@@ -41,7 +41,7 @@ const inventoryOptions = [
     count: props.sheet.profitCount,
     value: 4,
   },
-]
+])
 
 // 当前选择的盘点类型
 const currentSelected = ref(1)
@@ -84,7 +84,13 @@ const step = [
 
 // 盘点单详情状态--待处理、来源暂时不太确定，暂用：testInventory.InventoryStatus === 2 来代替（确认后删除该条注释）
 const active = computed(() => {
-  const progress = props.sheet.inventoryStatus === 1 ? 4 : (props.sheet.inventoryStatus === 2 ? 3 : 1)
+  let progress = 1
+  if (props.sheet.inventoryStatus === 1) {
+    progress = 4
+  }
+  else if (props.sheet.inventoryStatus === 2) {
+    progress = 3
+  }
   return progress
 })
 </script>
