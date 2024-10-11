@@ -7,8 +7,8 @@ const toggleOpen = () => {
 </script>
 
 <template>
-  <div class="grid-12">
-    <div class="grid-12 gap-[24px] col-12 sm:col-8 sm:offset-2">
+  <div class="">
+    <div class="grid-12 gap-[24px] ">
       <template v-for="(item, index) in 5" :key="index">
         <div class="sm:col-12 lg:col-6 col-12">
           <div class=" rounded-[24px] overflow-hidden ">
