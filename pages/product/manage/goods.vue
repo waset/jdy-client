@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <common-navbar />
-    <div class="grid-12">
-      <div class="col-12 lg:col-8 lg:offset-2 sm:col-8 sm:offset-2 grid-12 px-[16px] py-[12px]">
+  <div class="">
+    <!-- <common-navbar /> -->
+    <div class="grid-12 w-full">
+      <div class="col-12 box-border sm:col-8 sm:offset-2 grid-12 px-[16px] py-[12px] box-border">
         <div class="col-7  color-[#fff]">
           <product-filter-search />
         </div>
@@ -16,13 +16,11 @@
           搜索结果3条
         </div>
       </div>
-      <div>
-        <div class="px-[16px]">
-          <product-manage-fold />
-        </div>
+      <div class="col-12  sm:col-8 sm:offset-2 px-[16px]">
+        <product-manage-fold />
       </div>
 
-      <div class="fixed bottom-0 left-0 right-0 bg-[rgba(241,245,254,1)] px-[16px] py-[12px] grid-12">
+      <div class="fixed bottom-0 left-0 right-0 bg-[rgba(241,245,254,1)] px-[16px] py-[12px] grid-12 box-border">
         <div class="text-size-[14px] line-height-[20px] py-[8px] col-5">
           <span class="color-[#666] mr-[8px]">已选择</span><span class="color-[#3971F3]">2个商品</span>
         </div>
