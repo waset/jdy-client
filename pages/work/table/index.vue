@@ -1,6 +1,5 @@
 <template>
   <div>
-    <common-navbar />
     <div class="color-[#fff] grid-12 px-[16px] py-[12px]">
       <div class="col-4 " un-sm="col-2 offset-2">
         <product-manage-company />
