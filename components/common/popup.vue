@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const show = defineModel({ type: Boolean, default: false })
+
 watch(show, (val) => {
   if (val) {
     document.body.style.overflow = 'hidden'// 禁止滚动
@@ -26,7 +27,6 @@ function close() {
         </div>
         <div class="body">
           <slot />
-          <bottom-btn cancel-text="重置" confirm-text="确定" />
         </div>
       </div>
     </div>
