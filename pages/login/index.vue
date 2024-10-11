@@ -42,7 +42,7 @@ const isLogin = ref<boolean>(false)
           </div>
           <div class="px-[12px] py-[10px] bg-[#fff] rounded-[8px]">
             <input
-              type="text" class="bg-transparent border-0 input text-[14px] w-full outline-none" placeholder="全部"
+              type="text" class="bg-transparent border-0 placeholder-text-[#cbcdd1] text-[14px] w-full outline-none " placeholder="全部"
             >
           </div>
         </div>
@@ -53,7 +53,7 @@ const isLogin = ref<boolean>(false)
           </div>
           <div class="px-[12px] py-[10px] bg-[#fff] rounded-[8px] ">
             <input
-              type="text" class="bg-transparent border-0 input text-[14px] w-full outline-none" placeholder="密码"
+              type="text" class="bg-transparent border-0 placeholder-text-[#cbcdd1] text-[14px] w-full outline-none" placeholder="密码"
             >
           </div>
         </div>
@@ -124,28 +124,5 @@ const isLogin = ref<boolean>(false)
       0% 100%
     );
   }
-}
-.input::input-placeholder {
-  color: #cbcdd1;
-}
-
-.input::-webkit-input-placeholder {
-  //兼容WebKit browsers（Chrome的内核）
-  color: #cbcdd1;
-}
-
-.input::-moz-placeholder {
-  //Mozilla Firefox 4 to 18
-  color: #cbcdd1;
-}
-
-.input::-moz-placeholder {
-  //Mozilla Firefox 19+
-  color: #cbcdd1;
-}
-
-.input::-ms-input-placeholder {
-  //Internet Explorer 10+
-  color: #cbcdd1;
 }
 </style>
