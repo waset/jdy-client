@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const text = defineModel('text')
+const props = defineProps<{
+  text: string
+}>()
 </script>
 
 <template>
@@ -11,7 +13,7 @@ const text = defineModel('text')
           <van-icon name="cross" class="ml-[16px]" />
         </van-col>
         <van-col span="8" class="title">
-          <div> {{ text }}</div>
+          <div> {{ props.text }}</div>
         </van-col>
         <van-col span="8">
           <common-dark />

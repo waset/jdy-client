@@ -1,9 +1,11 @@
 <script setup lang="ts">
-const wh = defineModel('wh')
+const props = withDefaults(defineProps<{ wh: number }>(), {
+  wh: 40,
+})
 </script>
 
 <template>
-  <div class="bg-coolGray rounded-[4px] avatar" :style="{ width: `${wh}px`, height: `${wh}px` }" />
+  <div class="bg-coolGray rounded-[4px] avatar" :style="{ width: `${props.wh}px`, height: `${props.wh}px` }" />
 </template>
 
 <style lang="scss" scoped>

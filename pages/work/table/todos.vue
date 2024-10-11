@@ -17,10 +17,10 @@
       </div>
 
       <div>
-        <work-card-digitalization title="工作详情" right="今日数据" />
+        <work-card-digitalization left-title="工作详情" right-title="今日数据" />
       </div>
       <div class="mt-[16px]">
-        <work-card-digitalization title="工作目标" />
+        <work-card-digitalization left-title="工作目标" />
       </div>
       <common-tabbar />
     </div>

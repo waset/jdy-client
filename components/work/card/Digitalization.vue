@@ -1,6 +1,8 @@
 <script setup lang="ts">
-const leftTitle = defineModel('title')
-const rightTitle = defineModel('right')
+const porps = defineProps<{
+  leftTitle: string
+  rightTitle?: string
+}>()
 </script>
 
 <template>
@@ -10,11 +12,11 @@ const rightTitle = defineModel('right')
         class="skew col-4">
         <div class="skew-right" />
         <div class="skew-text ">
-          {{ leftTitle }}
+          {{ porps.leftTitle }}
         </div>
       </div>
       <div class="col-4 offset-8 flex-end pr-[16px] pt-[5px] color-[#3971F3] dark:color-[#FFF]">
-        {{ rightTitle }}
+        {{ porps.rightTitle }}
       </div>
     </div>
 
