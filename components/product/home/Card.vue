@@ -11,11 +11,12 @@ const num = defineModel<number>('num')
         <img :src="imgs" class="wh-[30px] mr-2">
       </div>
       <div>
-        <div class="color-[#46A6FF] dark:color-[#fff] text-size-xs line-height-[24px]">
+        <div class="color-[#428EFF] dark:color-[#fff] text-size-xs line-height-[24px]">
           {{ text }}
         </div>
-        <div class="color-[#007FF4] dark:color-[#fff] text-size-xl line-height-[24px]">
+        <div class="color-[#3971F3] dark:color-[#fff] text-size-xl line-height-[24px]">
           {{ num }}
+          <span class="text-[14px]">个</span>
         </div>
       </div>
     </div>
