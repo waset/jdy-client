@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="px-[16px] ">
+    <div class="px-[16px] pt-[48px]">
+      <div class="absolute right-0 top-[-10px]">
+        <nuxt-img src="/work/could.svg" alt="" width="217" height="211" />
+      </div>
       <div class=" top-[-66px] sm:top-[0] sm:right-[240px] sm:flex-center-col sm:items-end">
         <div class="text-size-xl line-height-[24px] font-semibold color-[#fff]">
           早上好,孙暴风
@@ -19,6 +22,7 @@
       <div class="mt-[16px]">
         <work-card-digitalization title="工作目标" />
       </div>
+      <common-tabbar />
     </div>
   </div>
 </template>

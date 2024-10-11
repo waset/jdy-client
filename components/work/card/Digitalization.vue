@@ -13,7 +13,7 @@ const rightTitle = defineModel('right')
           {{ leftTitle }}
         </div>
       </div>
-      <div class="col-4 offset-8 flex-end pr-[16px] pt-[5px] color-[#3971F3]">
+      <div class="col-4 offset-8 flex-end pr-[16px] pt-[5px] color-[#3971F3] dark:color-[#FFF]">
         {{ rightTitle }}
       </div>
     </div>
