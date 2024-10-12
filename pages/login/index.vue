@@ -37,7 +37,7 @@ const isLogin = ref<boolean>(false)
 
       <div class="cardbox blur-bgc" :style="{ borderTopRightRadius: isLogin ? '16px' : '0px', borderTopLeftRadius: isLogin ? '0px' : '16px' }">
         <div>
-          <div class="text-[14px] line-height-[20px] mb-[8px]">
+          <div class="text-[14px] line-height-[20px] mb-[8px] dark:color-[#fff]">
             手机号
           </div>
           <div class="px-[12px] py-[10px] bg-[#fff] rounded-[8px]">
@@ -48,7 +48,7 @@ const isLogin = ref<boolean>(false)
         </div>
 
         <div class="mt-[32px]">
-          <div class="text-[14px] line-height-[20px] mb-[8px]">
+          <div class="text-[14px] line-height-[20px] mb-[8px] dark:color-[#fff]">
             密码
           </div>
           <div class="px-[12px] py-[10px] bg-[#fff] rounded-[8px] ">
@@ -60,8 +60,19 @@ const isLogin = ref<boolean>(false)
 
         <div class="text-size-[16px]  font-semibold offset-5 mt-[32px]">
           <div class="ok ">
-            确定
+            登录
           </div>
+        </div>
+
+        <div class="px-[40px] mt-[112px] flex-center-row">
+          <div class="h-[1px] w-[58px] color-[#9E9E9E] dark:color-[#fff] bg-gradient-linear-[90deg,#CCCCCC00,#CCCCCC]" />
+          <div class=" color-[#9E9E9E] dark:color-[#fff] px-[9px]">
+            其他登录方式
+          </div>
+          <div class="h-[1px] w-[58px]  color-[#9E9E9E] dark:color-[#fff] bg-gradient-linear-[270deg,#CCCCCC00,#CCCCCC] " />
+        </div>
+        <div class="flex-center-row py-[24px]">
+          <div class="wh-[32px] rounded-full bg-blue" />
         </div>
       </div>
     </div>
