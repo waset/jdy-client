@@ -13,6 +13,7 @@ export default withNuxt(
   antfu({
     unocss: true,
     formatters: true,
+    typescript: true,
   }),
   {
     rules: {
