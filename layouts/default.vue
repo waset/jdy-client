@@ -1,14 +1,11 @@
 <script setup lang="ts">
 useToggle(isDark)
-onMounted(() => {
-
-})
 </script>
 
 <template>
   <div
     class="body min-h-screen box-border   ;">
-    <div :style="{ background: `url(/background/bg.png)`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }" class="min-h-screen ">
+    <div :style="{ background: `url(/images/background/bg.png)`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }" class="min-h-screen ">
       <slot />
     </div>
   </div>
