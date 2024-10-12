@@ -16,7 +16,7 @@ const toggleOpen = () => {
               <div class="col-1 flex-center-row mr-[8px]">
                 <template v-if="index > 1">
                   <div class="flex-center-row">
-                    <nuxt-img src="/product/selected.svg" width="18" height="18" />
+                    <icon name="jdy:product-selected" size="18" mode="css" />
                   </div>
                 </template>
                 <template v-else>

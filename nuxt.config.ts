@@ -33,7 +33,7 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    dir: 'assets/image',
+    dir: 'assets/images',
   },
   /**
    * @see https://github.com/nuxt/icon

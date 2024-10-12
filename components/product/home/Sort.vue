@@ -30,7 +30,7 @@ const list = [{
   <div class="grid-12">
     <div class="col-12 lg:col-8 lg:offset-2 sm:col-12 relative">
       <div class="absolute right-[-10px] top-[-146px] sm:right-[0] sm:top-[-90px]">
-        <NuxtImg src="/home/homeIcon.svg" width="200" />
+        <NuxtImg src="/product/product-homeicon.png" width="200" />
       </div>
       <div class="absolute top-[-66px] sm:top-[0] sm:right-[240px] sm:flex-center-col sm:items-end">
         <div class="text-size-xl line-height-[24px] font-semibold color-[#fff]">
@@ -52,7 +52,7 @@ const list = [{
               </div>
             </div>
             <div class="absolute sm:top-[54px] sm:left-[33px] top-[39px] left-[16px] ">
-              <product-home-card img="/home/target.svg" text="本月销售目标" :num="20" />
+              <product-home-card img="jdy:product-target" text="本月销售目标" :num="20" />
             </div>
           </div>
           <div class="ti-after" />
@@ -60,13 +60,13 @@ const list = [{
         <div class="center-title pl-[16px] sm:pl-[33px] py-[10px] rounded-tr-[16px] sm:pt-[42px]">
           <div class="grid-12 gap-[16px]">
             <div class="col-4">
-              <product-home-card img="/home/neworder.svg" text="新增订单" :num="20" />
+              <product-home-card img="jdy:product-neworder" text="新增订单" :num="20" />
             </div>
             <div class="col-4">
-              <product-home-card img="/home/newuser.svg" text="新增客户" :num="20" />
+              <product-home-card img="jdy:product-newuser" text="新增客户" :num="20" />
             </div>
             <div class="col-4">
-              <product-home-card img="/home/money.svg" text="销售金额" :num="20" />
+              <product-home-card img="jdy:product-money" text="销售金额" :num="20" />
             </div>
           </div>
         </div>
