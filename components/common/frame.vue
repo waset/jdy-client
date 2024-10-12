@@ -7,7 +7,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  name: '名称',
+  name: '',
   disable: false,
   type: 'text',
   fontSize: '14px',
