@@ -1,78 +1,77 @@
 <script setup lang="ts">
-interface Tags {
-  type: string
+interface Props {
+  type?: colors
   text: string
-  backgroundColor?: string
-  color?: string
   isOval?: boolean
 }
 
 // 接收一个标签主题色
-const props = withDefaults(defineProps<Tags>(), {
+const props = withDefaults(defineProps<Props>(), {
   type: 'orange',
-  text: '',
   isOval: false,
 })
 
-const tagStyle: Tags[] = [
-  {
-    // 标签关键词
-    type: 'orange',
+type Tags = {
+  backgroundColor?: string
+  color?: string
+} & Partial<Props>
+
+type colors =
+  | 'orange'
+  | 'red'
+  | 'green'
+  | 'lake'
+  | 'pink'
+  | 'greyblue'
+  | 'grey'
+  | 'black'
+
+const tagStyle: { [key in colors]: Tags } = {
+  orange: {
     // 标签背景色
     backgroundColor: '#fff4cd',
     // 标签字体颜色
     color: '#dd9200',
-    text: '',
   },
-  {
-    type: 'red',
+  red: {
     backgroundColor: '#ffd5d8',
     color: '#cc0000',
-    text: '',
   },
-  {
-    type: 'green',
+  green: {
     backgroundColor: '#baffd6',
     color: '#106633',
-    text: '',
   },
-  {
-    type: 'lake',
+  lake: {
     backgroundColor: '#a2f5f0',
     color: '#2b6662',
-    text: '',
   },
-  {
-    type: 'pink',
+  pink: {
     backgroundColor: '#fbe2ff',
     color: '#cc00b8',
-    text: '',
   },
-  {
-    type: 'greyblue',
+  greyblue: {
     backgroundColor: '#c7daff',
     color: '#4b576d',
-    text: '',
   },
-  {
-    type: 'grey',
+  grey: {
     backgroundColor: '#e6e6e8',
     color: '#4b576d',
-    text: '',
   },
-]
-
-// 设置border-radius
-const borderStyle = props.isOval === true ? '100px 10px / 120px' : '8px'
-
-// 根据props.type获取标签主题色
-const tagTheme = tagStyle.find(item => item.type === props.type)
+  black: {
+    backgroundColor: '#333333',
+    color: '#ffffff',
+  },
+}
 </script>
 
 <template>
   <div
     class="tag flex-start px-[8px]"
-    :style="{ backgroundColor: tagTheme?.backgroundColor, color: tagTheme?.color, borderRadius: borderStyle }"
+    :style="{
+      backgroundColor: tagStyle[props.type].backgroundColor,
+      color: tagStyle[props.type].color,
+      borderRadius: props.isOval ? '100px 10px / 120px' : '8px',
+    }"
   >
     {{ props.text }}
   </div>
