@@ -1,16 +1,18 @@
 <script lang="ts" setup>
 interface Props {
   name?: string
-  disable?: boolean
+  isDisabled?: boolean
   type?: 'text' | 'password' | 'number' | 'tel' | 'email' | 'url' | 'date' | 'time' | 'datetime-local' | 'month' | 'week' | 'search' | 'color'
   fontSize?: string
+  value?: string | number
 }
 
 const props = withDefaults(defineProps<Props>(), {
   name: '',
-  disable: false,
+  isDisabled: false,
   type: 'text',
   fontSize: '14px',
+  value: '',
 })
 
 const emit = defineEmits(['changeValue'])
@@ -21,9 +23,9 @@ const onInput = (e: any) => {
 </script>
 
 <template>
-  <div class="row" :class="props.disable ? 'disable' : 'nodisable'" :style="{ fontSize }">
+  <div class="row" :class="props.isDisabled ? 'disable' : 'nodisable'" :style="{ fontSize }">
     <div class="row-left">
-      <input :disabled="props.disable" :class="props.disable ? 'row-input dis' : 'row-input nodis'" :type="props.type" :placeholder="props.name" @input="onInput">
+      <input updata:changeValue="props.value" :disabled="props.isDisabled" :class="props.isDisabled ? 'row-input dis' : 'row-input nodis'" :type="props.type" :placeholder="props.name" @input="onInput">
     </div>
 
     <div class="row-right">
@@ -31,7 +33,7 @@ const onInput = (e: any) => {
         <slot name="icon" />
       </template>
       <template v-else>
-        <van-icon name="arrow" :color="props.disable ? '#808089' : '#CBCDD1'" />
+        <van-icon name="arrow" :color="props.isDisabled ? '#808089' : '#CBCDD1'" />
       </template>
     </div>
   </div>
