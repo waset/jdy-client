@@ -41,7 +41,7 @@ export default defineNuxtConfig({
   icon: {
     customCollections: [
       {
-        prefix: '',
+        prefix: 'jdy', // 前缀
         dir: 'assets/icons',
       },
     ],
