@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+  ssr: false,
   modules: [
     '@pinia/nuxt',
     'pinia-plugin-persistedstate',
@@ -13,7 +14,10 @@ export default defineNuxtConfig({
     '@vant/nuxt',
     '@vueuse/nuxt',
     '@nuxt/eslint',
+    '@nuxt/image',
+    '@nuxt/icon',
   ],
+  css: ['~/assets/css/main.scss'],
   vite: {
     css: {
       preprocessorOptions: {
@@ -27,5 +31,19 @@ export default defineNuxtConfig({
     config: {
       standalone: false,
     },
+  },
+  image: {
+    dir: 'assets/image',
+  },
+  /**
+   * @see https://github.com/nuxt/icon
+   */
+  icon: {
+    customCollections: [
+      {
+        prefix: 'jdy', // 前缀
+        dir: 'assets/icons',
+      },
+    ],
   },
 })
