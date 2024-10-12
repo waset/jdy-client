@@ -7,7 +7,7 @@ const toggleDark = useToggle(isDark)
     <div class="bg-[#FFFFFF66] rounded-full p-[2px] flex-center-row">
       <div class="p-[4px] rounded-full flex-center-row light:bg-[#FFF] dark:bg-transparent">
         <template v-if="isDark">
-          <icon name="jdy:demo" size="16" mode="css" />
+          <icon name="jdy:sun-line" size="16" mode="css" />
           <span class="text-size-[12px] line-height-[24px] ml-[4px] color-[#fff]">浅色</span>
         </template>
         <template v-else>
