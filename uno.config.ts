@@ -40,7 +40,6 @@ export default defineConfig({
     [/^blur-(\d+(?:\.\d+)?)(px)$/, ([, value]) => ({
       'backdrop-filter': `blur(${value}px)`,
     })],
-
   ],
   shortcuts: {
     'flex-start': 'flex items-center justify-start',
@@ -50,6 +49,7 @@ export default defineConfig({
     'flex-evenly': 'flex items-center justify-evenly',
     'flex-center-col': 'flex flex-col items-center justify-center',
     'flex-center-row': 'flex flex-row items-center justify-center',
+    'flex-center-between': 'flex flex-row items-center justify-between',
     'grid-12': 'grid grid-cols-12',
     'blur-bgc': 'light:bg-[rgba(255,255,255,0.7)] dark:bg-[rgba(0,0,0,0.3)] blur-5px', // 毛玻璃背景色
   },
