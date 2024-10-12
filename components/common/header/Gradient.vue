@@ -6,16 +6,10 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="flex justify-between items-center px-4 py-2 rounded-t-3 box">
-    <div class="font-extrabold text-#333333 italic text-14px">
+  <div class="flex-center-between px-4 py-2 rounded-t-3 bg-[linear-gradient(90deg,#3971f3b8,#f3f5fe00)]">
+    <div class="font-extrabold text-[#333333] italic text-[14px]">
       {{ props.title }}
     </div>
     <slot />
   </div>
 </template>
-
-<style scoped lang="scss">
-.box {
-  background: linear-gradient(0.25turn, #3971f3, 20%, #f3f5fe00);
-}
-</style>
