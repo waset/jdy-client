@@ -1,4 +1,4 @@
-name: Check Build
+name: Build
 
 on:
   push:
@@ -10,28 +10,21 @@ on:
       - main
 
 jobs:
-  check:
+  build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-
-      - name: Set node version to ${{ matrix.node_version }}
-        uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node_version }}
+          node-version: 18.x
           cache: pnpm
 
       - name: Install
         run: pnpm i
 
-      - name: Reset
-        run: pnpm run reset-manifest
+      - name: Build
+        run: pnpm generate
 
       - name: Lint
-        run: pnpm run lint
-
-      - name: Build
-        run: pnpm run ${{ matrix.build_cmd }}
-
-      - name: Typecheck
-        run: pnpm run type-check
+        run: pnpm lint

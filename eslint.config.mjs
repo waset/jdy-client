@@ -13,6 +13,7 @@ export default withNuxt(
   antfu({
     unocss: true,
     formatters: true,
+    typescript: true,
   }),
   {
     rules: {
@@ -21,6 +22,7 @@ export default withNuxt(
       'curly': 'off',
       'antfu/top-level-function': 'off',
       'unocss/order-attributify': 'off',
+      'vue/html-closing-bracket-newline': 'off',
     },
   },
 )
