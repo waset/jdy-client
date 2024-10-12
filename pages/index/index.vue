@@ -9,5 +9,6 @@
     <div class="p-4  w-full pt-[140px] box-border">
       <product-home-sort />
     </div>
+    <icon name="nuxt-v1" />
   </div>
 </template>
