@@ -9,5 +9,7 @@
     <div class="p-4  w-full pt-[140px] box-border">
       <product-home-sort />
     </div>
+    <!-- TODO: Test -->
+    <icon name="jdy:test666" size="100" mode="css" />
   </div>
 </template>

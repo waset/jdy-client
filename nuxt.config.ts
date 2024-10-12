@@ -4,7 +4,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: {
-    enabled: false,
+    enabled: true,
   },
   ssr: false,
   modules: [
@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/eslint',
     '@nuxt/image',
+    '@nuxt/icon',
   ],
   css: ['~/assets/css/main.scss'],
   vite: {
@@ -33,5 +34,16 @@ export default defineNuxtConfig({
   },
   image: {
     dir: 'assets/image',
+  },
+  /**
+   * @see https://github.com/nuxt/icon
+   */
+  icon: {
+    customCollections: [
+      {
+        prefix: 'jdy', // 前缀
+        dir: 'assets/icons',
+      },
+    ],
   },
 })
