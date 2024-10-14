@@ -30,7 +30,7 @@ const list = [{
   <div class="grid-12">
     <div class="col-12 lg:col-8 lg:offset-2 sm:col-12 relative">
       <div class="absolute right-[-10px] top-[-146px] sm:right-[0] sm:top-[-90px]">
-        <NuxtImg src="/product/product-homeicon.png" width="200" />
+        <NuxtImg src="/banner/product.png" width="200" />
       </div>
       <div class="absolute top-[-66px] sm:top-[0] sm:right-[240px] sm:flex-center-col sm:items-end">
         <div class="text-size-xl line-height-[24px] font-semibold color-[#fff]">

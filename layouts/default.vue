@@ -4,8 +4,9 @@ useToggle(isDark)
 
 <template>
   <div
-    class="body min-h-screen box-border   ;">
-    <div :style="{ background: `url(/images/background/bg.png)`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }" class="min-h-screen ">
+    class="body min-h-screen box-border;">
+    <NuxtImg src="/background/bg.png" class="fixed top-0 left-0 z-0 w-[400px] sm:w-[600px]" />
+    <div class="min-h-screen ">
       <slot />
     </div>
   </div>

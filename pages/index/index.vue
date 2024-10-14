@@ -10,6 +10,6 @@
       <product-home-sort />
     </div>
     <!-- TODO: Test -->
-    <icon name="jdy:test666" size="100" mode="css" />
+    <icon name="jdy:test666" size="100" />
   </div>
 </template>
