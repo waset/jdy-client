@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  ssr: false,
+  ssr: true,
   modules: [
     '@pinia/nuxt',
     'pinia-plugin-persistedstate',
@@ -33,7 +33,7 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    dir: 'assets/images',
+    inject: true,
   },
   /**
    * @see https://github.com/nuxt/icon

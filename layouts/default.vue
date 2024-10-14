@@ -1,17 +1,18 @@
 <script setup lang="ts">
 useToggle(isDark)
+const img = useImage()
+const backgroundStyles = computed(() => {
+  const src = isDark.value ? '/images/background/darkbg.png' : '/images/background/bg.png'
+  const imgUrl = img(src)
+  return { backgroundImage: `url('${imgUrl}')`, backgroundRepeat: 'no-repeat' }
+})
 </script>
 
 <template>
   <div
     class="body min-h-screen box-border z-0">
-    <template v-if="isDark">
-      <NuxtImg src="/background/darkbg.png" class="fixed top-0 left-0 z-[1] w-[375px] sm:w-[500px]" />
-    </template>
-    <template v-else>
-      <NuxtImg src="/background/bg.png" class="fixed top-0 left-0 z-[1] w-[375px] sm:w-[500px]" />
-    </template>
-    <div class="min-h-screen z-2 relative">
+    <div
+      class="min-h-screen z-2 relative" :style="backgroundStyles">
       <slot />
     </div>
   </div>
