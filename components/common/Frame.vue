@@ -12,20 +12,21 @@ const props = withDefaults(defineProps<Props>(), {
   isDisabled: false,
   type: 'text',
   fontSize: '14px',
-  value: '',
+  value: undefined,
 })
 
-const emit = defineEmits(['changeValue'])
-
+const emits = defineEmits<{
+  'update:value': [value: string]
+}>()
 const onInput = (e: any) => {
-  emit('changeValue', e.target.value)
+  emits('update:value', e.target.value)
 }
 </script>
 
 <template>
   <div class="row" :class="props.isDisabled ? 'disable' : 'nodisable'" :style="{ fontSize }">
     <div class="row-left">
-      <input updata:changeValue="props.value" :disabled="props.isDisabled" :class="props.isDisabled ? 'row-input dis' : 'row-input nodis'" :type="props.type" :placeholder="props.name" @input="onInput">
+      <input :value="value" :disabled="props.isDisabled" :class="props.isDisabled ? 'row-input dis' : 'row-input nodis'" :type="props.type" :placeholder="props.name" @input="onInput">
     </div>
 
     <div class="row-right">

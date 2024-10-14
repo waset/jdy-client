@@ -26,7 +26,7 @@ const list = ref([
 
 <template>
   <div>
-    <sale-infocard title="标题" :list="list" />
+    <sale-info-card title="标题" :list="list" />
     <div class="nav">
       <template v-for="(item, index) in nav" :key="index">
         <div class="nav-item" :class="{ active: index === selectNav }" @click="changeNav(index)">
@@ -80,7 +80,7 @@ const list = ref([
         </common-fold>
       </div>
     </common-fold>
-    <sale-infocard title="结算信息" :list="list">
+    <sale-info-card title="结算信息" :list="list">
       <template #footer>
         <div class="mx-[16px] mt-[14px] py-[14px] border-t-[#E6E6E8] border-t-[1px] border-t-solid">
           <div class="flex flex-col items-end">
@@ -93,9 +93,9 @@ const list = ref([
           </div>
         </div>
       </template>
-    </sale-infocard>
+    </sale-info-card>
     <div class="h-[80px]">
-      <common-bottom-btn />
+      <common-button-bottom />
     </div>
   </div>
 </template>
