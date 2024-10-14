@@ -1,14 +1,18 @@
 <script setup lang="ts">
 useToggle(isDark)
-onMounted(() => {
-
+const img = useImage()
+const backgroundStyles = computed(() => {
+  const src = isDark.value ? '/images/background/darkbg.png' : '/images/background/bg.png'
+  const imgUrl = img(src)
+  return { backgroundImage: `url('${imgUrl}')`, backgroundRepeat: 'no-repeat' }
 })
 </script>
 
 <template>
   <div
-    class="body min-h-screen box-border   ;">
-    <div :style="{ background: `url(/background/bg.png)`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }" class="min-h-screen ">
+    class="body min-h-screen box-border z-0">
+    <div
+      class="min-h-screen z-2 relative" :style="backgroundStyles">
       <slot />
     </div>
   </div>

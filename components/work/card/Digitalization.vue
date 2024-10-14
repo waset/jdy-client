@@ -22,13 +22,13 @@ const porps = defineProps<{
 
     <div class="grid-12 gap-[16px] pt-[11px] pb-[16px] px-[16px]">
       <div class="col-4">
-        <product-home-card img="/home/neworder.svg" text="新增订单" :num="20" />
+        <product-home-card img="jdy:product-neworder" text="新增订单" :num="20" />
       </div>
       <div class="col-4">
-        <product-home-card img="/home/newuser.svg" text="新增客户" :num="20" />
+        <product-home-card img="jdy:product-newuser" text="新增客户" :num="20" />
       </div>
       <div class="col-4">
-        <product-home-card img="/home/money.svg" text="销售金额" :num="20" />
+        <product-home-card img="jdy:product-money" text="销售金额" :num="20" />
       </div>
     </div>
   </div>

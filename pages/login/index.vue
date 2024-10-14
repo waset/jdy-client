@@ -4,6 +4,7 @@ const isLogin = ref<boolean>(false)
 
 <template>
   <div class="">
+    <common-dark />
     <div class="px-[16px] pt-[24px]">
       <div class="line-height-[24px] mb-[41px] color-[#fff]">
         <div class=" text-[20px]">
