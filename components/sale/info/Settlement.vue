@@ -21,9 +21,7 @@ const actions = [
                 {{ item.name }}
               </div>
               <common-frame
-                :value="item.num" @update:value="(val:any) => {
-                  item.num = val
-                }"
+                v-model="item.num"
               />
             </div>
           </template>
