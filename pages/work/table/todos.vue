@@ -2,7 +2,7 @@
   <div>
     <div class="px-[16px] pt-[48px]">
       <div class="absolute right-0 top-[-10px]">
-        <nuxt-img src="/images/banner/work.png" alt="" width="217" height="211" />
+        <nuxt-img src="/images/banner/work.png" size="200px" />
       </div>
       <div class=" top-[-66px] sm:top-[0] sm:right-[240px] sm:flex-center-col sm:items-end">
         <div class="text-size-xl line-height-[24px] font-semibold color-[#fff]">
