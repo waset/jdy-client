@@ -2,25 +2,53 @@
 const { $colorMode } = useNuxtApp()
 const mode = computed({
   get() {
-    return $colorMode.preference
+    return $colorMode.preference === 'dark'
   },
   set(newValue) {
-    $colorMode.preference = newValue
+    $colorMode.preference = newValue ? 'dark' : 'light'
   },
 })
 </script>
 
 <template>
-  <div class=" w-fit select-none">
-    <div class="bg-[#FFFFFF66] rounded-full p-[2px] flex-center-row ">
-      <div class="p-[4px] rounded-full flex-center-row light:bg-[#FFF] dark:bg-transparent" @click="mode = 'light'">
-        <icon name="jdy:sun-line" size="16" :color="mode === 'light' ? '#3971F3' : '#FFF'" />
-        <span class="text-size-[12px] line-height-[24px] ml-[4px] color-[#3971F3] dark:color-[#fff]">浅色</span>
-      </div>
-      <div class="p-[4px] rounded-full flex-center-row light:bg-transparent dark:bg-[#FFF]" @click="mode = 'dark'">
-        <icon name="jdy:moon-white" size="16" :color="mode === 'dark' ? '#3971F3' : '#FFF'" />
-        <span class="text-size-[12px]  line-height-[24px] ml-[4px] color-[#fFf] dark:color-[#3971F3]">深色</span>
-      </div>
-    </div>
+  <div>
+    <van-switch
+      v-model="mode" :style="{
+        '--van-switch-width': '4.2rem',
+      }">
+      <template #node>
+        <div class="h-[26px] line-height-[26px] flex justify-center items-center">
+          <!-- <van-icon :name="mode ? 'success' : 'cross'" /> -->
+          <template v-if="!mode">
+            <icon name="jdy:sun-line" size="20" :color="!mode ? '#3971F3' : '#FFF'" />
+          </template>
+          <template v-else>
+            <icon name="jdy:moon-white" size="20" :color="mode ? '#3971F3' : '#FFF'" />
+          </template>
+        </div>
+      </template>
+      <template #background>
+        <template v-if="!mode">
+          <span class="span select-none" style="right: 2px;">浅色</span>
+        </template>
+        <template v-else>
+          <span class="span select-none" style="left: 2px;">深色</span>
+        </template>
+      </template>
+    </van-switch>
   </div>
 </template>
+
+<style lang="scss">
+.span {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  color: #fff;
+}
+</style>
