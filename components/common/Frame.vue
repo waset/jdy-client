@@ -1,8 +1,17 @@
 <script lang="ts" setup>
 interface Props {
-  tip?: string // placeholder提示语
-  isDisabled?: boolean // 禁止输入
-  disabledStyle?: boolean // 禁止输入且为禁止输入样式
+  /**
+   * placeholder提示语
+   */
+  tip?: string
+  /**
+   * 禁止输入
+   */
+  isDisabled?: boolean
+  /**
+   * 禁止输入且为禁止输入样式
+   */
+  disabledStyle?: boolean
   type?: 'text' | 'password' | 'number' | 'tel' | 'email' | 'url' | 'date' | 'time' | 'datetime-local' | 'month' | 'week' | 'search' | 'color'
   fontSize?: string
   value?: string | number
