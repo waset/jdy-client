@@ -25,6 +25,8 @@ change-template: '- $TITLE (#$NUMBER)'
 change-title-escapes: '\<*_`&'
 exclude-contributors:
   - renovate
+  - renovate[bot]
+  - dependabot
 version-resolver:
   major:
     labels:
