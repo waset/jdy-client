@@ -29,9 +29,9 @@ const goodinfo = ref([
 
 <template>
   <div>
-    <sale-info-base />
-    <sale-info-product />
-    <sale-info-settlement :goodinfo="goodinfo" />
+    <sale-add-base />
+    <sale-add-product />
+    <sale-add-settlement :goodinfo="goodinfo" />
     <div class="h-[80px]">
       <common-button-bottom confirm-text="开单并打印" cancel-text="仅开单" />
     </div>
