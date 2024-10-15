@@ -19,6 +19,6 @@ const testData: WarehouseReceipt = {
 
 <template>
   <div class="storage">
-    <goods-finished-entry :product-storage-info="testData" />
+    <product-finished-entry :product-storage-info="testData" />
   </div>
 </template>

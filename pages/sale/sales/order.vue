@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+// 销售单_详情页
 const nav = ref(['详情', '结算信息', '操作记录'])
 const selectNav = ref(0)
 function changeNav(i: number) {
