@@ -52,5 +52,5 @@ const illData: FinishedProduct = {
 </script>
 
 <template>
-  <goods-finished-list :product-list="illData" />
+  <product-finished-list :product-list="illData" />
 </template>

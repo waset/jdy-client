@@ -26,5 +26,5 @@ const testInventory: InventorySheet = {
 </script>
 
 <template>
-  <goods-finished-stocktaking :sheet="testInventory" />
+  <product-finished-stocktaking :sheet="testInventory" />
 </template>
