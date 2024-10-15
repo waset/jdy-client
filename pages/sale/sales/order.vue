@@ -81,7 +81,6 @@ const list = ref([
       </div>
     </common-fold>
     <sale-add-card title="结算信息" :list="list">
-
       <template #footer>
         <div class="mx-[16px] mt-[14px] py-[14px] border-t-[#E6E6E8] border-t-[1px] border-t-solid">
           <div class="flex flex-col items-end">
