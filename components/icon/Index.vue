@@ -5,17 +5,14 @@ const props = defineProps<{
 }>()
 
 const attrs = useAttrs()
-let customize: any
 
-watchEffect(() => {
-  customize = (content: string, _name: string, _prefix: string, _provider: string) => {
-    if (!props.color)
-      return content
-
+const customize = (content: string, _name: string, _prefix: string, _provider: string) => {
+  if (!props.color)
     return content
-      .replace(/fill="[^"]*"/g, `fill="currentColor"`)
-  }
-})
+
+  return content
+    .replace(/fill="[^"]*"/g, `fill="currentColor"`)
+}
 </script>
 
 <template>
