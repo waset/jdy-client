@@ -1,8 +1,9 @@
 <script setup lang="ts">
-useToggle(isDark)
+// useToggle(isDark)
+const colorMode = useColorMode()
 const img = useImage()
 const backgroundStyles = computed(() => {
-  const src = isDark.value ? '/images/background/darkbg.png' : '/images/background/bg.png'
+  const src = colorMode.preference === 'dark' ? '/images/background/darkbg.png' : '/images/background/bg.png'
   const imgUrl = img(src)
   return { backgroundImage: `url('${imgUrl}')`, backgroundRepeat: 'no-repeat' }
 })

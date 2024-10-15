@@ -1,42 +1,47 @@
 <script lang="ts" setup>
 interface Props {
-  name?: string
+  /**
+   * placeholder提示语
+   */
+  tip?: string
+  /**
+   * 禁止输入
+   */
   isDisabled?: boolean
+  /**
+   * 禁止输入且为禁止输入样式
+   */
+  disabledStyle?: boolean
   type?: 'text' | 'password' | 'number' | 'tel' | 'email' | 'url' | 'date' | 'time' | 'datetime-local' | 'month' | 'week' | 'search' | 'color'
   fontSize?: string
   value?: string | number
+  isIcon?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  name: '',
-  isDisabled: false,
   type: 'text',
   fontSize: '14px',
-  value: undefined,
 })
 
-const emits = defineEmits<{
-  'update:value': [value: string]
-}>()
-const onInput = (e: any) => {
-  emits('update:value', e.target.value)
-}
+const value = defineModel()
 </script>
 
 <template>
-  <div class="row" :class="props.isDisabled ? 'disable' : 'nodisable'" :style="{ fontSize }">
+  <div class="row" :class="props.disabledStyle ? 'disable' : 'nodisable'" :style="{ fontSize }">
+    <slot name="left" />
     <div class="row-left">
-      <input :value="value" :disabled="props.isDisabled" :class="props.isDisabled ? 'row-input dis' : 'row-input nodis'" :type="props.type" :placeholder="props.name" @input="onInput">
+      <input v-model="value" :disabled="props.isDisabled || props.disabledStyle" :class="props.disabledStyle ? 'row-input dis' : 'row-input nodis'" :type="props.type" :placeholder="props.tip">
     </div>
-
-    <div class="row-right">
-      <template v-if="$slots.icon">
-        <slot name="icon" />
-      </template>
-      <template v-else>
-        <van-icon name="arrow" :color="props.isDisabled ? '#808089' : '#CBCDD1'" />
-      </template>
-    </div>
+    <template v-if="props.isIcon">
+      <div class="row-right">
+        <template v-if="$slots.icon">
+          <slot name="icon" />
+        </template>
+        <template v-else>
+          <van-icon name="arrow" :color="props.disabledStyle ? '#808089' : '#CBCDD1'" />
+        </template>
+      </div>
+    </template>
   </div>
 </template>
 

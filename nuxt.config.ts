@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxt/icon',
+    '@nuxtjs/color-mode',
   ],
   css: ['~/assets/css/main.scss'],
   vite: {
@@ -31,6 +32,17 @@ export default defineNuxtConfig({
     config: {
       standalone: false,
     },
+  },
+  colorMode: {
+    preference: 'light', // default value of $colorMode.preference
+    fallback: 'light', // fallback value if not system preference found
+    hid: 'nuxt-color-mode-script',
+    globalName: '__NUXT_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '',
+    storage: 'cookie', // or 'sessionStorage' or 'cookie'
+    storageKey: 'nuxt-color-mode',
   },
   image: {
     inject: true,
