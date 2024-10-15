@@ -51,6 +51,7 @@ export default defineNuxtConfig({
    * @see https://github.com/nuxt/icon
    */
   icon: {
+    componentName: 'NuxtIcon',
     customCollections: [
       {
         prefix: 'jdy', // 前缀
