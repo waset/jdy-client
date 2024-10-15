@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <div class="px-[16px] pt-[48px]">
-      <div class="absolute right-0 top-[-10px]">
+  <div class="grid-12">
+    <div class="col-12 sm:col-8 sm:offset-2  px-[16px] pt-[48px] pos-relative">
+      <div class="absolute right-0 top-[-10px] ">
         <nuxt-img src="/images/banner/work.png" size="200px" />
       </div>
-      <div class=" top-[-66px] sm:top-[0] sm:right-[240px] sm:flex-center-col sm:items-end">
+      <div class=" ">
         <div class="text-size-xl line-height-[24px] font-semibold color-[#fff]">
           早上好,孙暴风
         </div>
