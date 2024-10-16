@@ -40,7 +40,7 @@
               </van-col>
             </van-row>
           </div>
-          <div class="bg-[#F3F5FE] dark:bg-[#F3F5FE1A] rounded-b-[24px]">
+          <div class="bg-[#F3F5FE] dark:bg-[#F3F5FE1A] rounded-b-[24px] overflow-hidden ">
             <van-row justify="space-between">
               <van-col span="8">
                 <div class="py-[8px] px-[16px]">
@@ -51,13 +51,16 @@
                 </div>
               </van-col>
               <van-col span="12">
-                <div class="flex-end text-size-[14px]">
+                <div class="flex-end text-size-[14px] ">
                   <div class="mr-[16px] line-height-[20px] text-[#3971F3] dark:text-[#FFF]">
                     更多
                   </div>
-                  <div
-                    class="bg-gradient-linear-[180deg,#1F6FEC,#68A2FE] px-[41px] py-[8px] rounded-br-[24px] line-height-[20px] text-[#FFF]">
-                    编辑
+                  <div class="editbox ">
+                    <div
+                      class="edit">
+                      编辑
+                    </div>
+                    <div class="skew" />
                   </div>
                 </div>
               </van-col>
@@ -68,3 +71,15 @@
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.editbox {
+  --uno: 'relative w-[110px]  h-36px ';
+  .edit {
+    --uno: 'absolute bottom-[-1px]  z-2 right-[-1px] bg-gradient-linear-[180deg,#1F6FEC,#68A2FE] px-[41px] py-[8px] rounded-br-[24px] line-height-[20px] text-[#FFF] rounded-tl-[50px] rounded-tr-[8px]';
+  }
+  .skew {
+    --uno: 'absolute  bottom-[-1px] w-[80%] h-[100%] bg-#DEDEDE bg-gradient-linear-[180deg,#1F6FEC,#68A2FE] skew-x-320 rounded-rb-8px  rounded-tl-[6px] rounded-bl-[15px] z-1 ';
+  }
+}
+</style>

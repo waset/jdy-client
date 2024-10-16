@@ -5,7 +5,6 @@ const complate = ref(0)
 
 <template>
   <div>
-    <common-navbar text="货品管理" />
     <!-- 筛选 -->
     <product-filter v-model:id="complate" v-model:search="searchKey" />
     <!-- 小卡片组件 -->

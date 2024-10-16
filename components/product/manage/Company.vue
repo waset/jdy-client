@@ -4,7 +4,7 @@
       <div class="font-bold text-size-[14px] mr-[4px]">
         公司总店
       </div>
-      <van-icon name="/productManage/toggle.svg" />
+      <icon name="/product-toggle.svg" size="24" />
     </div>
   </div>
 </template>
