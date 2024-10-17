@@ -1,3 +1,12 @@
+<script setup lang="ts">
+const props = defineProps<{
+  text: string
+}>()
+
+const router = useRoute()
+console.log(router)
+</script>
+
 <template>
   <div
     class="fixed bottom-0 left-0 flex-center-row w-full"
@@ -7,24 +16,51 @@
       class="w-full blur-bgc text-[12px] pt-[12px] pb-[4px] px-[40px] box-border flex-between"
       uno-lg="w-auto px-8px py-12px flex-center-col rounded-8px "
     >
-      <div class="flex-center-col">
-        <div class="wh-[24px] bg-cyan mb-[4px]" />
-        <div class="line-height-[20px] dark:color-[#FFF]">
-          我的待办
+      <NuxtLink to="/work/table/todos">
+        <div class="flex-center-col">
+          <div class="wh-[24px]  mb-[4px]">
+            <template v-if="props.text === 'todo'">
+              <icon name="jdy:todo-select" size="24" />
+            </template>
+            <template v-else>
+              <icon name="jdy:todo-not" size="24" />
+            </template>
+          </div>
+          <div class="line-height-[20px] dark:color-[#FFF]" :style="{ color: props.text === 'todo' ? '#3971F3' : '#333' }">
+            我的待办
+          </div>
         </div>
-      </div>
-      <div class="flex-center-col" uno-lg="py-18px">
-        <div class="wh-[24px] bg-cyan mb-[4px]" />
-        <div class="line-height-[20px] dark:color-[#FFF]">
-          工作台
+      </NuxtLink>
+      <NuxtLink to="/work/table">
+        <div class="flex-center-col" uno-lg="py-18px">
+          <div class="wh-[24px]  mb-[4px]">
+            <template v-if="props.text === 'table'">
+              <icon name="jdy:table-select" size="24" />
+            </template>
+            <template v-else>
+              <icon name="jdy:table-not" size="24" />
+            </template>
+          </div>
+          <div class="line-height-[20px] dark:color-[#FFF]" :style="{ color: props.text === 'table' ? '#3971F3' : '#333' }">
+            工作台
+          </div>
         </div>
-      </div>
-      <div class="flex-center-col">
-        <div class="wh-[24px] bg-cyan mb-[4px]" />
-        <div class="line-height-[20px] dark:color-[#FFF]">
-          个人中心
+      </NuxtLink>
+      <NuxtLink to="/my/user">
+        <div class="flex-center-col">
+          <div class="wh-[24px]  mb-[4px]">
+            <template v-if="props.text === 'userinfo'">
+              <icon name="jdy:userinfo-select" size="24" />
+            </template>
+            <template v-else>
+              <icon name="jdy:userinfo-not" size="24" />
+            </template>
+          </div>
+          <div class="line-height-[20px] dark:color-[#FFF]" :style="{ color: props.text === 'userinfo' ? '#3971F3' : '#333' }">
+            个人中心
+          </div>
         </div>
-      </div>
+      </NuxtLink>
     </div>
   </div>
 </template>

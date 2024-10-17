@@ -6,7 +6,6 @@
     <div class="px-[16px] ">
       <my-user-option />
     </div>
-
-    <common-tabbar />
+    <common-tabbar text="userinfo" />
   </div>
 </template>

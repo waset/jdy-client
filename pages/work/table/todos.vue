@@ -22,7 +22,7 @@
       <div class="mt-[16px]">
         <work-card-digitalization left-title="工作目标" />
       </div>
-      <common-tabbar />
+      <common-tabbar text="todo" />
     </div>
   </div>
 </template>

@@ -22,6 +22,6 @@
       </common-coll>
     </div>
 
-    <common-tabbar />
+    <common-tabbar text="table" />
   </div>
 </template>
