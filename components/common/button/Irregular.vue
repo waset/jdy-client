@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<{
   <div class="editbox " :style="{ '--br-br': props.radius }">
     <div
       class="text ">
-      {{ props.text }}
+      <span v-text="props.text" />
     </div>
   </div>
 </template>

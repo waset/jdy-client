@@ -1,6 +1,5 @@
 <template>
   <div class="">
-    <!-- <common-navbar /> -->
     <div class="grid-12 w-full">
       <div class="col-12 box-border sm:col-8 sm:offset-2 grid-12 px-[16px] py-[12px] box-border">
         <div class="col-7  color-[#fff]">
