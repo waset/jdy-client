@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="color-[#fff] grid-12 px-[16px] py-[12px]">
-      <div class="col-4 " un-sm="col-2 offset-2">
+      <div class="col-4 " uno-sm="col-2 offset-2">
         <product-manage-company />
       </div>
-      <div class="col-7 offset-5" un-sm="col-5  offset-5">
+      <div class="col-7 offset-5" uno-sm="col-5  offset-5">
         <product-filter-search />
       </div>
     </div>
