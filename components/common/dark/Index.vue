@@ -18,12 +18,11 @@ const mode = computed({
       }">
       <template #node>
         <div class="h-[26px] line-height-[26px] flex justify-center items-center">
-          <!-- <van-icon :name="mode ? 'success' : 'cross'" /> -->
           <template v-if="!mode">
-            <icon name="jdy:sun-line" size="20" :color="!mode ? '#3971F3' : '#FFF'" />
+            <icon name="jdy:sun" size="20" :color="!mode ? '#3971F3' : '#FFF'" />
           </template>
           <template v-else>
-            <icon name="jdy:moon-white" size="20" :color="mode ? '#3971F3' : '#FFF'" />
+            <icon name="jdy:moon" size="20" :color="mode ? '#3971F3' : '#FFF'" />
           </template>
         </div>
       </template>
