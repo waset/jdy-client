@@ -6,3 +6,12 @@ export const getDayAndWeek = (date?: Date) => {
   const dayOfWeek = weekDays[currentDate.getDay()]
   return `${month}月${day}号，${dayOfWeek}`
 }
+
+export const getGreeting = () => {
+  const hour = new Date().getHours()
+  if (hour < 12)
+    return '早上好'
+  if (hour < 18)
+    return '下午好'
+  return '晚上好'
+}

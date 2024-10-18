@@ -32,7 +32,7 @@ const menuItems = [
 </template>
 
 <style lang="scss" scoped>
-  .text-active {
+.text-active {
   color: #3971f3;
 }
 .text-inactive {
