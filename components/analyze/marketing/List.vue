@@ -6,14 +6,14 @@
   <template v-for="i in 3" :key="i">
     <div class="mt-[16px]">
       <common-fold title="开业活动大秒杀" from-color="rgba(255,255,255,0.6)" to-color="rgba(130,208,250,0.8)" :is-collapse="false">
-        <template #title>
+        <template #title="t">
           <div class="flex pt-[4px]">
             <div class="bust">
               <div class="bust-bg" />
               <NuxtImg class="avatar" src="/images/empty/record.png" />
             </div>
             <div class="text-[14px] pl-4">
-              标题/名称/单号/条码示例
+              {{ t }}
             </div>
           </div>
         </template>
