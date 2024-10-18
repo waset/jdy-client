@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<{
     :style="{ padding: props.padding }"
   >
     <div class="flex-center-row w-full h-full">
-      <nuxt-img src="/images/condition/empty.png" class="w-[200px] h-auto" />
+      <nuxt-img :src="icon.startsWith('/') ? icon : `/images/condition/${icon}.png`" class="w-[200px] h-auto" />
     </div>
   </div>
 </template>

@@ -27,12 +27,12 @@ const hasShadow = ref(false)
         </div>
       </div>
     </div>
-    <div class="info grid grid-rows-3 grid-flow-col gap-2 px-4 pt-3 pb-4 bg-[#fff] rounded-b-3">
+    <div class="info grid grid-rows-3 grid-flow-col gap-2 px-4 pt-3 pb-4 bg-[#fff] rounded-b-3" uno-sm="grid-cols-2" uno-md="grid-cols-3">
       <div class="flex flex-row gap-2 text-[14px] font-medium">
         <span class="left">昵称</span>
         <span class="right">{{ props.memberInfo.nickname }}</span>
       </div>
-      <div class="flex flex-row gap-2 text-[14px] font-medium  w-auto">
+      <div class="flex flex-row gap-2 text-[14px] font-medium w-auto">
         <span class="left">生日</span>
         <span class="right">{{ props.memberInfo.birthday || '--' }}</span>
       </div>

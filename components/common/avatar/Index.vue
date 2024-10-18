@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<{
         :style="{
           width: `${props.size}px`,
           height: `${props.size}px`,
-          borderRadius: props.rounded ? props.rounded || '8px' : 'full' }"
+          borderRadius: props.rounded }"
       />
     </template>
     <template v-else>
