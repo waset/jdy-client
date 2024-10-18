@@ -1,6 +1,7 @@
 <script setup lang="ts">
+type texts = 'todo' | 'table' | 'userinfo'
 const props = withDefaults(defineProps<{
-  text?: string
+  text?: texts
 }>(), {
   text: 'todo',
 })
