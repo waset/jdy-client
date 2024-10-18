@@ -6,7 +6,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div>
+  <div class="px-[16px]">
     <common-dark />
     <analyze-lump-detail />
     <analyze-lump-data />

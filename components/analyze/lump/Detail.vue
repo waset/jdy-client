@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-
-</script>
-
 <template>
   <div>
     <common-fold title="活动详情" from-color="rgba(71,126,245,0.8)" to-color="rgba(243,245,254,0.6)">

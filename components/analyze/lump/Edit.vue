@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-
-</script>
-
 <template>
   <div class="mt-[16px]">
     <common-fold title="商品信息" from-color="rgba(71,126,245,0.6)" to-color="rgba(243,245,254,0.6)">

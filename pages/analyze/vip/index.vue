@@ -6,12 +6,7 @@ useSeoMeta({
 const showtime = ref(false)
 const currentTime = ref(['12', '00'])
 const formatter = (type: string, option: any) => {
-  if (type === 'hour') {
-    option.text += '时'
-  }
-  if (type === 'minute') {
-    option.text += '分'
-  }
+  option.text += type === 'hour' ? '时' : type === 'minute' ? '分' : ''
   return option
 }
 </script>
@@ -19,7 +14,7 @@ const formatter = (type: string, option: any) => {
 <template>
   <div class="px-[16px]">
     <common-dark />
-    <div class="flex justify-between items-centerpy-[12px]">
+    <div class="flex justify-between items-center py-[12px]">
       <product-manage-company />
       <product-filter-senior />
     </div>
