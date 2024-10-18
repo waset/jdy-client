@@ -1,104 +1,32 @@
 <script setup lang="ts">
-const isLogin = ref<boolean>(false)
+definePageMeta({
+  layout: 'table',
+})
 useSeoMeta({
-  title: '登录',
+  title: '登录注册',
 })
 </script>
 
 <template>
-  <div class="">
-    <common-dark />
-    <div class="px-[16px] pt-[24px]">
-      <div class="line-height-[24px] mb-[41px] color-[#fff]">
-        <div class=" text-[20px]">
-          欢迎登录！
-        </div>
-        <div class="text-[14px]">
-          未注册的手机号将自动创建为账号
-        </div>
-      </div>
+  <div class="grid-12">
+    <div class="px-[16px] pt-[24px] col-12" uno-sm="col-6 offset-3" uno-lg="offset-4 col-4">
+      <login-tips />
 
-      <div class="ti-row grid-12 text-[20px]">
-        <template v-if="isLogin">
-          <div class="ti-left col-5 z1">
-            登录
-          </div>
-          <div class="ti-after col-2" />
-          <div class="col-5 color-[#Fff] flex-center-row" @click="isLogin = !isLogin">
-            注册
-          </div>
-        </template>
-        <template v-else>
-          <div class=" col-5 z1 flex-center-row" @click="isLogin = !isLogin">
-            登录
-          </div>
-          <div class="ti-after rotate-y-180deg col-2" />
-          <div class="ti-right col-5 color-[#Fff] flex-center-row">
-            注册
-          </div>
-        </template>
-      </div>
-
-      <div class="cardbox blur-bgc" :style="{ borderTopRightRadius: isLogin ? '16px' : '0px', borderTopLeftRadius: isLogin ? '0px' : '16px' }">
-        <div>
-          <div class="text-[14px] line-height-[20px] mb-[8px] dark:color-[#fff]">
-            手机号
-          </div>
-          <div class="px-[12px] py-[10px] bg-[#fff] rounded-[8px]">
-            <input
-              type="text" class="bg-transparent border-0 placeholder-text-[#cbcdd1] text-[14px] w-full outline-none " placeholder="全部"
-            >
-          </div>
-        </div>
-
-        <div class="mt-[32px]">
-          <div class="text-[14px] line-height-[20px] mb-[8px] dark:color-[#fff]">
-            密码
-          </div>
-          <div class="px-[12px] py-[10px] bg-[#fff] rounded-[8px] ">
-            <input
-              type="text" class="bg-transparent border-0 placeholder-text-[#cbcdd1] text-[14px] w-full outline-none" placeholder="密码"
-            >
-          </div>
-        </div>
-
-        <div class="text-size-[16px]  font-semibold offset-5 mt-[32px]">
-          <div class="ok ">
-            登录
-          </div>
-        </div>
-
-        <div class="px-[40px] mt-[112px] flex-center-row">
-          <div class="h-[1px] w-[58px] color-[#9E9E9E] dark:color-[#fff] bg-gradient-linear-[90deg,#CCCCCC00,#CCCCCC]" />
-          <div class=" color-[#9E9E9E] dark:color-[#fff] px-[9px]">
-            其他登录方式
-          </div>
-          <div class="h-[1px] w-[58px]  color-[#9E9E9E] dark:color-[#fff] bg-gradient-linear-[270deg,#CCCCCC00,#CCCCCC] " />
-        </div>
-        <div class="flex-center-row py-[24px]">
-          <div class="wh-[32px] rounded-full bg-blue" />
-        </div>
-      </div>
+      <login-info />
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.cardbox {
-  --uno: 'px-[23px] pb-14px sm:px-[24px] sm:pb-33px pt-0 rounded-b-16px  pt-36px';
-  .ok {
-    --uno: 'bg-gradient-linear-[180deg,#1A6BEB,#6EA6FF] line-height-[24px] px-[77px] py-[6px] text-center rounded-[36px] color-[#fff] shadow-[0_8px_8px_0px_#3971F33D]';
-  }
-}
 .ti-row {
   .ti-left {
-    --uno: 'relative rounded-tl-[16px] h-60px sm:h-60px flex-center-row line-height-[24px] blur-bgc';
+    --uno: 'relative rounded-tl-[16px] h-60px sm:h-60px flex-center-row line-height-[24px] bg-[#fff]';
   }
   .ti-right {
-    --uno: 'relative rounded-tr-[16px] h-60px sm:h-60px flex-center-row line-height-[24px] blur-bgc';
+    --uno: 'relative rounded-tr-[16px] h-60px sm:h-60px flex-center-row line-height-[24px] bg-[#fff]';
   }
   .ti-after {
-    --uno: ' h-full h-60px sm:h-60px  blur-bgc ';
+    --uno: ' h-full h-60px sm:h-60px  bg-[#fff] ';
 
     clip-path: polygon(
       0% 100%,
@@ -140,4 +68,87 @@ useSeoMeta({
     );
   }
 }
+
+// .bg {
+//   --uno: ' w-full h-full bg-[#f7f7f7] z-0';
+//   background: linear-gradient(180deg, #f7f7f7 0%, #e6e6e6 100%);
+
+//   clip-path: polygon(
+//     46.353% 5.117%,
+//     46.353% 5.117%,
+//     46.14% 4.81%,
+//     45.873% 4.526%,
+//     45.556% 4.268%,
+//     45.193% 4.037%,
+//     44.791% 3.836%,
+//     44.353% 3.667%,
+//     43.884% 3.531%,
+//     43.389% 3.432%,
+//     42.873% 3.371%,
+//     42.341% 3.35%,
+//     8.533% 3.35%,
+//     8.533% 3.35%,
+//     7.841% 3.385%,
+//     7.185% 3.487%,
+//     6.573% 3.649%,
+//     6.013% 3.867%,
+//     5.516% 4.135%,
+//     5.09% 4.447%,
+//     4.743% 4.799%,
+//     4.484% 5.183%,
+//     4.323% 5.595%,
+//     4.267% 6.03%,
+//     4.267% 13.4%,
+//     4.267% 36.181%,
+//     4.267% 92.63%,
+//     4.267% 92.63%,
+//     4.323% 93.065%,
+//     4.484% 93.477%,
+//     4.743% 93.861%,
+//     5.09% 94.213%,
+//     5.516% 94.525%,
+//     6.014% 94.793%,
+//     6.573% 95.011%,
+//     7.185% 95.173%,
+//     7.841% 95.275%,
+//     8.533% 95.31%,
+//     91.467% 95.31%,
+//     91.467% 95.31%,
+//     92.159% 95.275%,
+//     92.815% 95.173%,
+//     93.427% 95.011%,
+//     93.987% 94.793%,
+//     94.484% 94.525%,
+//     94.91% 94.213%,
+//     95.257% 93.861%,
+//     95.516% 93.477%,
+//     95.677% 93.065%,
+//     95.733% 92.63%,
+//     95.733% 16.08%,
+//     95.733% 16.08%,
+//     95.677% 15.646%,
+//     95.516% 15.233%,
+//     95.257% 14.849%,
+//     94.91% 14.498%,
+//     94.484% 14.185%,
+//     93.987% 13.917%,
+//     93.427% 13.699%,
+//     92.815% 13.537%,
+//     92.159% 13.435%,
+//     91.467% 13.4%,
+//     54.122% 13.4%,
+//     54.122% 13.4%,
+//     53.589% 13.379%,
+//     53.073% 13.318%,
+//     52.579% 13.219%,
+//     52.11% 13.084%,
+//     51.672% 12.914%,
+//     51.269% 12.713%,
+//     50.907% 12.483%,
+//     50.59% 12.224%,
+//     50.323% 11.94%,
+//     50.11% 11.633%,
+//     46.353% 5.117%
+//   );
+// }
 </style>
