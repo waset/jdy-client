@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: '货品管理',
+})
+</script>
+
 <template>
   <div class="">
     <div class="grid-12 w-full">

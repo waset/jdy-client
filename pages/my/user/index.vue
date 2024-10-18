@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: '个人中心',
+})
+</script>
+
 <template>
   <div>
     <div class="px-[16px] py-[24px]">

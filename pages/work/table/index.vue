@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: '工作台',
+})
+</script>
+
 <template>
   <div>
     <div class="color-[#fff] grid-12 px-[16px] py-[12px]">

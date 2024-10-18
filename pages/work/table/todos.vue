@@ -2,6 +2,11 @@
 definePageMeta({
   layout: 'table',
 })
+
+useSeoMeta({
+  title: '待办',
+})
+
 interface DemoItem { title: string, number: number }
 
 const demoList = ref<DemoItem[]>([
