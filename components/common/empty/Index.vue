@@ -3,18 +3,18 @@ const props = withDefaults(defineProps<{
   icon?: string
   padding?: string
 }>(), {
-  icon: '/images/empty.svg',
+  icon: 'empty',
   padding: '20px 50px 20px 50px',
 })
 </script>
 
 <template>
   <div
-    class="empty flex-center-col flex-grow h-auto"
+    class="flex-center-col flex-grow h-auto"
     :style="{ padding: props.padding }"
   >
-    <div class="icon w-full h-full flex-center-row">
-      <nuxt-img :src="props.icon" />
+    <div class="flex-center-row w-full h-full">
+      <nuxt-img src="/images/condition/empty.png" class="w-[200px] h-auto" />
     </div>
   </div>
 </template>

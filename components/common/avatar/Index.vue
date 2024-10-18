@@ -1,28 +1,32 @@
 <script setup lang="ts">
-const props = withDefaults(defineProps<{ wh: number }>(), {
-  wh: 40,
+const props = withDefaults(defineProps<{
+  // 头像尺寸
+  size: number
+  // 图片链接
+  img?: string
+  // 圆角半径
+  rounded?: string
+}>(), {
+  size: 40,
+  rounded: '8px',
+  img: '',
 })
 </script>
 
 <template>
-  <div class="bg-coolGray rounded-[4px] avatar" :style="{ width: `${props.wh}px`, height: `${props.wh}px` }" />
+  <div>
+    <template v-if="props.img">
+      <nuxt-img
+        :src="props.img"
+        class="w-full h-full shadow-[-4px_4px_0px_1px_rgba(56,101,258,.8)]"
+        :style="{
+          width: `${props.size}px`,
+          height: `${props.size}px`,
+          borderRadius: props.rounded ? props.rounded || '8px' : 'full' }"
+      />
+    </template>
+    <template v-else>
+      <div class="rounded-[8px] bg-gray-200 shadow-[-4px_4px_0px_1px_rgba(56,101,258,.8)]" :style="{ width: `${props.size}px`, height: `${props.size}px` }" />
+    </template>
+  </div>
 </template>
-
-<style lang="scss" scoped>
-.avatar {
-  position: relative;
-  transform-style: preserve-3d;
-}
-.avatar::before {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: -4px;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #5c82fd;
-  transform: translateZ(-10px);
-  border-radius: 4px;
-}
-</style>
