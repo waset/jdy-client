@@ -1,5 +1,7 @@
-<!-- 营销分析 -->
 <script lang="ts" setup>
+useSeoMeta({
+  title: '营销分析',
+})
 const data = ref([
   {
     name: '旧料总件数',

@@ -32,7 +32,7 @@ function close() {
       <div class="center">
         <div class="box">
           <slot />
-          <div class="cancel-btn">
+          <div class="cancel-btn" @click="close">
             取消
           </div>
         </div>
@@ -65,14 +65,14 @@ function close() {
           --uno: 'z-[2] pl-[58px] absolute bottom-4px';
         }
         &-content {
-          --uno: 'absolute left-[80px] top-[2px] z-9 text-[rgba(255,255,255,1)] font-bold';
-          transform: skewy(-6deg);
+          --uno: 'absolute left-[80px] top-[2px] z-[9] text-[rgba(255,255,255,1)] font-bold';
+          transform: skewY(-6deg);
           transform-origin: bottom left;
         }
       }
     }
     .box {
-      --uno: 'border-rd-[16px_0_0_0] bg-[rgb(236,239,246)] dark:bg-[rgba(0,0,0,0.8)] sm:border-rd-[16px_0_16px_16px] px-[30px] py[42px]';
+      --uno: 'border-rd-[16px_0_0_0] bg-[rgb(236,239,246)] dark:bg-[rgba(0,0,0,0.8)] sm:border-rd-[16px_0_16px_16px] px-[30px] py-[42px]';
       margin-top: 0;
 
       .cancel-btn {

@@ -1,5 +1,8 @@
 <!-- 拼团详情 -->
 <script lang="ts" setup>
+useSeoMeta({
+  title: '拼团详情',
+})
 </script>
 
 <template>

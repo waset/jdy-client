@@ -1,5 +1,7 @@
-<!-- 会员详情 -->
 <script lang="ts" setup>
+useSeoMeta({
+  title: '会员详情',
+})
 const vipbase = ref([
   {
     key: '姓名',

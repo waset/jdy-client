@@ -1,5 +1,8 @@
 <!-- 会员分析 -->
 <script lang="ts" setup>
+useSeoMeta({
+  title: '会员分析',
+})
 const showtime = ref(false)
 const currentTime = ref(['12', '00'])
 const formatter = (type: string, option: any) => {
