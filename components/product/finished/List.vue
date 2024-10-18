@@ -13,7 +13,7 @@ const goodsStatus = {
 
 <template>
   <div class="grid-12">
-    <div class="w-full bg-white rounded-2xl border-solid border-[#EFF0F6] col-12 lg:col-8 lg:offset-2 sm:col-12">
+    <div class="w-full bg-white blur-bga rounded-2xl border-solid border-[#EFF0F6] col-12" uno-lg="col-8 offset-2" uno-md="col-12">
       <div class="rounded-6">
         <common-header-theme :title="props.productList.name">
           <common-tags type="orange" :text="goodsStatus[props.productList.status]" />
@@ -36,7 +36,7 @@ const goodsStatus = {
           </template>
         </div>
         <div class="grid-12">
-          <div class="flex-center-row gap-4 px-4 py-2 col-12 lg:col-8 lg:offset-2 sm:col-12 flex-shrink-1">
+          <div class="flex-center-row gap-4 px-4 py-2 col-12" uno-lg="col-8 offset-2" uno-md="col-12 flex-shrink-1">
             <common-button-rounded content="操作记录" color="#fff" />
             <common-button-rounded content="编辑" />
           </div>
