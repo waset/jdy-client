@@ -5,8 +5,11 @@ definePageMeta({
 useSeoMeta({
   title: '工作台',
 })
-
-const list = ref([{ title: '货品管理', children: [{ title: '成品', enter: [{ name: '成品列表', path: '/product/manage/list' }, { name: '成品列表', path: '/product/manage/list' }] }] }])
+interface IList {
+  title: string
+  children: Array<{ title: string, enter: Array<{ name: string, path: string }> }>
+}
+const list = ref<IList[]>([{ title: '货品管理', children: [{ title: '成品', enter: [{ name: '成品列表', path: '/product/manage/list' }, { name: '成品列表', path: '/product/manage/list' }] }] }])
 </script>
 
 <template>

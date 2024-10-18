@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  content: any
+  content: Array<{ title: string, enter: Array<{ name: string, path: string }> }>
 }>()
 </script>
 

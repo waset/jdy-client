@@ -21,7 +21,7 @@
       </div>
       <div class="px-[12px] py-[10px] bg-[#fff] rounded-[8px] ">
         <input
-          type="text" class="bg-transparent border-0 placeholder-text-[#cbcdd1] text-[14px] w-full outline-none" placeholder="密码"
+          type="password" class="bg-transparent border-0 placeholder-text-[#cbcdd1] text-[14px] w-full outline-none" placeholder="密码"
         >
       </div>
     </div>
@@ -46,7 +46,7 @@
 </template>
 
 <style lang="scss" scoped>
-    .cardbox {
+.cardbox {
   --uno: 'px-[23px] pb-14px sm:px-[24px] sm:pb-33px pt-0 rounded-b-16px  pt-36px';
   .ok {
     --uno: 'bg-gradient-linear-[180deg,#1A6BEB,#6EA6FF] line-height-[24px] px-[77px] py-[6px] text-center rounded-[36px] color-[#fff] shadow-[0_8px_8px_0px_#3971F33D]';
