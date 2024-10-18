@@ -1,7 +1,18 @@
 <script setup lang="ts">
 interface Props {
+  /**
+   * 标签主题色
+   * ‘orange’ | ‘red’ | ‘green’ | ‘lake’ | ‘pink’ | ‘greyblue’ | ‘grey’ | ‘black’
+   */
   type?: colors
+  /**
+   * 文本内容
+   */
   text: string
+  /**
+   * 是否为异形标签
+   * @default false
+   */
   isOval?: boolean
 }
 
@@ -66,7 +77,7 @@ const tagStyle: { [key in colors]: Tags } = {
 
 <template>
   <div
-    class="tag flex-start px-[8px]"
+    class="tag flex-start px-[8px] text-size-[14px]"
     :style="{
       backgroundColor: tagStyle[props.type].backgroundColor,
       color: tagStyle[props.type].color,
