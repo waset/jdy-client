@@ -11,7 +11,7 @@ const mode = computed({
 </script>
 
 <template>
-  <div>
+  <div class="mb-[16px]">
     <client-only>
       <van-switch
         v-model="mode" :style="{

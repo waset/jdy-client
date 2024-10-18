@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const isLogin = ref<boolean>(false)
+useSeoMeta({
+  title: '登录',
+})
 </script>
 
 <template>

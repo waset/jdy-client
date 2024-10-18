@@ -1,6 +1,9 @@
 <script setup lang="ts">
 const searchKey = ref('')
 const complate = ref(0)
+useSeoMeta({
+  title: '货品管理',
+})
 </script>
 
 <template>
