@@ -8,28 +8,26 @@ const toggleOpen = () => {
 <template>
   <div class="grid-12 px-[16px] py-[12px]">
     <div class="grid-12 gap-[24px] col-12 sm:col-8 sm:offset-2">
-      <template v-for="(item, index) in 5" :key="index">
-        <div class="sm:col-12 lg:col-6 col-12">
-          <div class=" rounded-[24px] overflow-hidden">
-            <div class="bg-gradient-linear-[90deg,#8CADF8,#D8E7FD] px-[16px] py-[8px] text-size-[14px] line-height-[20px] color-[#333] font-semibold flex-between">
-              <slot name="title" />
-              <div @click="toggleOpen()">
-                <template v-if="isOpen">
-                  <van-icon name="arrow-down" />
-                </template>
-                <template v-else>
-                  <van-icon name="arrow-up" />
-                </template>
-              </div>
+      <div class="sm:col-12 lg:col-6 col-12">
+        <div class=" rounded-[24px] overflow-hidden">
+          <div class="bg-gradient-linear-[90deg,#8CADF8,#D8E7FD] px-[16px] py-[8px] text-size-[14px] line-height-[20px] color-[#333] font-semibold flex-between" @click="toggleOpen()">
+            <slot name="title" />
+            <div>
+              <template v-if="isOpen">
+                <van-icon name="arrow-down" />
+              </template>
+              <template v-else>
+                <van-icon name="arrow-up" />
+              </template>
             </div>
-            <div class="bg-[#DAE8FD] px-[16px]" :class="[isOpen ? 'block1' : 'hidden1']">
-              <div class=" pt-[12px] pb-[16px] text-size-[14px]" :class="[isOpen ? 'block2' : 'hidden2']">
-                <slot name="content" />
-              </div>
+          </div>
+          <div class="bg-[#DAE8FD] px-[16px]" :class="[isOpen ? 'block1' : 'hidden1']">
+            <div class=" pt-[12px] pb-[16px] text-size-[14px]" :class="[isOpen ? 'block2' : 'hidden2']">
+              <slot name="content" />
             </div>
           </div>
         </div>
-      </template>
+      </div>
     </div>
   </div>
 </template>

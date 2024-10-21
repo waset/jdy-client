@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'table',
+})
 useSeoMeta({
   title: '个人中心',
 })
