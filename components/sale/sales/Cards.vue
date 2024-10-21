@@ -12,7 +12,7 @@ const handleClick = async () => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-[12px] bg-[rgba(255,255,255,0.8)] rounded-[24px] gap-4">
+  <div class="flex flex-col gap-[12px] bg-[rgba(255,255,255,0.8)] rounded-[24px] gap-4 border-solid border-1 border-[#EFF0F6] overflow-hidden">
     <template v-for="(item, index) in props.info" :key="index">
       <!-- header -->
       <common-header-theme :title="item.num" color="#333">
