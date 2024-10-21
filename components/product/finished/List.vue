@@ -12,16 +12,16 @@ const goodsStatus = {
 </script>
 
 <template>
-  <div class="grid-12">
-    <div class="w-full bg-white blur-bga rounded-2xl border-solid border-[#EFF0F6] col-12" uno-lg="col-8 offset-2" uno-md="col-12">
-      <div class="rounded-6">
+  <div class="grid-12 px-[16px]">
+    <div class="w-auto bg-white blur-bga rounded-[24px] border-solid border-[#EFF0F6] col-12 overflow-hidden" uno-lg="col-8 offset-2" uno-md="col-12">
+      <div class="rounded-[24px]">
         <common-header-theme :title="props.productList.name">
           <common-tags type="orange" :text="goodsStatus[props.productList.status]" />
         </common-header-theme>
         <div class="flex flex-col gap-3 px-4 py-3">
           <template v-if="props.productList.info.length">
             <template v-for="(item, index) in props.productList.info" :key="index">
-              <div class="flex-center-between text-sm font-normal">
+              <div class="flex-center-between text-sm font-normal even:bg-[#F5F5F5]">
                 <div class="color-[#666666]">
                   {{ item.name }}
                 </div>
