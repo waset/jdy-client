@@ -11,7 +11,6 @@ const levelDesc = {
 }
 
 const isSquare = defineModel({ type: Boolean, default: true })
-const hasShadow = defineModel({ type: Boolean, default: false })
 </script>
 
 <template>
@@ -21,7 +20,7 @@ const hasShadow = defineModel({ type: Boolean, default: false })
         <common-check v-model="checked" :checked="checked" />
       </div>
       <div class="flex flex-row gap-2 items-center">
-        <common-avatar v-model:is-square="isSquare" v-model:has-shadow="hasShadow" :img="props.memberInfo.img || ''" :size="24" />
+        <common-avatar v-model:is-square="isSquare" :img="props.memberInfo.img || ''" :size="24" />
         <div class="text-[14px] font-semibold">
           {{ props.memberInfo.nickname }}
         </div>

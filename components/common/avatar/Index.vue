@@ -1,15 +1,25 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
-  // 头像尺寸
+  /**
+   * 尺寸
+   */
   size: number
-  // 图片链接
+  /**
+   * 图片地址
+   */
   img?: string
-  // 圆角半径
+  /**
+   * 圆角大小
+   */
   rounded?: string
+  /**
+   * 是否有投影
+   */
+  hasShadow?: boolean
 }>(), {
-  size: 40,
-  rounded: '8px',
   img: '',
+  rounded: '8px',
+  hasShadow: true,
 })
 </script>
 

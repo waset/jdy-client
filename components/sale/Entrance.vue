@@ -9,7 +9,7 @@ enum Title {
   OtherItem = '其他收支单',
 }
 
-const isFold = defineModel<boolean>()
+const isFold = defineModel({ type: Boolean, default: false })
 
 const toggleFold = () => {
   isFold.value = !isFold.value
@@ -38,9 +38,6 @@ const toggleFold = () => {
           <!-- 分割线 -->
           <div class="h-[1px] bg-[#E6E6E8]" />
           <div class="grid grid-rows-2 grid-flow-col w-full place-items-start gap-[16px]">
-            <!-- <template v-for="(item, index) in Items.saleItem" :key="index">
-              <common-entrance-group :img="item.img" :title="item.title" :path="item.path" />
-            </template> -->
             <nuxt-link to="/sale/sales/list">
               <div class="list flex-center-row gap-[4px]">
                 <nuxt-img src="images/sale/sales-list.png" class="w-[32px] h-[32px]" />
