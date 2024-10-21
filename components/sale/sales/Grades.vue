@@ -2,7 +2,7 @@
 const props = defineProps<{
   memberInfo: MemberInfo
 }>()
-const checked = ref(false)
+const checked = defineModel({ type: Boolean, default: false })
 // 用户等级描述
 const levelDesc = {
   1: '银卡',
@@ -10,8 +10,8 @@ const levelDesc = {
   3: '钻石卡',
 }
 
-const isSquare = ref(true)
-const hasShadow = ref(false)
+const isSquare = defineModel({ type: Boolean, default: true })
+const hasShadow = defineModel({ type: Boolean, default: false })
 </script>
 
 <template>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// 空页面组件
 const props = withDefaults(defineProps<{
   icon?: string
   padding?: string
@@ -6,6 +7,8 @@ const props = withDefaults(defineProps<{
   icon: 'empty',
   padding: '20px 50px 20px 50px',
 })
+
+const imgUrl = props.icon.startsWith('/') ? props.icon : `/images/condition/${props.icon}.png`
 </script>
 
 <template>
@@ -14,7 +17,7 @@ const props = withDefaults(defineProps<{
     :style="{ padding: props.padding }"
   >
     <div class="flex-center-row w-full h-full">
-      <nuxt-img :src="icon.startsWith('/') ? icon : `/images/condition/${icon}.png`" class="w-[200px] h-auto" />
+      <nuxt-img :src="imgUrl" class="w-[200px] h-auto" />
     </div>
   </div>
 </template>

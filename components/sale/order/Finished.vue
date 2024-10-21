@@ -1,10 +1,14 @@
 <script setup lang="ts">
 // 销售明细_产品信息_成品
+
+// 折叠菜单
+const isFold = ref(true)
 </script>
 
 <template>
   <div>
-    <sale-order-nesting title="成品">
+    <sale-order-nesting
+      v-model="isFold" title="成品">
       <template #info>
         <div class="flex flex-col gap-[12px] px-[16px]">
           <div class="flex flex-row gap-[12px]">

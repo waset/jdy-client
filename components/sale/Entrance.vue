@@ -9,7 +9,7 @@ enum Title {
   OtherItem = '其他收支单',
 }
 
-const isFold = ref(false)
+const isFold = defineModel<boolean>()
 
 const toggleFold = () => {
   isFold.value = !isFold.value

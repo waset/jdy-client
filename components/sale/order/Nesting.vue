@@ -3,7 +3,7 @@ const props = defineProps<{
   title: string
 }>()
 
-const folded = ref(true)
+const folded = defineModel<boolean>()
 
 const toggleFold = () => {
   folded.value = !folded.value
@@ -20,7 +20,8 @@ const toggleFold = () => {
           {{ props.title }}
         </div>
       </div>
-      <div class="font-size-[10px] color-[#333]" @click="toggleFold">
+      <div
+        class="font-size-[10px] color-[#333]" @click="toggleFold()">
         <van-icon :name="!folded ? 'arrow' : 'arrow-down'" size="12" />
       </div>
     </div>
