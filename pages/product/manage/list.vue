@@ -1,11 +1,13 @@
 <script setup lang="ts">
 const searchKey = ref('')
 const complate = ref(0)
+useSeoMeta({
+  title: '货品管理',
+})
 </script>
 
 <template>
   <div>
-    <common-navbar text="货品管理" />
     <!-- 筛选 -->
     <product-filter v-model:id="complate" v-model:search="searchKey" />
     <!-- 小卡片组件 -->

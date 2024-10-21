@@ -4,7 +4,7 @@
       <div class="font-bold text-size-[14px] mr-[4px]">
         公司总店
       </div>
-      <icon name="jdy:product-toggle" />
+      <icon name="jdy:product-toggle" size="24" />
     </div>
   </div>
 </template>

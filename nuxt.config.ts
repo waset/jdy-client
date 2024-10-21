@@ -41,7 +41,7 @@ export default defineNuxtConfig({
     componentName: 'ColorScheme',
     classPrefix: '',
     classSuffix: '',
-    storage: 'cookie', // or 'sessionStorage' or 'cookie'
+    storage: 'localStorage', // or 'sessionStorage' or 'cookie'
     storageKey: 'nuxt-color-mode',
   },
   image: {
@@ -51,6 +51,7 @@ export default defineNuxtConfig({
    * @see https://github.com/nuxt/icon
    */
   icon: {
+    componentName: 'NuxtIcon',
     customCollections: [
       {
         prefix: 'jdy', // 前缀
