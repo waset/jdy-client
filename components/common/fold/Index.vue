@@ -1,20 +1,31 @@
 <script lang="ts" setup>
 interface FoldProps {
   title?: string
-  // 标题字体大小
+  /**
+   * 标题字体大小
+   */
   size?: string
-  // 渐变方向
+  /**
+   * 渐变方向
+   */
   direction?: 'left' | 'right'
+  /**
+   * 渐变起始颜色
+   */
   fromColor?: string
+  /**
+   * 渐变结束颜色
+   */
   toColor?: string
-  // 是否展开折叠
+  /**
+   * 是否展开折叠
+   */
   isCollapse?: boolean
 }
 
 const props = withDefaults(defineProps<FoldProps>(), {
-  title: '',
   size: '14px',
-  direction: 'left',
+  direction: 'right',
   fromColor: 'rgba(71, 126, 245, 0)',
   toColor: 'rgba(130, 208, 250, 0.8)',
   isCollapse: true,
@@ -58,6 +69,8 @@ function toggleShow() {
 <style lang="scss" scoped>
 .collapse-item {
   --uno: 'flex flex-col overflow-hidden';
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.04);
+
   border-radius: 24px;
   .title {
     --uno: 'flex justify-between items-center py-8px px-16px text-14px font-600 text-#333333 dark:text-#FFFFFF';

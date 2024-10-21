@@ -12,9 +12,11 @@ interface Props {
    * 禁止输入且为禁止输入样式
    */
   disabledStyle?: boolean
+  /**
+   * 输入框类型
+   */
   type?: 'text' | 'password' | 'number' | 'tel' | 'email' | 'url' | 'date' | 'time' | 'datetime-local' | 'month' | 'week' | 'search' | 'color'
   fontSize?: string
-  value?: string | number
   isIcon?: boolean
 }
 
@@ -28,8 +30,8 @@ const value = defineModel()
 
 <template>
   <div class="row" :class="props.disabledStyle ? 'disable' : 'nodisable'" :style="{ fontSize }">
-    <slot name="left" />
-    <div class="row-left">
+    <div class="flex items-center">
+      <slot name="left" />
       <input v-model="value" :disabled="props.isDisabled || props.disabledStyle" :class="props.disabledStyle ? 'row-input dis' : 'row-input nodis'" :type="props.type" :placeholder="props.tip">
     </div>
     <template v-if="props.isIcon">

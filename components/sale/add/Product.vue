@@ -1,16 +1,7 @@
 <template>
   <div class="pb-[16px]">
     <common-fold title="产品信息" :is-collapse="false">
-      <div class="flex justify-center items-center py-[24px]">
-        <div class="product">
-          <NuxtImg class="bag" src="/images/sale/bag.png" width="120" />
-          <div class="super">
-            <div class="super-bg">
-              <icon name="jdy:crosspath" size="12" />
-            </div>
-          </div>
-        </div>
-      </div>
+      <common-empty />
       <div class="p-[16px]">
         <div class="btn grid-12 gap-[20px]">
           <div class="btn-left col-span-4 offset-2">
@@ -53,6 +44,7 @@
     &-bg {
       --uno: 'w-[36px] h-[36px] rounded-[50%] bg-[#FFFFFF] flex justify-center items-center';
       background: linear-gradient(to bottom, rgba(255, 152, 152, 1), rgba(255, 79, 79, 1));
+      box-shadow: 0 0 20px 2px rgba(255, 152, 152, 1);
     }
   }
 }
