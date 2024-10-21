@@ -1,23 +1,38 @@
 <script setup lang="ts">
-// 空页面组件
 const props = withDefaults(defineProps<{
-  icon?: string
-  padding?: string
+  img?: string
 }>(), {
-  icon: 'empty',
-  padding: '20px 50px 20px 50px',
+  img: '/images/empty/record.png',
 })
-
-const imgUrl = props.icon.startsWith('/') ? props.icon : `/images/condition/${props.icon}.png`
 </script>
 
 <template>
-  <div
-    class="flex-center-col flex-grow h-auto"
-    :style="{ padding: props.padding }"
-  >
-    <div class="flex-center-row w-full h-full">
-      <nuxt-img :src="imgUrl" class="w-[200px] h-auto" />
+  <div class="flex justify-center items-center py-[24px]">
+    <div class="empty">
+      <NuxtImg class="empty-icon" :src="props.img" height="120" />
+      <div class="super">
+        <div class="super-bg">
+          <icon name="jdy:crosspath" size="18" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.empty {
+  --uno: 'w-[150px] h-[150px] rounded-[50%] relative';
+  box-shadow: rgba(239, 242, 255, 1) 0 5px 20px 0;
+  .empty-icon {
+    --uno: 'absolute top-[34px] left-[50%] translate-x-[-50%]';
+  }
+  .super {
+    --uno: 'absolute top-[14px] right-[14px]';
+    .super-bg {
+      --uno: 'w-[36px] h-[36px] rounded-[50%] bg-[#FFFFFF] flex justify-center items-center';
+      background: linear-gradient(to bottom, rgba(255, 152, 152, 1), rgba(255, 79, 79, 1));
+      box-shadow: 0 0 20px 2px rgba(255, 152, 152, 1);
+    }
+  }
+}
+</style>
