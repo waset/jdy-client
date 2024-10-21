@@ -14,16 +14,14 @@
             </div>
           </template>
           <div class="p-[16px]">
-            <template v-for="i in 5" :key="i">
-              <div class="flex justify-between items-center mb-2">
-                <div class="text-color-light">
-                  推广人数
-                </div>
-                <div class="text-color">
-                  42
-                </div>
+            <div class="flex justify-between items-center mb-2">
+              <div class="text-color-light">
+                推广人数
               </div>
-            </template>
+              <div class="text-color">
+                42
+              </div>
+            </div>
           </div>
         </common-fold>
       </div>

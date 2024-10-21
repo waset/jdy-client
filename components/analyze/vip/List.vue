@@ -14,16 +14,14 @@
           </template>
           <div>
             <div class="p-[16px] text-[14px]">
-              <template v-for="i in 4" :key="i">
-                <div class="flex justify-between items-center pb-[8px]">
-                  <div class="text-color">
-                    条码<span class="text-[rgba(57,113,243,1)] pl-[8px]">sp42445</span>
-                  </div>
-                  <div class="text-color-light">
-                    工艺<span class="pl-[8px]">3D</span>
-                  </div>
+              <div class="flex justify-between items-center pb-[8px]">
+                <div class="text-color">
+                  条码<span class="text-[rgba(57,113,243,1)] pl-[8px]">sp42445</span>
                 </div>
-              </template>
+                <div class="text-color-light">
+                  工艺<span class="pl-[8px]">3D</span>
+                </div>
+              </div>
             </div>
             <div />
           </div>
