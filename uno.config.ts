@@ -6,7 +6,8 @@ export default defineConfig({
       dark: 'class',
     }),
     presetAttributify({
-      prefix: 'un-',
+      prefix: 'uno-',
+      prefixedOnly: true,
     }),
   ],
   transformers: [

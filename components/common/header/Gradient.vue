@@ -7,7 +7,7 @@ const props = defineProps<{
 
 <template>
   <div class="flex-center-between px-4 py-2 rounded-t-3 bg-[linear-gradient(90deg,#3971f3b8,#f3f5fe00)]">
-    <div class="font-extrabold text-[#333333] italic text-[14px]">
+    <div class="font-extrabold text-[#333333] italic text-[14px] dark:color-[#fff]">
       {{ props.title }}
     </div>
     <slot />
