@@ -1,15 +1,22 @@
 <script setup lang="ts">
 interface Props {
+  /**
+   * 标签主题色
+   * ‘orange’ | ‘red’ | ‘green’ | ‘lake’ | ‘pink’ | ‘greyblue’ | ‘grey’ | ‘black’
+   */
   type?: colors
+  /**
+   * 文本内容
+   */
   text: string
-  isOval?: boolean
 }
 
 // 接收一个标签主题色
 const props = withDefaults(defineProps<Props>(), {
   type: 'orange',
-  isOval: false,
 })
+
+const isOval = defineModel({ type: Boolean, default: false })
 
 type Tags = {
   backgroundColor?: string
@@ -66,11 +73,11 @@ const tagStyle: { [key in colors]: Tags } = {
 
 <template>
   <div
-    class="tag flex-start px-[8px]"
+    class="tag flex-start px-[8px] text-size-[14px]"
     :style="{
       backgroundColor: tagStyle[props.type].backgroundColor,
       color: tagStyle[props.type].color,
-      borderRadius: props.isOval ? '100px 10px / 120px' : '8px',
+      borderRadius: isOval ? '100px 10px / 120px' : '8px',
     }"
   >
     {{ props.text }}

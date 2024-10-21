@@ -1,5 +1,8 @@
 <script setup lang="ts">
 // 盘点单详情
+useSeoMeta({
+  title: '盘点单详情',
+})
 
 // 盘点单详情测试数据。需删除
 const testInventory: InventorySheet = {

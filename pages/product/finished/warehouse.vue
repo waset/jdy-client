@@ -1,5 +1,8 @@
 <script setup lang="ts">
 // 入库单详情
+useSeoMeta({
+  title: '入库单详情',
+})
 
 // 入库单详情测试使用数据。需删除
 const testData: WarehouseReceipt = {

@@ -1,5 +1,8 @@
 <script setup lang="ts">
 // 成品列表详情
+useSeoMeta({
+  title: '列表详情',
+})
 
 // 成品列表详情测试使用数据。需删除
 const illData: FinishedProduct = {
