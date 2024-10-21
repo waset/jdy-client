@@ -97,129 +97,129 @@ const active = computed(() => {
 
 <template>
   <div class="grid-12">
-    <div class="flex flex-col gap-4 col-12 lg:col-8 lg:offset-2 sm:col-12 ">
+    <div class="flex flex-col gap-4 col-12" uno-lg="col-8 offset-2" uno-sm="col-12">
       <div class="rounded-6 bg-white w-auto top">
         <common-header-gradient title="基础信息" />
         <div class="flex flex-col gap-4 px-4 py-4">
           <div class="operation-information flex flex-col gap-1">
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 盘点人
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 {{ props.sheet.operator }}
               </div>
             </div>
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 监盘人
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 {{ props.sheet.supervisor }}
               </div>
             </div>
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 盘点单号
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 {{ props.sheet.num }}
               </div>
             </div>
           </div>
           <div class="h-0.5 bg-[#E6E6E8]" />
           <div class="other-information flex flex-col gap-1">
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 盘点品牌
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 {{ props.sheet.brand }}
               </div>
             </div>
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 盘点仓库
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 {{ props.sheet.wareHouse }}
               </div>
             </div>
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 备注
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 {{ props.sheet.remark || '无' }}
               </div>
             </div>
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 状态
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 <common-tags type="lake" :text="statusDesc[props.sheet.inventoryStatus]" />
               </div>
             </div>
           </div>
           <div class="h-0.5 bg-[#E6E6E8]" />
           <div class="product-information flex flex-col gap-1">
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 盘点范围
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 {{ props.sheet.scope }}
               </div>
             </div>
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 大类
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 {{ props.sheet.category }}
               </div>
             </div>
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 品类
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 {{ props.sheet.refinement }}
               </div>
             </div>
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 工艺
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 {{ props.sheet.technique || '' }}
               </div>
             </div>
           </div>
           <div class="h-0.5 bg-[#E6E6E8]" />
           <div class="product-information flex flex-col gap-1">
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 总件数
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 {{ props.sheet.totalCount }}
               </div>
             </div>
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 总金重
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 {{ props.sheet.totalWeight }}
               </div>
             </div>
-            <div class="flex-start gap-3 text-sm font-normal">
-              <div class="color-[#666666]">
+            <div class="part">
+              <div class="left">
                 总标价
               </div>
-              <div class="color-[#333333]">
+              <div class="right">
                 {{ props.sheet.totalPrice }}
               </div>
             </div>
@@ -231,10 +231,24 @@ const active = computed(() => {
           <common-tab-secondary v-model:current-selected="currentSelected" :options="inventoryOptions" />
           <common-step :description="step" :active-index="active" />
         </div>
-        <div class="color-[#333333] font-normal text-[14px]">
+        <div class="color-[#333333] dark:color-[#FFFFFF] font-normal text-[14px]">
           共{{ getCount() }}条数据
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.part {
+  --uno: 'flex-start gap-3 text-sm font-normal';
+
+  .left {
+    --uno: 'color-[#666666] dark:color-[#CBCDD1]';
+  }
+
+  .right {
+    --uno: 'color-[#333333] dark:color-[#FFFFFF]';
+  }
+}
+</style>

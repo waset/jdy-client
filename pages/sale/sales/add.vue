@@ -1,4 +1,9 @@
 <script lang="ts" setup>
+// 新增销售单
+useSeoMeta({
+  title: '新增销售单',
+})
+
 const goodinfo = ref([
   {
     name: '商品名称',

@@ -40,7 +40,7 @@
               </van-col>
             </van-row>
           </div>
-          <div class="bg-[#F3F5FE] dark:bg-[#F3F5FE1A] rounded-b-[24px]">
+          <div class="bg-[#F3F5FE] dark:bg-[#F3F5FE1A] rounded-b-[24px] ">
             <van-row justify="space-between">
               <van-col span="8">
                 <div class="py-[8px] px-[16px]">
@@ -51,14 +51,8 @@
                 </div>
               </van-col>
               <van-col span="12">
-                <div class="flex-end text-size-[14px]">
-                  <div class="mr-[16px] line-height-[20px] text-[#3971F3] dark:text-[#FFF]">
-                    更多
-                  </div>
-                  <div
-                    class="bg-gradient-linear-[180deg,#1F6FEC,#68A2FE] px-[41px] py-[8px] rounded-br-[24px] line-height-[20px] text-[#FFF]">
-                    编辑
-                  </div>
+                <div class="flex-end text-size-[14px] ">
+                  <common-button-irregular text="编辑" />
                 </div>
               </van-col>
             </van-row>

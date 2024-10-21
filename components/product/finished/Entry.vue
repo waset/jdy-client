@@ -14,8 +14,8 @@ const statusDesc = {
 
 <template>
   <div class="grid-12">
-    <div class="flex flex-col gap-4 col-12 lg:col-8 lg:offset-2 sm:col-12 ">
-      <div class="rounded-6 bg-white w-auto top">
+    <div class="flex flex-col gap-4 col-12" uno-lg="col-8 offset-2" uno-sm="col-12">
+      <div class="rounded-6 bg-white w-auto blur-bga top">
         <common-header-gradient title="基础信息" />
         <div class="flex flex-col gap-4 px-4 py-4">
           <div class="operation-information flex flex-col gap-1">

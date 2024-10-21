@@ -11,31 +11,32 @@ const mode = computed({
 </script>
 
 <template>
-  <div>
-    <van-switch
-      v-model="mode" :style="{
-        '--van-switch-width': '4.2rem',
-      }">
-      <template #node>
-        <div class="h-[26px] line-height-[26px] flex justify-center items-center">
-          <!-- <van-icon :name="mode ? 'success' : 'cross'" /> -->
+  <div class="mb-[16px]">
+    <client-only>
+      <van-switch
+        v-model="mode" :style="{
+          '--van-switch-width': '4.2rem',
+        }">
+        <template #node>
+          <div class="h-[26px] line-height-[26px] flex justify-center items-center">
+            <template v-if="!mode">
+              <icon name="jdy:sun" size="20" :color="!mode ? '#3971F3' : '#FFF'" />
+            </template>
+            <template v-else>
+              <icon name="jdy:moon" size="20" :color="mode ? '#3971F3' : '#FFF'" />
+            </template>
+          </div>
+        </template>
+        <template #background>
           <template v-if="!mode">
-            <icon name="jdy:sun-line" size="20" :color="!mode ? '#3971F3' : '#FFF'" />
+            <span class="span select-none" style="right: 2px;">浅色</span>
           </template>
           <template v-else>
-            <icon name="jdy:moon-white" size="20" :color="mode ? '#3971F3' : '#FFF'" />
+            <span class="span select-none" style="left: 2px;">深色</span>
           </template>
-        </div>
-      </template>
-      <template #background>
-        <template v-if="!mode">
-          <span class="span select-none" style="right: 2px;">浅色</span>
         </template>
-        <template v-else>
-          <span class="span select-none" style="left: 2px;">深色</span>
-        </template>
-      </template>
-    </van-switch>
+      </van-switch>
+    </client-only>
   </div>
 </template>
 
