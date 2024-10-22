@@ -68,7 +68,7 @@ function toggleShow() {
 
 <style lang="scss" scoped>
 .collapse-item {
-  --uno: 'flex flex-col overflow-hidden';
+  --uno: 'flex flex-col bg-[#fff] dark:bg-[rgb(245,245,245,0.1)] border-solid border-1 border-[#EFF0F6] dark:border-[rgb(239,240,246,0.1)] rounded-[24px] overflow-hidden';
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.04);
 
   border-radius: 24px;

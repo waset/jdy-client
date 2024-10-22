@@ -12,7 +12,7 @@ const handleClick = async () => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-[12px] bg-[rgba(255,255,255,0.8)] rounded-[24px] gap-4 border-solid border-1 border-[#EFF0F6] overflow-hidden">
+  <div class="card">
     <template v-for="(item, index) in props.info" :key="index">
       <!-- header -->
       <common-header-theme :title="item.num" color="#333">
@@ -47,16 +47,20 @@ const handleClick = async () => {
 </template>
 
 <style lang="scss" scoped>
-.info {
-  --uno: 'flex flex-col gap-[12px] px-[16px]';
+.card {
+  --uno: 'flex flex-col gap-[12px] rounded-[24px] gap-4 bg-[#fff] dark:bg-[rgb(245,245,245,0.1)] border-solid border-1 border-[#EFF0F6] overflow-hidden dark:border-[rgb(239,240,246,0.1)]';
 
-  .part {
-    --uno: 'flex-center-between';
-    &-left {
-      --uno: 'text-size-[14px] color-[#666] dark:color-[#CBCDD1]';
-    }
-    &-right {
-      --uno: 'text-size-[14px] color-[#333] dark:color-[#fff]';
+  .info {
+    --uno: 'flex flex-col gap-[12px] px-[16px]';
+
+    .part {
+      --uno: 'flex-center-between';
+      &-left {
+        --uno: 'text-size-[14px] color-[#666] dark:color-[#CBCDD1]';
+      }
+      &-right {
+        --uno: 'text-size-[14px] color-[#333] dark:color-[#fff]';
+      }
     }
   }
 }

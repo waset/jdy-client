@@ -38,8 +38,8 @@ const saleList: SalesSlip[] = [
     <div class="flex flex-col gap-[16px] px-[16px] py-[16px] col-12" uno-lg="col-8 offset-2" uno-sm="col-12">
       <!-- header -->
       <div class="flex flex-row gap-2">
-        <product-manage-company />
-        <product-filter-search />
+        <product-manage-company class="color-[#fff]" />
+        <product-filter-search class="color-[#fff]" />
       </div>
       <!-- data -->
       <div class="flex-center-between gap-2">
