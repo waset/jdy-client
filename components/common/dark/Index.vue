@@ -16,6 +16,8 @@ const mode = computed({
       <van-switch
         v-model="mode" :style="{
           '--van-switch-width': '4.2rem',
+          '--van-switch-background': '#8FB8EE',
+
         }">
         <template #node>
           <div class="h-[26px] line-height-[26px] flex justify-center items-center">
