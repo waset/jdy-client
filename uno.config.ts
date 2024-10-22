@@ -54,5 +54,7 @@ export default defineConfig({
     'grid-12': 'grid grid-cols-12',
     'blur-bgc': 'light:bg-[rgba(255,255,255,0.7)] dark:bg-[rgba(0,0,0,0.3)] blur-5px', // 毛玻璃背景色
     'blur-bga': 'light:bg-[rgb(255,255,255)] dark:bg-[rgba(0,0,0,0.3)] blur-5px',
+    'text-color': 'text-[rgb(0,0,0)] dark:text-[rgb(255,255,255)]',
+    'text-color-light': 'text-[#666666] dark:text-[#CBCDD1]',
   },
 })

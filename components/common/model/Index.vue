@@ -57,6 +57,7 @@ function close() {
 
     .top {
       --uno: 'relative h-34px border-rd-[20px_20px_0_0]';
+      --uno: 'relative h-34px border-rd-[20px_20px_0_0]';
       background: linear-gradient(to right, rgba(147, 211, 245, 1), rgba(56, 101, 252, 1));
 
       .close {
@@ -70,9 +71,12 @@ function close() {
 
         &-img2 {
           --uno: 'z-[2] pl-[58px] absolute bottom-4px';
+          --uno: 'z-[2] pl-[58px] absolute bottom-4px';
         }
 
         &-content {
+          --uno: 'absolute left-[80px] top-[2px] z-[9] text-[rgba(255,255,255,1)] font-bold';
+          transform: skewY(-6deg);
           --uno: 'absolute left-[80px] top-[2px] z-[9] text-[rgba(255,255,255,1)] font-bold';
           transform: skewY(-6deg);
           transform-origin: bottom left;
