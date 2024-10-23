@@ -8,13 +8,13 @@ const actions = [
   { text: '支付宝' },
   { text: '现金' },
 ]
-const getInitialItems = () => [{ id: 1, isPopoverVisible: false, actions }]
+const getInitialItems = () => [{ id: 1, isPopoverVisible: false, actions, selected: '' }]
 const items = ref(getInitialItems())
 let id = items.value.length + 1
 
 const insertItem = () => {
   // 添加新的支付信息栏并初始化状态
-  items.value.push({ id: id++, isPopoverVisible: false, actions })
+  items.value.push({ id: id++, isPopoverVisible: false, actions, selected: '' })
 }
 
 function removeItem(item: { id: number }) {
@@ -29,7 +29,7 @@ function removeItem(item: { id: number }) {
   <div class="px-[16px]">
     <common-fold title="结算信息">
       <div class="p-[16px]">
-        <div class="grid-cols-[1fr_1fr] gap-[16px]" uno-lg="grid-cols-[1fr_1fr_1fr]" uno-md="grid">
+        <div class="grid-cols-[1fr] gap-[16px]" uno-lg="grid-cols-[1fr]" uno-md="grid">
           <div class="flex flex-col gap-[12px]">
             <template v-for="(item, index) in props.goodinfo" :key="index">
               <div class="flex items-center justify-between">
@@ -72,37 +72,38 @@ function removeItem(item: { id: number }) {
           <span class="mr-[4px]">剩余未支付:</span>
           <span>00.00</span>
         </div>
-        <div class="grid-cols-[1fr_1fr] gap-[16px]" uno-lg="grid-cols-[1fr_1fr_1fr]" uno-md="grid">
-          <div class="flex flex-col gap-[12px]">
-            <TransitionGroup name="operation">
-              <template v-for="item in items" :key="item">
-                <div class="flex flex-shrink-0 items-center gap-[12px]">
-                  <van-popover v-model:show="item.isPopoverVisible" :actions="item.actions">
-                    <template #reference>
-                      <div class="refer">
-                        <div class="row-left color-[#333] dark:color-[#fff] font-size-[14px]">
-                          支付方式
-                        </div>
-                        <div class="row-right">
-                          <van-icon name="arrow-down" color="#333" />
-                        </div>
+        <div class="flex flex-col gap-[12px]">
+          <TransitionGroup name="operation">
+            <template v-for="item in items" :key="item.id">
+              <div class="flex flex-row items-end gap-[12px]">
+                <van-popover
+                  v-model:show="item.isPopoverVisible" :actions="item.actions" @select="(action) => {
+                    item.selected = action.text;
+                  }">
+                  <template #reference>
+                    <div class="refer">
+                      <div class="row-left color-[#333] dark:color-[#fff] font-size-[14px] text-nowrap">
+                        {{ item.selected || '支付方式' }}
                       </div>
-                    </template>
-                  </van-popover>
-                  <common-frame tip="金额" />
-                  <template v-if="item.id === 1">
-                    <sale-sales-plusminus
-                      @button-click="insertItem()" />
+                      <div class="row-right">
+                        <van-icon name="arrow-down" color="#333" />
+                      </div>
+                    </div>
                   </template>
-                  <template v-else>
-                    <sale-sales-plusminus
-                      :is-add="false"
-                      @button-click="removeItem(item)" />
-                  </template>
-                </div>
-              </template>
-            </TransitionGroup>
-          </div>
+                </van-popover>
+                <common-frame tip="金额" uno-lg="flex-1" uno-md="flex-1" />
+                <template v-if="item.id === 1">
+                  <sale-sales-plusminus
+                    @button-click="insertItem()" />
+                </template>
+                <template v-else>
+                  <sale-sales-plusminus
+                    :is-add="false"
+                    @button-click="removeItem(item)" />
+                </template>
+              </div>
+            </template>
+          </TransitionGroup>
         </div>
       </div>
     </common-fold>
@@ -111,7 +112,7 @@ function removeItem(item: { id: number }) {
 
 <style lang="scss" scoped>
 .refer {
-  --uno: 'flex-1 gap-[4px] px-12px py-6px border-rd-36px text-[14px] flex-between bg-#fff border-[#e6e6e8] border-1px border-solid dark:bg-[rgba(255,255,255,0.2)] dark:border-[rgba(230,230,232,0.2)]';
+  --uno: 'flex flex-between min-w-[80px] gap-[4px] px-[12px] py-[6px] border-rd-[60px] text-[14px] bg-[#fff] border-[#e6e6e8] border-[1px] border-solid dark:bg-[rgba(255,255,255,0.2)] dark:border-[rgba(230,230,232,0.2)]';
 }
 
 .remark {
@@ -119,7 +120,7 @@ function removeItem(item: { id: number }) {
 }
 
 textarea::placeholder {
-  --uno: 'color-#cbcdd1';
+  --uno: 'color-[#cbcdd1]';
 }
 
 .operation-enter-active,
