@@ -9,14 +9,16 @@ interface Props {
    * 文本内容
    */
   text: string
+  /**
+   * 是否为异形标签
+   */
+  isOval?: boolean
 }
 
 // 接收一个标签主题色
 const props = withDefaults(defineProps<Props>(), {
   type: 'orange',
 })
-
-const isOval = defineModel({ type: Boolean, default: false })
 
 type Tags = {
   backgroundColor?: string
@@ -73,19 +75,13 @@ const tagStyle: { [key in colors]: Tags } = {
 
 <template>
   <div
-    class="tag flex-start px-[8px] text-size-[14px]"
+    class="flex-start px-[8px] text-size-[14px] min-w-fit"
     :style="{
       backgroundColor: tagStyle[props.type].backgroundColor,
       color: tagStyle[props.type].color,
-      borderRadius: isOval ? '100px 10px / 120px' : '8px',
+      borderRadius: props.isOval ? '100px 10px / 120px' : '8px',
     }"
   >
     {{ props.text }}
   </div>
 </template>
-
-<style scoped lang="scss">
-.tag {
-  max-width: fit-content;
-}
-</style>

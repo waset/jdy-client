@@ -33,12 +33,16 @@ const goodinfo = ref([
 </script>
 
 <template>
-  <div>
-    <sale-add-base />
-    <sale-add-product />
-    <sale-add-settlement :goodinfo="goodinfo" />
-    <div class="h-[80px]">
-      <common-button-bottom confirm-text="开单并打印" cancel-text="仅开单" />
+  <div class="grid-12">
+    <div class="flex flex-col w-auto gap-[16px] col-12" uno-lg="col-8 offset-2" uno-sm="col-12">
+      <div class="pt-[16px]">
+        <sale-add-base />
+      </div>
+      <sale-add-product />
+      <sale-add-settlement :goodinfo="goodinfo" />
+      <div class="h-[80px]">
+        <common-button-bottom confirm-text="开单" cancel-text="取消" />
+      </div>
     </div>
   </div>
 </template>

@@ -91,10 +91,10 @@ const toggleFold = () => {
 
 <style lang="scss" scoped>
 .nav {
-  --uno: 'flex justify-around pt-[16px] dark:text-[#fff]';
+  --uno: 'flex justify-around pt-[16px]';
 
   &-item {
-    --uno: 'color-[#333333] font-size-[16px] font-semibold';
+    --uno: 'color-[#333333] font-size-[16px] font-semibold dark:text-[#fff]';
   }
 
   .active {
