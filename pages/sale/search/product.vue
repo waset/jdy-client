@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// 搜索会员页
+// 搜索商品页
 useSeoMeta({
   title: '商品列表',
 })
@@ -21,9 +21,17 @@ useSeoMeta({
       <!-- card -->
       <div class="flex flex-col gap-[16px] px-[16px]">
         <!-- 成品 -->
-        <sale-order-finished />
+        <sale-order-finished>
+          <template #checkbox>
+            <common-check rounded="8px" />
+          </template>
+        </sale-order-finished>
         <!-- 配件 -->
-        <sale-order-accessory />
+        <sale-order-accessory>
+          <template #checkbox>
+            <common-check rounded="8px" />
+          </template>
+        </sale-order-accessory>
       </div>
       <!-- 操作栏 -->
       <div class="h-[80px]">

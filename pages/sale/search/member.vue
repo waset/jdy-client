@@ -4,6 +4,7 @@ useSeoMeta({
   title: '会员列表',
 })
 
+// 测试数据。待删除。
 const memberInfo: MemberInfo = {
   nickname: '懒羊羊',
   phone: '19222222222',
@@ -18,6 +19,11 @@ const memberInfo: MemberInfo = {
   buyCount: 60,
   isFollow: 1,
 }
+
+const handleClick = async () => {
+  // 跳转到新增会员页
+  await navigateTo('/sale/sales/member')
+}
 </script>
 
 <template>
@@ -26,7 +32,7 @@ const memberInfo: MemberInfo = {
       <!-- 搜索组件 -->
       <div class="search-header flex flex-row gap-[12px] px-[16px]">
         <product-filter-search class="flex-1" />
-        <sale-sales-plusminus />
+        <sale-sales-plusminus @button-click="handleClick()" />
       </div>
       <!-- 文本信息 -->
       <div class="flex flex-row gap-[4px] items-center color-[#fff] font-size-[14px] px-[16px]">

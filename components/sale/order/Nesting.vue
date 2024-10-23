@@ -15,6 +15,7 @@ const toggleFold = () => {
     <!-- header -->
     <div class="flex-center-between px-[16px] py-[8px] bg-[#F1F5FE] dark:bg-[rgb(245,245,245,0.1)]">
       <div class="flex-center-row gap-[8px]">
+        <slot name="check" />
         <slot name="tag" />
         <div class="text-[14px] font-semibold color-[#1B2129] dark:color-[#fff]">
           {{ props.title }}
