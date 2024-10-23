@@ -7,6 +7,9 @@
 <template>
   <div>
     <sale-order-nesting title="成品">
+      <template #check>
+        <slot name="checkbox" />
+      </template>
       <template #tag>
         <common-tags type="pink" text="成品" :is-oval="true" />
       </template>

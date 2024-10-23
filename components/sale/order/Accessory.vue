@@ -5,6 +5,9 @@
 <template>
   <div>
     <sale-order-nesting title="配件">
+      <template #check>
+        <slot name="checkbox" />
+      </template>
       <template #tag>
         <common-tags type="orange" text="配件" :is-oval="true" />
       </template>
