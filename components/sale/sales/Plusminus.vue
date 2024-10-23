@@ -24,7 +24,6 @@ const handleClick = () => {
 
 <template>
   <div class="bg-[#F1F5FE] rounded-[60px] flex justify-center items-center" :style="`width: ${props.size}px; height: ${props.size}px;`" @click="handleClick()">
-    <!-- <van-icon name="plus" color="#3971F3" :size="20" /> -->
     <template v-if="props.isAdd">
       <icon name="jdy:add" size="20" class="color-[#3971F3]" />
     </template>
