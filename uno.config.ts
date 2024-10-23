@@ -1,4 +1,4 @@
-import { defineConfig, presetAttributify, presetMini, transformerDirectives, transformerVariantGroup } from 'unocss'
+import { defineConfig, presetAttributify, presetIcons, presetMini, transformerDirectives, transformerVariantGroup } from 'unocss'
 
 export default defineConfig({
   presets: [
@@ -8,6 +8,12 @@ export default defineConfig({
     presetAttributify({
       prefix: 'uno-',
       prefixedOnly: true,
+    }),
+    presetIcons({
+      collections: {
+        icon: () => import('./.nuxt/cache/icons/icon.json').then(i => i.default as any),
+        svg: () => import('./.nuxt/cache/icons/svg.json').then(i => i.default as any),
+      },
     }),
   ],
   transformers: [

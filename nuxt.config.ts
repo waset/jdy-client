@@ -15,9 +15,10 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/eslint',
     '@nuxt/image',
-    '@nuxt/icon',
+    '@waset/unplugin-iconify/nuxt',
     '@nuxtjs/color-mode',
   ],
+
   css: ['~/assets/css/main.scss'],
   vite: {
     css: {
@@ -47,16 +48,20 @@ export default defineNuxtConfig({
   image: {
     inject: true,
   },
-  /**
-   * @see https://github.com/nuxt/icon
-   */
-  icon: {
-    componentName: 'NuxtIcon',
-    customCollections: [
+  Iconify: {
+    convert: [
       {
-        prefix: 'jdy', // 前缀
-        dir: 'assets/icons',
+        prefix: 'icon',
+        noColor: true,
+        path: 'assets/icons',
+        out: '.nuxt/cache/icons',
+      },
+      {
+        prefix: 'svg',
+        path: 'assets/icons',
+        out: '.nuxt/cache/icons',
       },
     ],
   },
+
 })

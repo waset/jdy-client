@@ -3,7 +3,7 @@
     <div class="">
       <div class="flex-between">
         <div class="flex-center-row">
-          <icon name="jdy:my-profile" size="32" />
+          <icon name="i-svg:my-profile" size="32" />
           <div class="font-semibold text-[14px] line-height-[20px] ml-[8px] dark:color-[#fff]">
             资料管理
           </div>
@@ -15,7 +15,7 @@
     <div class="">
       <div class="flex-between">
         <div class="flex-center-row">
-          <icon name="jdy:my-setting" size="32" />
+          <icon name="i-svg:my-setting" size="32" />
           <div class="font-semibold text-[14px] line-height-[20px]  ml-[8px] dark:color-[#fff]">
             提醒设置
           </div>
@@ -27,7 +27,7 @@
     <div class="">
       <div class="flex-between">
         <div class="flex-center-row">
-          <icon name="jdy:my-question" size="32" />
+          <icon name="i-svg:my-question" size="32" />
           <div class="font-semibold text-[14px] line-height-[20px]  ml-[8px] dark:color-[#fff]">
             问题反馈
           </div>

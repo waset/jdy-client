@@ -22,10 +22,10 @@ const mode = computed({
         <template #node>
           <div class="h-[26px] line-height-[26px] flex justify-center items-center">
             <template v-if="!mode">
-              <icon name="jdy:sun" size="20" :color="!mode ? '#3971F3' : '#FFF'" />
+              <icon name="i-svg:sun" size="20" :color="!mode ? '#3971F3' : '#FFF'" />
             </template>
             <template v-else>
-              <icon name="jdy:moon" size="20" :color="mode ? '#3971F3' : '#FFF'" />
+              <icon name="i-icon:moon" size="20" :color="mode ? '#3971F3' : '#FFF'" />
             </template>
           </div>
         </template>
