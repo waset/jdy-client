@@ -1,6 +1,19 @@
 <script setup lang="ts">
 type texts = 'todo' | 'table' | 'userinfo'
-
+const props = withDefaults(defineProps<{
+  text?: texts
+}>(), {
+  text: 'todo',
+})
+const { $colorMode } = useNuxtApp()
+const mode = computed({
+  get() {
+    return $colorMode.preference === 'dark'
+  },
+  set(newValue) {
+    $colorMode.preference = newValue ? 'dark' : 'light'
+  },
+})
 interface MenuItem {
   key: texts
   name: string
@@ -9,17 +22,15 @@ interface MenuItem {
   inactiveIcon: string
 }
 
-const props = withDefaults(defineProps<{
-  text?: texts
-}>(), {
-  text: 'todo',
-})
-
 const menuItems: MenuItem[] = [
-  { key: 'todo', name: '我的待办', route: '/work/table/todos', activeIcon: 'jdy:todo-select', inactiveIcon: 'jdy:todo-not' },
-  { key: 'table', name: '工作台', route: '/work/table', activeIcon: 'jdy:table-select', inactiveIcon: 'jdy:table-not' },
-  { key: 'userinfo', name: '个人中心', route: '/my/user', activeIcon: 'jdy:userinfo-select', inactiveIcon: 'jdy:userinfo-not' },
+  { key: 'todo', name: '我的待办', route: '/', activeIcon: 'i-svg:todo-select', inactiveIcon: 'i-icon:todo-not' },
+  { key: 'table', name: '工作台', route: '/work/table', activeIcon: 'i-svg:table-select', inactiveIcon: 'i-icon:table-not' },
+  { key: 'userinfo', name: '个人中心', route: '/my/user', activeIcon: 'i-svg:userinfo-select', inactiveIcon: 'i-icon:userinfo-not' },
 ]
+
+const modeFun = () => {
+  return mode.value ? '#fff' : '#333'
+}
 </script>
 
 <template>
@@ -31,11 +42,11 @@ const menuItems: MenuItem[] = [
         <nuxt-link :to="item.route">
           <div class="flex-center-col sm:py-[10px]">
             <div class="wh-[24px] mb-[4px]">
-              <icon :name="props.text === item.key ? item.activeIcon : item.inactiveIcon" size="24" />
+              <icon :name="props.text === item.key ? item.activeIcon : item.inactiveIcon" size="24" :color="modeFun()" />
             </div>
             <div
-              class="line-height-[20px]"
-              :class="{ 'text-active': props.text === item.key, 'text-inactive': props.text !== item.key }">
+              class="line-height-[20px] color-[#333] dark:color-[#fff]"
+              :class="{ 'text-active': props.text === item.key }">
               {{ item.name }}
             </div>
           </div>
@@ -48,8 +59,5 @@ const menuItems: MenuItem[] = [
 <style lang="scss" scoped>
 .text-active {
   color: #3971f3;
-}
-.text-inactive {
-  color: #333;
 }
 </style>

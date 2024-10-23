@@ -41,5 +41,10 @@
   },
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
-  }
+  },
+  "iconify.customCollectionJsonPaths": [
+    ".nuxt/cache/icons/svg.json",
+    ".nuxt/cache/icons/icon.json"
+  ],
+  "iconify.inplace": false
 }

@@ -3,7 +3,7 @@ const search = defineModel('search')
 </script>
 
 <template>
-  <div class="grid-12 px-[16px] color-[#Fff]">
+  <div class="grid-12 py-[12px] px-[16px] color-[#Fff]">
     <div class="col-12 grid-12 lg:col-8 lg:offset-2">
       <div class="col-4 ">
         <product-manage-company />
