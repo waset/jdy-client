@@ -1,13 +1,9 @@
-const BASE_URL = 'http://127.0.0.1:5000'
+export const BASE_URL = 'http://127.0.0.1:5000'
 
-async function fetchApi<T>(url: string, options?: RequestInit): Promise<T> {
+const fetchApi = async (url: string, options = {}) => {
   try {
-    const response = await fetch(BASE_URL + url, options)
-    if (!response.ok) {
-      const error = new Error(`Fetch error! status: ${response.status}`)
-      throw error
-    }
-    return response.json() as Promise<T>
+    const response = await $fetch(BASE_URL + url, options)
+    return response
   }
   catch (error) {
     console.error('Fetch failed:', error)
@@ -15,26 +11,33 @@ async function fetchApi<T>(url: string, options?: RequestInit): Promise<T> {
   }
 }
 
-export async function get<T>(url: string): Promise<T> {
-  return fetchApi<T>(url, { method: 'GET' })
+export const get = async (url: string, options = {}) => {
+  return fetchApi(url, { ...options, method: 'GET' })
 }
 
-export async function post<T>(url: string, body: any, options?: RequestInit): Promise<T> {
-  return fetchApi<T>(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body), ...options })
+export const post = async (url: string, body: any, options = {}) => {
+  return fetchApi(url, {
+    ...options,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  })
 }
 
-async function setAuthToken(requestInit: RequestInit): Promise<RequestInit> {
-  const token = localStorage.getItem('authToken')
+const setAuthToken = async (requestOptions: RequestInit) => {
+  const token = useCookie('authToken').value
   if (token) {
-    requestInit.headers = {
-      ...requestInit.headers,
+    requestOptions.headers = {
+      ...requestOptions.headers,
       Authorization: `Bearer ${token}`,
     }
   }
-  return requestInit
+  return requestOptions
 }
 
-export async function fetchWithAuth<T>(url: string, options: RequestInit): Promise<T> {
+export const fetchWithAuth = async (url: string, options = {}) => {
   const modifiedOptions = await setAuthToken(options)
-  return fetchApi<T>(url, modifiedOptions)
+  return fetchApi(url, modifiedOptions)
 }
