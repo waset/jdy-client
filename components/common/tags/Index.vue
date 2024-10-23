@@ -75,7 +75,7 @@ const tagStyle: { [key in colors]: Tags } = {
 
 <template>
   <div
-    class="tag flex-start px-[8px] text-size-[14px]"
+    class="flex-start px-[8px] text-size-[14px] min-w-fit"
     :style="{
       backgroundColor: tagStyle[props.type].backgroundColor,
       color: tagStyle[props.type].color,
@@ -85,9 +85,3 @@ const tagStyle: { [key in colors]: Tags } = {
     {{ props.text }}
   </div>
 </template>
-
-<style scoped lang="scss">
-.tag {
-  max-width: fit-content;
-}
-</style>

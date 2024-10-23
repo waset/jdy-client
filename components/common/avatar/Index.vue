@@ -38,7 +38,14 @@ const props = withDefaults(defineProps<{
       />
     </template>
     <template v-else>
-      <div class="rounded-[8px] bg-gray-200 shadow-[-4px_4px_0px_1px_rgba(56,101,258,.8)]" :style="{ width: `${props.size}px`, height: `${props.size}px`, borderRadius: props.rounded, boxShadow: props.hasShadow ? '-4 4px 0px 1px rgba(56,101,258,.8)' : 'none' }" />
+      <div
+        class="rounded-[8px] bg-gray-200 shadow-[-4px_4px_0px_1px_rgba(56,101,258,.8)]"
+        :style="{
+          width: `${props.size}px`,
+          height: `${props.size}px`,
+          borderRadius: props.rounded,
+          boxShadow: props.hasShadow ? '-4 4px 0px 1px rgba(56,101,258,.8)' : 'none',
+        }" />
     </template>
   </div>
 </template>
