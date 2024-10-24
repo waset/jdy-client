@@ -1,10 +1,18 @@
 export const useDemo = defineStore('demoStore', () => {
-  const number = ref(0)
-  const username = ref(0)
+  interface Result {
+    id: string
+    name: string
+    tags: string
+  }
 
+  const number = ref<number>(0)
+  const username = ref(0)
+  const result = ref<Result>()
   const increment = async () => {
-    await fetchWithAuth('/hello', { method: 'GET' })
-    await post('/submit', { name: 'sun' })
+    return await post<Result>('/submit', { username: 'test' }, true).then((res) => {
+      result.value = res
+      return res
+    })
   }
 
   return {

@@ -1,9 +1,12 @@
-export const BASE_URL = 'http://127.0.0.1:5000'
+export const BASE_URL = 'http://127.0.0.1:4523/m1/5347033-5018095-default'
 
-const fetchApi = async (url: string, options = {}) => {
+const fetchApi = async <T>(url: string, options: RequestInit = {}): Promise<T> => {
   try {
-    const response = await $fetch(BASE_URL + url, options)
-    return response
+    const response = await fetch(BASE_URL + url, options)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    return await response.json()
   }
   catch (error) {
     console.error('Fetch failed:', error)
@@ -11,33 +14,23 @@ const fetchApi = async (url: string, options = {}) => {
   }
 }
 
-export const get = async (url: string, options = {}) => {
-  return fetchApi(url, { ...options, method: 'GET' })
-}
+const createHeaders = (isToken: boolean): HeadersInit => ({
+  'Content-Type': 'application/json',
+  ...(isToken ? { Token: window.localStorage.getItem('authToken') || '' } : {}),
+})
 
-export const post = async (url: string, body: any, options = {}) => {
-  return fetchApi(url, {
-    ...options,
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(body),
+export const get = async <T>(url: string, options: Record<string, any> = {}, isToken: boolean = false): Promise<T> => {
+  return fetchApi<T>(url, {
+    method: 'GET',
+    headers: createHeaders(isToken),
+    ...(options && { query: options }),
   })
 }
 
-const setAuthToken = async (requestOptions: RequestInit) => {
-  const token = useCookie('authToken').value
-  if (token) {
-    requestOptions.headers = {
-      ...requestOptions.headers,
-      Authorization: `Bearer ${token}`,
-    }
-  }
-  return requestOptions
-}
-
-export const fetchWithAuth = async (url: string, options = {}) => {
-  const modifiedOptions = await setAuthToken(options)
-  return fetchApi(url, modifiedOptions)
+export const post = async <T>(url: string, body: Record<string, any> = {}, isToken: boolean = false): Promise<T> => {
+  return fetchApi<T>(url, {
+    method: 'POST',
+    headers: createHeaders(isToken),
+    body: JSON.stringify(body),
+  })
 }

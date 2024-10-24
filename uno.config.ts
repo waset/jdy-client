@@ -1,3 +1,4 @@
+import { UnocssLoader } from '@waset/unplugin-iconify/loader'
 import { defineConfig, presetAttributify, presetIcons, presetMini, transformerDirectives, transformerVariantGroup } from 'unocss'
 
 export default defineConfig({
@@ -11,8 +12,7 @@ export default defineConfig({
     }),
     presetIcons({
       collections: {
-        icon: () => import('./.nuxt/cache/icons/icon.json').then(i => i.default as any),
-        svg: () => import('./.nuxt/cache/icons/svg.json').then(i => i.default as any),
+        ...UnocssLoader(),
       },
     }),
   ],
