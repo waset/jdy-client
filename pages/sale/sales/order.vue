@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-// 销售明细、销售单详情
+// 销售单详情
 useSeoMeta({
-  title: '销售明细',
+  title: '销售单详情',
 })
 
 const nav = ref(['详情', '结算信息', '操作记录'])

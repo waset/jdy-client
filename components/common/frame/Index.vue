@@ -57,8 +57,8 @@ const value = defineModel()
 
 <style lang="scss" scoped>
 .row {
-  padding: 0 12px;
-  border-radius: 36px;
+  --uno: 'px-[12px] rounded-[36px] w-auto';
+
   &.disable {
     --uno: 'flex-between bg-[rgba(222,222,222,0.5)] border-[rgba(230,230,232,0.5)] border-1px border-solid dark:bg-[rgba(230,230,232,0.3)] dark:border-[rgba(230,230,232,0.3)]';
   }
@@ -69,9 +69,9 @@ const value = defineModel()
     background: transparent;
     --uno: 'border-none bg-transparent color-[#333] dark:color-[#fff]';
   }
+
   .nodis::placeholder {
-    color: #cbcdd1;
-    font-size: 14px;
+    ---uno: 'color-[#cbcdd1] font-size-[14px]';
   }
   .dis::placeholder {
     --uno: 'color-[#808089] font-size-[14px]';

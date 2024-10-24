@@ -56,7 +56,7 @@ const toggleFold = () => {
                     </div>
                   </div>
                 </nuxt-link>
-                <nuxt-link to="/sale/sales/order">
+                <nuxt-link to="/sale/sales/details">
                   <div class="list flex-center-row gap-[4px]">
                     <nuxt-img src="images/sale/sales-list.png" class="w-[32px] h-[32px]" />
                     <div class="title">

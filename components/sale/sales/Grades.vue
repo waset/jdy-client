@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// 会员卡片
 const props = defineProps<{
   memberInfo: MemberInfo
 }>()
