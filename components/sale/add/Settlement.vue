@@ -8,11 +8,22 @@ const actions = [
   { text: '支付宝' },
   { text: '现金' },
 ]
+
+const { $toast } = useNuxtApp()
+
 const getInitialItems = () => [{ id: 1, isPopoverVisible: false, actions, selected: '' }]
 const items = ref(getInitialItems())
 let id = items.value.length + 1
 
 const insertItem = () => {
+  if (items.value.length >= 3) {
+    $toast({
+      msg: '最多可选择3种支付方式',
+      ico: 'jdy:succeed',
+      type: 'warning',
+    })
+    return
+  }
   // 添加新的支付信息栏并初始化状态
   items.value.push({ id: id++, isPopoverVisible: false, actions, selected: '' })
 }
@@ -130,5 +141,10 @@ textarea::placeholder {
 .operation-enter-from,
 .operation-leave-to {
   --uno: 'translate-x-[30px] opacity-0';
+}
+
+textarea:focus {
+  outline: none;
+  border: 1px solid #3971f3;
 }
 </style>
