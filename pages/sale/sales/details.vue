@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // 销售明细页面
 
-// 测试数据。需删除替换
+// TODO: 后端接口返回数据后，替换以下数据
 const saleList: SalesSlip[] = [
   {
     num: 'CZ-32493974',
@@ -28,6 +28,24 @@ const saleList: SalesSlip[] = [
   },
 ]
 
+interface Pics {
+  url: string[]
+  data: string
+}
+const pics: Pics[] = [
+  {
+    url: [
+      'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg',
+      'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg',
+      'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg',
+      'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg',
+      'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg',
+      'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg',
+    ],
+    data: '2021-11-11 11:11:11',
+  },
+]
+
 const options = [
   {
     label: '销售明细',
@@ -40,6 +58,10 @@ const options = [
 ]
 
 const currentSelected = ref(1)
+
+const salesCards = resolveComponent('sale-sales-cards')
+// currentSelected.value = 2 切换到销售明细图
+const salesChart = resolveComponent('sale-sales-chart')
 </script>
 
 <template>
@@ -54,10 +76,11 @@ const currentSelected = ref(1)
       <!-- 切换tab -->
       <common-tab-secondary v-model:current-selected="currentSelected" :options="options" />
       <!-- content -->
-      <sale-sales-cards :info="saleList" />
+      <component
+        :is="currentSelected === 1 ? salesCards : salesChart"
+        :info="saleList"
+        :pics="pics"
+      />
     </div>
   </div>
 </template>
-
-<style scoped lang="scss">
-</style>

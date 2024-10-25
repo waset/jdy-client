@@ -1,0 +1,82 @@
+<script setup lang="ts">
+// TODO: 后端接口返回数据后，替换以下数据
+interface Pics {
+  url: string[]
+  data: string
+}
+const props = defineProps<{
+  pics: Pics[]
+}>()
+</script>
+
+<template>
+  <div>
+    <div class="chart flex flex-col bg-[#fff] rounded-[24px] overflow-hidden">
+      <template v-for="(item, index) in props.pics" :key="index">
+        <common-header-theme :title="item.data" />
+        <div class="grid grid-cols-2 gap-x-[12px] gap-y-[12px] px-[16px] py-[16px]" uno-lg="grid-cols-4 gap-[24px]" uno-md="grid-cols-3 gap-[24px]">
+          <template v-for="(url, index) in item.url" :key="index">
+            <div class="chart-item">
+              <div class="rounded-[24px]">
+                <nuxt-img :key="index" :src="url" class="flex items-center justify-center bg-[#fff] rounded-[8px] w-full" />
+              </div>
+              <div class="info">
+                <div class="item">
+                  <div class="title">
+                    名称
+                  </div>
+                  <div class="desc">
+                    足金999
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="title">
+                    条码
+                  </div>
+                  <div class="desc">
+                    jdy129712
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="title">
+                    金重
+                  </div>
+                  <div class="desc">
+                    12.9kg
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="title">
+                    款号
+                  </div>
+                  <div class="desc">
+                    暂无
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </template>
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.chart-item {
+  --uno: 'flex flex-col gap-[12px] bg-[#fff] rounded-[24px] overflow-hidden border-solid border-1 border-[#EFF0F6] dark:bg-[rgb(245,245,245,0.1)] rounded-[24px] shadow-[0_10px_20px_-7px_rgb(0,0,0,0.1)] gap-[12px] overflow-hidden dark:border-[rgb(239,240,246,0.1)] px-[16px] py-[16px]';
+}
+.info {
+  --uno: 'flex flex-col gap-[8px] border-t-[1px] border-t-solid border-t-[rgba(230,230,232,1)] pt-[12px]';
+
+  .item {
+    --uno: 'flex-center-between';
+    .title {
+      --uno: 'text-size-[14px] color-[#666] dark:color-[#CBCDD1]';
+    }
+    .desc {
+      --uno: 'text-size-[14px] color-[#333] dark:color-[#fff]';
+    }
+  }
+}
+</style>
