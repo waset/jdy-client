@@ -19,7 +19,7 @@ const insertItem = () => {
   if (items.value.length >= 3) {
     $toast({
       msg: '最多可选择3种支付方式',
-      ico: 'jdy:succeed',
+      ico: 'i-svg-succeed',
       type: 'warning',
     })
     return
@@ -144,7 +144,6 @@ textarea::placeholder {
 }
 
 textarea:focus {
-  outline: none;
-  border: 1px solid #3971f3;
+  --uno: 'border border-solid border-[1px] border-[#3971f3] outline-[none]';
 }
 </style>

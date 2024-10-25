@@ -62,15 +62,7 @@ const toastStyle: { [key in types]: Toasts } = {
   },
 }
 
-onMounted(() => {
-  if (props.duration) {
-    setTimeout(() => {
-      close()
-    }, props.duration)
-  }
-})
-
-const iconName = props.ico || 'jdy:succeed'
+const iconName = props.ico || 'i-icon-succeed'
 </script>
 
 <template>
@@ -78,20 +70,14 @@ const iconName = props.ico || 'jdy:succeed'
     <div class="rounded-[8px] w-80%" :style="{ backgroundColor: toastStyle[props.type].backgroundColor }">
       <div
         class="flex flex-row items-center gap-[12px] px-[12px] py-[12px]"
-        uno-lg="flex-center-row"
+        uno-lg="flex-center-row w-60%"
       >
         <div class="icon">
-          <template v-if="props.ico">
-            <icon
-              :name="iconName"
-              size="24"
-              class="rounded-[4px] w-[24px] h-[24px]"
-              :style="{ backgroundColor: toastStyle[props.type].iconBg, color: toastStyle[props.type].color }"
-            />
-          </template>
-          <template v-else>
-            <div class="w-[24px] h-[24px] rounded-[4px]" :style="{ backgroundColor: toastStyle[props.type].iconBg }" />
-          </template>
+          <div
+            class="rounded-[4px] w-[24px] h-[24px]"
+            :class="iconName"
+            :style="{ backgroundColor: toastStyle[props.type].iconBg, color: toastStyle[props.type].color }"
+          />
         </div>
         <div class="msg font-medium font-size-[14px]" :style="{ color: toastStyle[props.type].color }">
           {{ props.msg }}
