@@ -5,7 +5,7 @@ const props = defineProps<{
   size?: string | number
 }>()
 
-// const attrs = useAttrs()
+const attrs = useAttrs()
 // const customize = (content: string, _name: string, _prefix: string, _provider: string) => {
 //   if (!props.color)
 //     return content
@@ -20,6 +20,7 @@ const props = defineProps<{
   <client-only>
     <div
       class="icon"
+      v-bind="attrs"
       :style="{
         '--color': props.color,
         '--size': props.size ? `${props.size}px` : '16px',
@@ -32,6 +33,5 @@ const props = defineProps<{
 <style lang="scss" scoped>
 .icon {
   font-size: var(--size);
-  color: var(--color);
 }
 </style>

@@ -4,7 +4,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: {
-    enabled: false,
+    enabled: true,
   },
   ssr: true,
   modules: [
@@ -50,8 +50,8 @@ export default defineNuxtConfig({
   },
   Iconify: {
     convert: {
-      icon: 'assets/icons',
-      svg: {
+      svg: 'assets/icons',
+      icon: {
         path: 'assets/icons',
         noColor: true,
       },
