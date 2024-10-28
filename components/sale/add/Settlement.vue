@@ -87,8 +87,17 @@ function removeItem(item: { id: number }) {
           <template v-for="item in items" :key="item.id">
             <div class="flex flex-row items-end gap-[12px]">
               <van-popover
-                v-model:show="item.isPopoverVisible" :actions="item.actions" @select="(action) => {
-                  item.selected = action.text;
+                v-model:show="item.isPopoverVisible"
+                :actions="item.actions"
+                @select="(action) => {
+                  if (items.some(i => i !== item && i.selected === action.text)) {
+                    $toast({
+                      msg: '该支付方式已被选择',
+                      type: 'warning',
+                    })
+                    return
+                  }
+                  item.selected = action.text
                 }">
                 <template #reference>
                   <div class="refer">
