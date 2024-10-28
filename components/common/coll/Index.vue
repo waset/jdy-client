@@ -3,27 +3,34 @@ const isOpen = ref<boolean>(false)
 const toggleOpen = () => {
   isOpen.value = !isOpen.value
 }
+interface IList {
+  title: string
+  children: Array<{ title: string, enter: Array<{ name: string, path: string }> }>
+}
+const list = ref<IList[]>([{ title: '货品管理', children: [{ title: '成品', enter: [{ name: '成品列表', path: '/product/manage/list' }, { name: '成品列表', path: '/product/manage/list' }] }] }])
 </script>
 
 <template>
-  <div class="grid-12 px-[16px] py-[12px]">
-    <div class="grid-12 gap-[24px] col-12 " uno-sm="col-10 offset-1" uno-lg="col-8 offset-2" uno-xl="col-6 offset-3">
-      <div class="sm:col-12 lg:col-12 xl:col-6 col-12">
-        <div class=" rounded-[24px] overflow-hidden">
-          <div class="bg-gradient-linear-[90deg,#8CADF8,#D8E7FD] px-[16px] py-[8px] text-size-[14px] line-height-[20px] color-[#333] font-semibold flex-between" @click="toggleOpen()">
-            <slot name="title" />
-            <div>
-              <template v-if="isOpen">
-                <van-icon name="arrow-down" />
-              </template>
-              <template v-else>
-                <van-icon name="arrow-up" />
-              </template>
+  <div v-for="(item, index) in list" :key="index">
+    <div class="grid-12 px-[16px] py-[12px]">
+      <div class="grid-12 gap-[24px] col-12 " uno-sm="col-10 offset-1" uno-lg="col-8 offset-2" uno-xl="col-6 offset-3">
+        <div class="sm:col-12 lg:col-12 xl:col-6 col-12">
+          <div class=" rounded-[24px] overflow-hidden">
+            <div class="bg-gradient-linear-[90deg,#8CADF8,#D8E7FD] px-[16px] py-[8px] text-size-[14px] line-height-[20px] color-[#333] font-semibold flex-between" @click="toggleOpen()">
+              <slot name="title" :title="item.title" />
+              <div>
+                <template v-if="isOpen">
+                  <van-icon name="arrow-down" />
+                </template>
+                <template v-else>
+                  <van-icon name="arrow-up" />
+                </template>
+              </div>
             </div>
-          </div>
-          <div class="bg-[#DAE8FD] px-[16px]" :class="[isOpen ? 'block1' : 'hidden1']">
-            <div class=" pt-[12px] pb-[16px] text-size-[14px]" :class="[isOpen ? 'block2' : 'hidden2']">
-              <slot name="content" />
+            <div class="bg-[#DAE8FD] px-[16px]" :class="[isOpen ? 'block1' : 'hidden1']">
+              <div class=" pt-[12px] pb-[16px] text-size-[14px]" :class="[isOpen ? 'block2' : 'hidden2']">
+                <slot name="content" :content="item.children" />
+              </div>
             </div>
           </div>
         </div>
