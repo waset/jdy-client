@@ -7,8 +7,8 @@ const toggleOpen = () => {
 
 <template>
   <div class="grid-12 px-[16px] py-[12px]">
-    <div class="grid-12 gap-[24px] col-12 sm:col-8 sm:offset-2">
-      <div class="sm:col-12 lg:col-6 col-12">
+    <div class="grid-12 gap-[24px] col-12 " uno-sm="col-10 offset-1" uno-lg="col-8 offset-2" uno-xl="col-6 offset-3">
+      <div class="sm:col-12 lg:col-12 xl:col-6 col-12">
         <div class=" rounded-[24px] overflow-hidden">
           <div class="bg-gradient-linear-[90deg,#8CADF8,#D8E7FD] px-[16px] py-[8px] text-size-[14px] line-height-[20px] color-[#333] font-semibold flex-between" @click="toggleOpen()">
             <slot name="title" />

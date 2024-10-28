@@ -11,7 +11,7 @@ const subsearch = () => {
       <div class="col-1">
         <van-icon name="search" />
       </div>
-      <div class="text-size-[14px] line-height-[20px]  col-10 offset-2 sm:offset-1">
+      <div class="text-size-[14px] line-height-[20px] col-9 offset-2">
         <input
           v-model="searchKey" type="text" class="bg-transparent border-0 placeholder-text-[#fff] w-full" placeholder="搜索"
           @keyup.enter="subsearch()">
