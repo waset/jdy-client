@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/icon',
     '@nuxtjs/color-mode',
+    'nuxt-echarts',
   ],
   css: ['~/assets/css/main.scss'],
   vite: {
@@ -58,5 +59,9 @@ export default defineNuxtConfig({
         dir: 'assets/icons',
       },
     ],
+  },
+  echarts: {
+    charts: ['BarChart', 'LineChart', 'PieChart'],
+    components: ['DatasetComponent', 'GridComponent', 'TooltipComponent', 'LegendComponent'],
   },
 })
