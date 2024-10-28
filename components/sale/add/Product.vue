@@ -6,29 +6,27 @@ const handleClick = async () => {
 </script>
 
 <template>
-  <div class="px-[16px]">
-    <common-fold title="产品信息" :is-collapse="false">
-      <common-empty />
-      <div class="p-[16px]">
-        <div class="btn grid-12 gap-[20px]">
-          <div class="btn-left col-span-4 offset-2">
-            <icon name="jdy:search" size="12" />
-            <div class="ml-2" @click="handleClick()">
-              搜商品
-            </div>
+  <common-fold title="产品信息" :is-collapse="false">
+    <common-empty />
+    <div class="p-[16px]">
+      <div class="btn grid-12 gap-[20px]">
+        <div class="btn-left col-span-4 offset-2">
+          <icon name="jdy:search" size="12" />
+          <div class="ml-2" @click="handleClick()">
+            搜商品
           </div>
-          <div
-            class="btn-right col-span-4"
-          >
-            <icon name="jdy:scanit" size="12" />
-            <div class="ml-2">
-              扫商品
-            </div>
+        </div>
+        <div
+          class="btn-right col-span-4"
+        >
+          <icon name="jdy:scanit" size="12" />
+          <div class="ml-2">
+            扫商品
           </div>
         </div>
       </div>
-    </common-fold>
-  </div>
+    </div>
+  </common-fold>
 </template>
 
 <style lang="scss" scoped>
