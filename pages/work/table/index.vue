@@ -5,11 +5,6 @@ definePageMeta({
 useSeoMeta({
   title: '工作台',
 })
-interface IList {
-  title: string
-  children: Array<{ title: string, enter: Array<{ name: string, path: string }> }>
-}
-const list = ref<IList[]>([{ title: '货品管理', children: [{ title: '成品', enter: [{ name: '成品列表', path: '/product/manage/list' }, { name: '成品列表', path: '/product/manage/list' }] }] }])
 </script>
 
 <template>
@@ -22,18 +17,17 @@ const list = ref<IList[]>([{ title: '货品管理', children: [{ title: '成品'
         <product-filter-search />
       </div>
     </div>
-    <template v-for="(item, index) in list" :key="index">
-      <common-coll>
-        <template #title>
-          <div>{{ item.title }}</div>
-        </template>
-        <template #content>
-          <div class="">
-            <work-card-enter :content="item.children" />
-          </div>
-        </template>
-      </common-coll>
-    </template>
+
+    <common-coll>
+      <template #title="{ title }">
+        <div>{{ title }}</div>
+      </template>
+      <template #content="{ content }">
+        <div class="">
+          <work-card-enter :content="content" />
+        </div>
+      </template>
+    </common-coll>
 
     <common-tabbar text="table" />
   </div>
