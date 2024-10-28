@@ -31,6 +31,12 @@ const saleList: SalesSlip[] = [
     slipStatus: 2,
   },
 ]
+
+const handleClick = async () => {
+// 跳转到详情页
+// this.$router.push({name: 'SalesOrder', params: {id: item.id}})
+  await navigateTo('/sale/sales/order')
+}
 </script>
 
 <template>
@@ -49,7 +55,10 @@ const saleList: SalesSlip[] = [
         <product-filter-senior />
       </div>
       <!-- cards -->
-      <sale-sales-cards :info="saleList" />
+      <sale-sales-list :info="saleList" @user-click="handleClick()" />
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+</style>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// 销售明细图_组件
 // TODO: 后端接口返回数据后，替换以下数据
 interface Pics {
   url: string[]
@@ -15,7 +16,7 @@ const props = defineProps<{
       <template v-for="(item, index) in props.pics" :key="index">
         <common-header-theme :title="item.data" />
         <div class="grid grid-cols-2 gap-x-[12px] gap-y-[12px] px-[16px] py-[16px]" uno-lg="grid-cols-4 gap-[24px]" uno-md="grid-cols-3 gap-[24px]">
-          <template v-for="(url, index) in item.url" :key="index">
+          <template v-for="(url, urlIndex) in item.url" :key="urlIndex">
             <div class="chart-item">
               <div class="rounded-[24px]">
                 <nuxt-img :key="index" :src="url" class="flex items-center justify-center bg-[#fff] rounded-[8px] w-full" />

@@ -1,7 +1,10 @@
 <script setup lang="ts">
 // 销售明细页面
+useSeoMeta({
+  title: '销售明细',
+})
 
-// TODO: 后端接口返回数据后，替换以下数据
+// 测试数据。待删除
 const saleList: SalesSlip[] = [
   {
     num: 'CZ-32493974',
@@ -22,12 +25,11 @@ const saleList: SalesSlip[] = [
     discountAmount: '100',
     oldDiscountAmount: '20',
     integral: '32',
-    openType: '线下开单',
+    openType: '已回收',
     createTime: '2021-11-11 11:11:11',
     slipStatus: 2,
   },
 ]
-
 interface Pics {
   url: string[]
   data: string
@@ -57,11 +59,17 @@ const options = [
   },
 ]
 
+const handleClick = async () => {
+// 跳转到详情页
+// this.$router.push({name: 'SalesOrder', params: {id: item.id}})
+  await navigateTo('/sale/sales/order')
+}
+
 const currentSelected = ref(1)
 
-const salesCards = resolveComponent('sale-sales-cards')
-// currentSelected.value = 2 切换到销售明细图
-const salesChart = resolveComponent('sale-sales-chart')
+const detailsCards = resolveComponent('sale-sales-details')
+// currentSelected.value = 2 时，切换到销售明细图
+const detailsChart = resolveComponent('sale-sales-chart')
 </script>
 
 <template>
@@ -77,9 +85,10 @@ const salesChart = resolveComponent('sale-sales-chart')
       <common-tab-secondary v-model:current-selected="currentSelected" :options="options" />
       <!-- content -->
       <component
-        :is="currentSelected === 1 ? salesCards : salesChart"
+        :is="currentSelected === 1 ? detailsCards : detailsChart"
         :info="saleList"
         :pics="pics"
+        @click="handleClick()"
       />
     </div>
   </div>
