@@ -18,16 +18,11 @@ interface Props {
   type?: 'text' | 'password' | 'number' | 'tel' | 'email' | 'url' | 'date' | 'time' | 'datetime-local' | 'month' | 'week' | 'search' | 'color'
   fontSize?: string
   isIcon?: boolean
-  /**
-   * 输入框高度
-   */
-  height?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   type: 'text',
   fontSize: '14px',
-  height: '32px',
 })
 
 const value = defineModel()
@@ -36,7 +31,7 @@ const value = defineModel()
 <template>
   <div
     class="row"
-    :class="props.disabledStyle ? 'disable' : 'nodisable'" :style="{ fontSize, height: props.height }"
+    :class="props.disabledStyle ? 'disable' : 'nodisable'" :style="{ fontSize }"
   >
     <div class="flex items-center">
       <slot name="left" />
@@ -57,7 +52,7 @@ const value = defineModel()
 
 <style lang="scss" scoped>
 .row {
-  --uno: 'px-[12px] rounded-[36px] w-auto';
+  --uno: 'px-[12px] py-[10px] rounded-[36px] w-auto';
 
   &.disable {
     --uno: 'flex-between bg-[rgba(222,222,222,0.5)] border-[rgba(230,230,232,0.5)] border-1px border-solid dark:bg-[rgba(230,230,232,0.3)] dark:border-[rgba(230,230,232,0.3)]';

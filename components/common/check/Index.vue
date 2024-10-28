@@ -8,7 +8,7 @@ const props = withDefaults(defineProps<{
 }>(), {
   rounded: '60px',
 })
-const checked = defineModel<boolean>('checked')
+const checked = defineModel({ type: Boolean, default: false })
 
 function toggleCheck() {
   checked.value = !checked.value
