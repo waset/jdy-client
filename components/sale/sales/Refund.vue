@@ -1,0 +1,70 @@
+<script setup lang="ts">
+// 退货明细
+const props = defineProps<{
+  info: SalesSlip[]
+}>()
+
+const emit = defineEmits(['userClick'])
+const handleClick = () => {
+  emit('userClick')
+}
+</script>
+
+<template>
+  <div class="flex flex-col gap-[16px]">
+    <template v-for="(item, index) in props.info" :key="index">
+      <sale-cards :title="item.num">
+        <template #info>
+          <div class="grid grid-cols-1 gap-[12px]">
+            <!-- 是否有图片 -->
+            <template v-if="item.img">
+              <img :src="item.img" class="w-[48px] h-[48px] rounded-[4px]">
+            </template>
+            <div class="info">
+              <div class="part">
+                <span class="part-left">所属门店</span>
+                <span class="part-right">{{ item.store.name || '--' }}</span>
+              </div>
+              <div class="part">
+                <span class="part-left">会员</span>
+                <span class="part-right">{{ item.member.nickname || '--' }}</span>
+              </div>
+              <div class="part">
+                <span class="part-left">会员手机</span>
+                <span class="part-right">{{ item.member.phone || '--' }}</span>
+              </div>
+              <div class="part">
+                <span class="part-left">来源销售单</span>
+                <span class="part-right">{{ item.mainSalesman || '--' }}</span>
+              </div>
+            </div>
+          </div>
+        </template>
+        <template #footer>
+          <!-- 操作按钮 -->
+          <div class="flex-center-row bg-[#F3F5FE] rounded-b-[24px] px-[16px] py-[8px] dark:bg-[rgba(243,245,254,0.1)]">
+            <div class="info color-[#3971F3] text-size-[14px] font-semibold dark:color-[#fff]" @click="handleClick()">
+              查看详情
+            </div>
+          </div>
+        </template>
+      </sale-cards>
+    </template>
+  </div>
+</template>
+
+<style scoped lang="scss">
+  .info {
+  --uno: 'flex flex-col gap-[12px] px-[16px]';
+
+  .part {
+    --uno: 'flex-center-between';
+    &-left {
+      --uno: 'text-size-[14px] color-[#666] dark:color-[#CBCDD1]';
+    }
+    &-right {
+      --uno: 'text-size-[14px] color-[#333] dark:color-[#fff]';
+    }
+  }
+}
+</style>
