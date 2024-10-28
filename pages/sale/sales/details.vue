@@ -88,7 +88,7 @@ const detailsChart = resolveComponent('sale-sales-chart')
         :is="currentSelected === 1 ? detailsCards : detailsChart"
         :info="saleList"
         :pics="pics"
-        @user-click="handleClick()"
+        @user-click="handleClick"
       />
     </div>
   </div>

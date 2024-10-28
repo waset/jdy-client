@@ -47,7 +47,7 @@ const handleClick = async () => {
         <product-filter-senior class="color-[#fff]" />
       </div>
       <!-- content -->
-      <sale-deposit-list :info="depositList" @user-click="handleClick()" />
+      <sale-deposit-list :info="depositList" @user-click="handleClick" />
     </div>
   </div>
 </template>

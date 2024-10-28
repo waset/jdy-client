@@ -55,7 +55,7 @@ const handleClick = async () => {
         <product-filter-senior />
       </div>
       <!-- cards -->
-      <sale-sales-list :info="saleList" @user-click="handleClick()" />
+      <sale-sales-list :info="saleList" @user-click="handleClick" />
     </div>
   </div>
 </template>

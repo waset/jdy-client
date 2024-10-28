@@ -32,7 +32,6 @@ const refundDetail: SalesSlip[] = [
 
 const handleClick = async () => {
 // 跳转到详情页
-// this.$router.push({name: 'SalesOrder', params: {id: item.id}})
   await navigateTo('/sale/sales/order')
 }
 </script>
@@ -47,7 +46,7 @@ const handleClick = async () => {
         <product-filter-senior class="color-[#fff]" />
       </div>
       <!-- content -->
-      <sale-sales-refund :info="refundDetail" @user-click="handleClick()" />
+      <sale-sales-refund :info="refundDetail" @user-click="handleClick" />
     </div>
   </div>
 </template>

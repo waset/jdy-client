@@ -32,7 +32,7 @@ const handleClick = async () => {
       <!-- 搜索组件 -->
       <div class="search-header flex flex-row gap-[12px] px-[16px]">
         <product-filter-search class="flex-1" />
-        <sale-plusminus @button-click="handleClick()" />
+        <sale-plusminus @button-click="handleClick" />
       </div>
       <!-- 文本信息 -->
       <div class="flex flex-row gap-[4px] items-center color-[#fff] font-size-[14px] px-[16px]">
