@@ -31,7 +31,7 @@
     "@vant/nuxt": "^1.0.6",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
-    "@waset/unplugin-iconify": "1.1.1",
+    "@waset/unplugin-iconify": "1.2.0",
     "eslint-plugin-format": "^0.1.2",
     "lint-staged": "^15.2.10",
     "pinia-plugin-persistedstate": "^4.0.2",

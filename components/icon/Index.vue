@@ -6,17 +6,9 @@ const props = defineProps<{
 }>()
 
 const attrs = useAttrs()
-// const customize = (content: string, _name: string, _prefix: string, _provider: string) => {
-//   if (!props.color)
-//     return content
-
-//   return content
-//     .replace(/fill="[^"]*"/g, `fill="currentColor"`)
-// }
 </script>
 
 <template>
-  <!-- <nuxt-icon :name="props.name" v-bind="attrs" :customize="customize" :style="{ color: props.color }" /> -->
   <client-only>
     <div
       class="icon"
@@ -33,5 +25,6 @@ const attrs = useAttrs()
 <style lang="scss" scoped>
 .icon {
   font-size: var(--size);
+  color: var(--color);
 }
 </style>

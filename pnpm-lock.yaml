@@ -52,8 +52,8 @@ importers:
         specifier: ^11.1.0
         version: 11.1.0(magicast@0.3.5)(nuxt@3.13.2(@parcel/watcher@2.4.1)(@types/node@22.7.7)(eslint@9.11.1(jiti@2.3.3))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.22.4)(sass@1.80.1)(terser@5.36.0)(typescript@5.6.2)(vite@5.4.8(@types/node@22.7.7)(sass@1.80.1)(terser@5.36.0))(webpack-sources@3.2.3))(rollup@4.22.4)(vue@3.5.12(typescript@5.6.2))(webpack-sources@3.2.3)
       '@waset/unplugin-iconify':
-        specifier: 1.1.1
-        version: 1.1.1(@nuxt/kit@3.13.2(magicast@0.3.5)(rollup@4.22.4)(webpack-sources@3.2.3))(@nuxt/schema@3.13.2(rollup@4.22.4)(webpack-sources@3.2.3))(esbuild@0.23.1)(rollup@4.22.4)(vite@5.4.8(@types/node@22.7.7)(sass@1.80.1)(terser@5.36.0))(webpack-sources@3.2.3)(webpack@5.95.0(esbuild@0.23.1))
+        specifier: 1.2.0
+        version: 1.2.0(@nuxt/kit@3.13.2(magicast@0.3.5)(rollup@4.22.4)(webpack-sources@3.2.3))(@nuxt/schema@3.13.2(rollup@4.22.4)(webpack-sources@3.2.3))(esbuild@0.23.1)(rollup@4.22.4)(vite@5.4.8(@types/node@22.7.7)(sass@1.80.1)(terser@5.36.0))(webpack-sources@3.2.3)(webpack@5.95.0(esbuild@0.23.1))
       eslint-plugin-format:
         specifier: ^0.1.2
         version: 0.1.2(eslint@9.11.1(jiti@2.3.3))
@@ -1365,9 +1365,6 @@ packages:
   '@types/ms@0.7.34':
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
 
-  '@types/node@22.7.3':
-    resolution: {integrity: sha512-qXKfhXXqGTyBskvWEzJZPUxSslAiLaB6JGP1ic/XTH9ctGgzdgYguuLP1C601aRTSDNlLb0jbKqXjZ48GNraSA==}
-
   '@types/node@22.7.7':
     resolution: {integrity: sha512-SRxCrrg9CL/y54aiMCG3edPKdprgMVGDXjA3gB8UmmBW5TcXzRUYAh8EWzTnSJFAd1rgImPELza+A3bJ+qxz8Q==}
 
@@ -1775,8 +1772,8 @@ packages:
   '@vueuse/shared@11.1.0':
     resolution: {integrity: sha512-YUtIpY122q7osj+zsNMFAfMTubGz0sn5QzE5gPzAIiCmtt2ha3uQUY1+JPyL4gRCTsLPX82Y9brNbo/aqlA91w==}
 
-  '@waset/unplugin-iconify@1.1.1':
-    resolution: {integrity: sha512-97MtOkJtjJPZ9ABRxr5XpMz0OlZ9CENijkybcpG/qsXhxNYukQbSTC3C5IZLYD8phu2htPA8237e7jy56et/hA==}
+  '@waset/unplugin-iconify@1.2.0':
+    resolution: {integrity: sha512-hNOZ0ro3L7y0UpDqrHY+3FSMxHQwur6ngJBS5Dncha14OWEaAL1yd3sbzIivkHUGg23sTmTyrEhEtsJ4Kf9WRg==}
     peerDependencies:
       '@farmfe/core': '>=1'
       '@nuxt/kit': ^3
@@ -6812,7 +6809,7 @@ snapshots:
 
   '@types/http-proxy@1.17.15':
     dependencies:
-      '@types/node': 22.7.3
+      '@types/node': 22.7.7
 
   '@types/json-schema@7.0.15': {}
 
@@ -6821,10 +6818,6 @@ snapshots:
       '@types/unist': 3.0.3
 
   '@types/ms@0.7.34': {}
-
-  '@types/node@22.7.3':
-    dependencies:
-      undici-types: 6.19.8
 
   '@types/node@22.7.7':
     dependencies:
@@ -7297,8 +7290,8 @@ snapshots:
     dependencies:
       '@mapbox/node-pre-gyp': 1.0.11
       '@rollup/pluginutils': 4.2.1
-      acorn: 8.12.1
-      acorn-import-attributes: 1.9.5(acorn@8.12.1)
+      acorn: 8.13.0
+      acorn-import-attributes: 1.9.5(acorn@8.13.0)
       async-sema: 3.1.1
       bindings: 1.5.0
       estree-walker: 2.0.2
@@ -7528,7 +7521,7 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@waset/unplugin-iconify@1.1.1(@nuxt/kit@3.13.2(magicast@0.3.5)(rollup@4.22.4)(webpack-sources@3.2.3))(@nuxt/schema@3.13.2(rollup@4.22.4)(webpack-sources@3.2.3))(esbuild@0.23.1)(rollup@4.22.4)(vite@5.4.8(@types/node@22.7.7)(sass@1.80.1)(terser@5.36.0))(webpack-sources@3.2.3)(webpack@5.95.0(esbuild@0.23.1))':
+  '@waset/unplugin-iconify@1.2.0(@nuxt/kit@3.13.2(magicast@0.3.5)(rollup@4.22.4)(webpack-sources@3.2.3))(@nuxt/schema@3.13.2(rollup@4.22.4)(webpack-sources@3.2.3))(esbuild@0.23.1)(rollup@4.22.4)(vite@5.4.8(@types/node@22.7.7)(sass@1.80.1)(terser@5.36.0))(webpack-sources@3.2.3)(webpack@5.95.0(esbuild@0.23.1))':
     dependencies:
       '@iconify/tools': 4.0.7
       jsonc-parser: 3.3.1
@@ -7630,10 +7623,6 @@ snapshots:
   abort-controller@3.0.0:
     dependencies:
       event-target-shim: 5.0.1
-
-  acorn-import-attributes@1.9.5(acorn@8.12.1):
-    dependencies:
-      acorn: 8.12.1
 
   acorn-import-attributes@1.9.5(acorn@8.13.0):
     dependencies:
@@ -9918,7 +9907,7 @@ snapshots:
 
   mlly@1.7.1:
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.13.0
       pathe: 1.1.2
       pkg-types: 1.2.1
       ufo: 1.5.4
@@ -11081,7 +11070,7 @@ snapshots:
       css-tree: 2.3.1
       css-what: 6.1.0
       csso: 5.0.5
-      picocolors: 1.1.0
+      picocolors: 1.1.1
 
   synckit@0.6.2:
     dependencies:
@@ -11156,7 +11145,7 @@ snapshots:
   terser@5.34.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.12.1
+      acorn: 8.13.0
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -11255,7 +11244,7 @@ snapshots:
 
   unctx@2.3.1(webpack-sources@3.2.3):
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.13.0
       estree-walker: 3.0.3
       magic-string: 0.30.11
       unplugin: 1.14.1(webpack-sources@3.2.3)
@@ -11290,7 +11279,7 @@ snapshots:
   unimport@3.13.0(rollup@4.22.4)(webpack-sources@3.2.3):
     dependencies:
       '@rollup/pluginutils': 5.1.2(rollup@4.22.4)
-      acorn: 8.12.1
+      acorn: 8.13.0
       escape-string-regexp: 5.0.0
       estree-walker: 3.0.3
       fast-glob: 3.3.2
@@ -11398,7 +11387,7 @@ snapshots:
 
   unplugin@1.14.1(webpack-sources@3.2.3):
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.13.0
       webpack-virtual-modules: 0.6.2
     optionalDependencies:
       webpack-sources: 3.2.3
