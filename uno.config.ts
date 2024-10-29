@@ -31,8 +31,8 @@ export default defineConfig({
       width: size,
       height: size,
     })],
-    [/^bg-gradient-linear-\[(\d{1,3}deg),(.*)\]$/, ([, angle, colors]) => ({
-      background: `linear-gradient(${angle}, ${colors})`,
+    [/^bg-gradient-linear-\[(\d{1,3}deg),\s*([^,\s]+(?:\s*,\s*[^,\s]+)*)\]$/, ([, angle, colors]) => ({
+      background: `linear-gradient(${angle}, ${colors.split(/\s*,\s*/).join(', ')})`,
     })],
     [/^(col)-(\d+)$/, ([, _, num]) => {
       return {

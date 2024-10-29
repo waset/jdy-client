@@ -93,15 +93,6 @@ const list = [{
 </template>
 
 <style lang="scss" scoped>
-.skew {
-  --uno: 'h-[29px] relative';
-  .skew-right {
-    --uno: 'absolute left-[10px] w-[80%] h-[100%] bg-gradient-linear-[90deg,#1a6beb,#69a2fe]  skew-x-335';
-  }
-  .skew-text {
-    --uno: 'line-height-[29px] absolute text-size-xl text-center  w-[80%] h-[100%]  color-[#fff] bg-gradient-linear-[90deg,#1a6beb,#619cfc] rounded-tl-16px ';
-  }
-}
 .ti-row {
   --uno: 'flex-start h-85px sm:h-75px relative ';
   .ti-right {
