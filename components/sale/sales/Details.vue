@@ -4,9 +4,9 @@ const props = defineProps<{
   info: SalesSlip[]
 }>()
 
-const emit = defineEmits(['userClick'])
+const emits = defineEmits(['userClick'])
 const handleClick = () => {
-  emit('userClick')
+  emits('userClick')
 }
 </script>
 

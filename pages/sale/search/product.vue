@@ -3,6 +3,7 @@
 useSeoMeta({
   title: '商品列表',
 })
+const hasCheck = ref(true)
 </script>
 
 <template>
@@ -21,17 +22,7 @@ useSeoMeta({
       <!-- card -->
       <div class="flex flex-col gap-[16px] px-[16px]">
         <!-- 成品 -->
-        <sale-order-finished>
-          <template #checkbox>
-            <common-check rounded="8px" />
-          </template>
-        </sale-order-finished>
-        <!-- 配件 -->
-        <sale-order-accessory>
-          <template #checkbox>
-            <common-check rounded="8px" />
-          </template>
-        </sale-order-accessory>
+        <sale-order-product v-model="hasCheck" />
       </div>
       <!-- 操作栏 -->
       <div class="h-[80px]">

@@ -4,9 +4,9 @@ const props = defineProps<{
   info: SalesSlip[]
 }>()
 
-const emit = defineEmits(['userClick'])
+const emits = defineEmits(['userClick'])
 const handleClick = () => {
-  emit('userClick')
+  emits('userClick')
 }
 </script>
 
@@ -15,28 +15,22 @@ const handleClick = () => {
     <template v-for="(item, index) in props.info" :key="index">
       <sale-cards :title="item.num">
         <template #info>
-          <div class="grid grid-cols-1 gap-[12px]">
-            <!-- 是否有图片 -->
-            <template v-if="item.img">
-              <img :src="item.img" class="w-[48px] h-[48px] rounded-[4px]">
-            </template>
-            <div class="info">
-              <div class="part">
-                <span class="part-left">所属门店</span>
-                <span class="part-right">{{ item.store.name || '--' }}</span>
-              </div>
-              <div class="part">
-                <span class="part-left">会员</span>
-                <span class="part-right">{{ item.member.nickname || '--' }}</span>
-              </div>
-              <div class="part">
-                <span class="part-left">会员手机</span>
-                <span class="part-right">{{ item.member.phone || '--' }}</span>
-              </div>
-              <div class="part">
-                <span class="part-left">来源销售单</span>
-                <span class="part-right">{{ item.mainSalesman || '--' }}</span>
-              </div>
+          <div class="info">
+            <div class="part">
+              <span class="part-left">所属门店</span>
+              <span class="part-right">{{ item.store.name || '--' }}</span>
+            </div>
+            <div class="part">
+              <span class="part-left">会员</span>
+              <span class="part-right">{{ item.member.nickname || '--' }}</span>
+            </div>
+            <div class="part">
+              <span class="part-left">会员手机</span>
+              <span class="part-right">{{ item.member.phone || '--' }}</span>
+            </div>
+            <div class="part">
+              <span class="part-left">来源销售单</span>
+              <span class="part-right">{{ item.mainSalesman || '--' }}</span>
             </div>
           </div>
         </template>

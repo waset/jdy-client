@@ -1,15 +1,14 @@
 <script setup lang="ts">
-// 销售明细_产品信息_配件
+// 产品信息组件
+const hasCheck = defineModel({ type: Boolean, default: false })
+const hasTag = ref(true)
 </script>
 
 <template>
   <div>
-    <sale-order-nesting title="配件">
-      <template #check>
-        <slot name="checkbox" />
-      </template>
+    <sale-order-nesting v-model="hasCheck" :has-tag="hasTag" title="成品">
       <template #tag>
-        <common-tags type="orange" text="配件" :is-oval="true" />
+        <common-tags type="pink" text="成品" :is-oval="true" />
       </template>
       <template #info>
         <div class="flex flex-col gap-[12px] px-[16px]">
@@ -21,7 +20,7 @@
                   条码
                 </div>
                 <div class="text-[14px] font-medium text-[#3971F3] dark:text-[#6EA6FF]">
-                  --
+                  s123901287
                 </div>
               </div>
               <div class="content">
