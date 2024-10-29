@@ -2,6 +2,7 @@
 // 通用_列表_卡片
 const props = defineProps<{
   title: string
+  info: SalesSlip
   tagText?: string
 }>()
 </script>
@@ -21,9 +22,7 @@ const props = defineProps<{
       </template>
     </div>
     <!-- info -->
-    <slot name="info" />
-    <!-- footer -->
-    <slot name="footer" />
+    <slot :card-info="props.info" />
   </div>
 </template>
 

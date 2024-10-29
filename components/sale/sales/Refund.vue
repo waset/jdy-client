@@ -13,29 +13,30 @@ const handleClick = () => {
 <template>
   <div class="flex flex-col gap-[16px]">
     <template v-for="(item, index) in props.info" :key="index">
-      <sale-cards :title="item.num">
-        <template #info>
-          <div class="info">
-            <div class="part">
-              <span class="part-left">所属门店</span>
-              <span class="part-right">{{ item.store.name || '--' }}</span>
+      <sale-cards :title="item.num" :tag-text="item.openType" :info="item">
+        <template #default="slotProps">
+          <template v-for="(result, ind) in slotProps" :key="ind">
+            <div class="grid grid-cols-1 gap-[12px]">
+              <div class="info">
+                <div class="part">
+                  <span class="part-left">所属门店</span>
+                  <span class="part-right">{{ result.store.name || '--' }}</span>
+                </div>
+                <div class="part">
+                  <span class="part-left">会员</span>
+                  <span class="part-right">{{ result.member.nickname || '--' }}</span>
+                </div>
+                <div class="part">
+                  <span class="part-left">会员手机</span>
+                  <span class="part-right">{{ result.member.phone || '--' }}</span>
+                </div>
+                <div class="part">
+                  <span class="part-left">主销</span>
+                  <span class="part-right">{{ result.mainSalesman || '--' }}</span>
+                </div>
+              </div>
             </div>
-            <div class="part">
-              <span class="part-left">会员</span>
-              <span class="part-right">{{ item.member.nickname || '--' }}</span>
-            </div>
-            <div class="part">
-              <span class="part-left">会员手机</span>
-              <span class="part-right">{{ item.member.phone || '--' }}</span>
-            </div>
-            <div class="part">
-              <span class="part-left">来源销售单</span>
-              <span class="part-right">{{ item.mainSalesman || '--' }}</span>
-            </div>
-          </div>
-        </template>
-        <template #footer>
-          <!-- 操作按钮 -->
+          </template>
           <div class="flex-center-row bg-[#F3F5FE] rounded-b-[24px] px-[16px] py-[8px] dark:bg-[rgba(243,245,254,0.1)]">
             <div class="info color-[#3971F3] text-size-[14px] font-semibold dark:color-[#fff]" @click="handleClick">
               查看详情
