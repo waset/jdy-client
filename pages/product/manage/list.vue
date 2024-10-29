@@ -9,7 +9,15 @@ useSeoMeta({
 <template>
   <div>
     <!-- 筛选 -->
-    <product-filter v-model:id="complate" v-model:search="searchKey" />
+    <product-filter
+      v-model:id="complate" v-model:search="searchKey">
+      <template #company>
+        <product-manage-company
+          @click="() => {
+            console.log(123);
+          }" />
+      </template>
+    </product-filter>
     <!-- 小卡片组件 -->
     <div class="px-[16px]">
       <product-manage-card />

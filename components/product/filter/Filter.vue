@@ -6,7 +6,7 @@ const search = defineModel('search')
   <div class="grid-12 py-[12px] px-[16px] color-[#Fff]">
     <div class="col-12 grid-12 lg:col-8 lg:offset-2">
       <div class="col-4 ">
-        <product-manage-company />
+        <slot name="company" />
       </div>
       <div class="col-7  offset-5">
         <product-filter-search v-model:search-key="search" />
