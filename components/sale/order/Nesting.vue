@@ -1,6 +1,12 @@
 <script setup lang="ts">
+// 测试数据。待删除
+interface ProductInfo {
+  name: string
+  desc: string
+}
 const props = defineProps<{
   title: string
+  info: ProductInfo[]
 }>()
 
 const folded = ref(true)
@@ -36,7 +42,7 @@ const toggleFold = () => {
     </div>
     <!-- info -->
     <template v-if="folded">
-      <slot name="info" />
+      <slot :info="props.info" />
     </template>
   </div>
 </template>
