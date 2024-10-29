@@ -31,6 +31,9 @@ const option = ref({
     itemWidth: 8, // 设置圆形的宽度
     itemHeight: 8,
     margin: [40, 0],
+    textStyle: {
+      color: '#666666',
+    },
   },
   xAxis: {
     type: 'category',
