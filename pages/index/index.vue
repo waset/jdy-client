@@ -6,11 +6,10 @@ definePageMeta({
 useSeoMeta({
   title: '待办',
 })
-// const useUser = useDemo()
+const User = useUser()
 
 onMounted(async () => {
-//   const data = await useUser.increment()
-//   console.log(data, 'data')
+  await User.increment()
 })
 interface DemoItem { title: string, number: number }
 

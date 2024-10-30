@@ -1,26 +1,20 @@
-export const useDemo = defineStore('demoStore', () => {
-  interface Result {
-    id: string
-    name: string
-    tags: string
-  }
+export const useUser = defineStore('userStore', {
+  state: () => {
+    return {
+      num: 1,
+    }
+  },
+  getters: {
 
-  const number = ref<number>(0)
-  const username = ref(0)
-  const result = ref<Result>()
-  const increment = async () => {
-    return await post<Result>('/submit', { username: 'test' }, true).then((res) => {
-      result.value = res
-      return res
-    })
-  }
-
-  return {
-    number,
-    username,
-    increment,
-  }
-}, {
+  },
+  actions: {
+    async increment() {
+      https.setAuthToken('1111111111111')
+      await https.post('/submit', { username: 'test' }, true).then((res) => {
+        console.log(res)
+      })
+    },
+  },
   persist: {
     storage: {
       getItem(key) {
