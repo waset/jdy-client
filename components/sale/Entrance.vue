@@ -1,14 +1,5 @@
 <script setup lang="ts">
 // 销售管理入口页
-
-// 定义标题文本
-enum Title {
-  SaleItem = '销售',
-  DepositItem = '订金单',
-  RepairItem = '维修单',
-  OtherItem = '其他收支单',
-}
-
 const isFold = defineModel({ type: Boolean, default: false })
 
 const toggleFold = () => {
@@ -35,7 +26,7 @@ const toggleFold = () => {
           <div class="flex flex-col gap-[24px] py-[16px]">
             <div class="flex flex-col gap-[16px] px-4">
               <div class="text-[12px] font-semibold color-[#333] dark:color-[#fff]">
-                {{ Title.SaleItem }}
+                销售
               </div>
               <!-- 分割线 -->
               <div class="line" />
@@ -77,7 +68,7 @@ const toggleFold = () => {
             <!-- 订金单列表项 -->
             <div class="flex flex-col gap-[16px] px-4">
               <div class="text-[12px] font-semibold color-[#333] dark:color-[#fff]">
-                {{ Title.DepositItem }}
+                订金单
               </div>
               <!-- 分割线 -->
               <div class="line" />
@@ -87,6 +78,24 @@ const toggleFold = () => {
                     <nuxt-img src="images/sale/sales-list.png" class="w-[32px] h-[32px]" />
                     <div class="title">
                       订金单列表
+                    </div>
+                  </div>
+                </nuxt-link>
+              </div>
+            </div>
+            <!-- 维修单列表项 -->
+            <div class="flex flex-col gap-[16px] px-4">
+              <div class="text-[12px] font-semibold color-[#333] dark:color-[#fff]">
+                维修单
+              </div>
+              <!-- 分割线 -->
+              <div class="line" />
+              <div class="sector grid-rows-1">
+                <nuxt-link to="/sale/repair/list">
+                  <div class="flex-center-row gap-[4px]">
+                    <nuxt-img src="images/sale/sales-list.png" class="w-[32px] h-[32px]" />
+                    <div class="title">
+                      维修单列表
                     </div>
                   </div>
                 </nuxt-link>

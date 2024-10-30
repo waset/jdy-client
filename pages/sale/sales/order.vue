@@ -59,9 +59,7 @@ const toggleFold = () => {
         <template v-if="isFold">
           <div class="flex flex-col gap-[12px] px-[16px] py-[16px]">
             <!-- 成品 -->
-            <sale-order-finished />
-            <!-- 配件 -->
-            <sale-order-accessory />
+            <sale-order-product />
           </div>
         </template>
       </div>

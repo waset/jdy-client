@@ -7,9 +7,9 @@ const props = withDefaults(defineProps<{
   isFull: false,
 })
 
-const emit = defineEmits(['onButtonClick'])
+const emits = defineEmits(['onButtonClick'])
 const handleClick = () => {
-  emit('onButtonClick')
+  emits('onButtonClick')
 }
 
 const colorStyle = props.isFull ? '#0068FF' : '#fff'

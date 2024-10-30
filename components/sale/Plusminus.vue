@@ -15,10 +15,10 @@ const props = withDefaults(defineProps<{
   isAdd: true,
 })
 
-const emit = defineEmits(['buttonClick'])
+const emits = defineEmits(['buttonClick'])
 
 const handleClick = () => {
-  emit('buttonClick')
+  emits('buttonClick')
 }
 </script>
 
