@@ -7,7 +7,7 @@ on:
 
 jobs:
   label-pr:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: grafana/pr-labeler-action@v0.1.0
         with:
