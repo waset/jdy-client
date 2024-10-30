@@ -1,4 +1,5 @@
-import { defineConfig, presetAttributify, presetMini, transformerDirectives, transformerVariantGroup } from 'unocss'
+import { UnocssLoader } from '@waset/unplugin-iconify/loader'
+import { defineConfig, presetAttributify, presetIcons, presetMini, transformerDirectives, transformerVariantGroup } from 'unocss'
 
 export default defineConfig({
   presets: [
@@ -8,6 +9,11 @@ export default defineConfig({
     presetAttributify({
       prefix: 'uno-',
       prefixedOnly: true,
+    }),
+    presetIcons({
+      collections: {
+        ...UnocssLoader(),
+      },
     }),
   ],
   transformers: [
@@ -25,8 +31,8 @@ export default defineConfig({
       width: size,
       height: size,
     })],
-    [/^bg-gradient-linear-\[(\d{1,3}deg),(.*)\]$/, ([, angle, colors]) => ({
-      background: `linear-gradient(${angle}, ${colors})`,
+    [/^bg-gradient-linear-\[(\d{1,3}deg),\s*([^,\s]+(?:\s*,\s*[^,\s]+)*)\]$/, ([, angle, colors]) => ({
+      background: `linear-gradient(${angle}, ${colors.split(/\s*,\s*/).join(', ')})`,
     })],
     [/^(col)-(\d+)$/, ([, _, num]) => {
       return {

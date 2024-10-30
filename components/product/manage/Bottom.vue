@@ -5,7 +5,7 @@
 <template>
   <div>
     <div
-      class="text-black dark:text-[#FFF] pos-fixed bottom-0 w-full px-[16px] py-[10px] box-border blur-bgc border-t border-[#E6E6E8] border-solid dark:border-[#0000001A] b-t-solid">
+      class="text-black dark:text-[#FFF] pos-fixed bottom-0 w-full px-[16px] py-[10px] box-border blur-bgc dark:border-[#0000001A] b-t-solid border-color-[#999] b-t-[1px]">
       <van-row justify="space-between">
         <van-col span="6">
           <div class=" item">
