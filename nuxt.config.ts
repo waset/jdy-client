@@ -15,10 +15,11 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/eslint',
     '@nuxt/image',
-    '@nuxt/icon',
+    '@waset/unplugin-iconify/nuxt',
     '@nuxtjs/color-mode',
     'nuxt-echarts',
   ],
+
   css: ['~/assets/css/main.scss'],
   vite: {
     css: {
@@ -48,17 +49,15 @@ export default defineNuxtConfig({
   image: {
     inject: true,
   },
-  /**
-   * @see https://github.com/nuxt/icon
-   */
-  icon: {
-    componentName: 'NuxtIcon',
-    customCollections: [
-      {
-        prefix: 'jdy', // 前缀
-        dir: 'assets/icons',
+  Iconify: {
+    convert: {
+      svg: 'assets/icons',
+      icon: {
+        path: 'assets/icons',
+        noColor: true,
       },
-    ],
+    },
+    iconifyIntelliSense: true,
   },
   echarts: {
     charts: ['BarChart', 'LineChart', 'PieChart'],

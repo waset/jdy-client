@@ -56,13 +56,5 @@ const props = withDefaults(defineProps<{
 </template>
 
 <style lang="scss" scoped>
-.skew {
-  --uno: 'h-[29px] relative';
-  .skew-right {
-    --uno: 'absolute left-[20px] w-[80%] h-[100%] bg-gradient-linear-[90deg,#1a6beb,#69a2fe]  skew-x-335 rounded-rb-8px';
-  }
-  .skew-text {
-    --uno: 'line-height-[29px] absolute text-size-xl text-center  w-[80%] h-[100%]  color-[#fff] bg-gradient-linear-[90deg,#1a6beb,#5B98FB] rounded-tl-16px ';
-  }
-}
+
 </style>

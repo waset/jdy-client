@@ -10,9 +10,9 @@ const props = withDefaults(defineProps<{
   shadow: true,
 })
 
-const emit = defineEmits(['buttonClick'])
+const emits = defineEmits(['buttonClick'])
 const handleClick = () => {
-  emit('buttonClick')
+  emits('buttonClick')
 }
 </script>
 

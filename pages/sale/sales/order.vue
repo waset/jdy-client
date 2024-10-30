@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-// 销售明细、销售单详情
+// 销售单详情
 useSeoMeta({
-  title: '销售明细',
+  title: '销售单详情',
 })
 
 const nav = ref(['详情', '结算信息', '操作记录'])
@@ -37,7 +37,7 @@ const toggleFold = () => {
 
 <template>
   <div class="grid-12">
-    <div class="col-12 flex flex-col gap-[16px] px-[16px] py-[16px]" uno-lg="col-8 offset-2">
+    <div class="col-12 flex flex-col gap-[16px] py-[16px]" uno-lg="col-8 offset-2">
       <sale-add-card title="标题" :list="list" />
       <!-- 切换 -->
       <div class="nav">
@@ -59,9 +59,7 @@ const toggleFold = () => {
         <template v-if="isFold">
           <div class="flex flex-col gap-[12px] px-[16px] py-[16px]">
             <!-- 成品 -->
-            <sale-order-finished />
-            <!-- 配件 -->
-            <sale-order-accessory />
+            <sale-order-product />
           </div>
         </template>
       </div>
@@ -91,10 +89,10 @@ const toggleFold = () => {
 
 <style lang="scss" scoped>
 .nav {
-  --uno: 'flex justify-around pt-[16px] dark:text-[#fff]';
+  --uno: 'flex justify-around pt-[16px]';
 
   &-item {
-    --uno: 'color-[#333333] font-size-[16px] font-semibold';
+    --uno: 'color-[#333333] font-size-[16px] font-semibold dark:text-[#fff]';
   }
 
   .active {

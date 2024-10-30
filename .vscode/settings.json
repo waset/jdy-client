@@ -1,4 +1,13 @@
 {
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
   "css.validate": false,
   // Auto fix
   "editor.codeActionsOnSave": {
@@ -29,17 +38,15 @@
     "nuxt.config.*": ".editorconfig,  uno.config.*, nuxt.config.*, eslint.config.*,",
     "package.json": ".npmrc, package.json, package-lock.json, yarn.lock, pnpm-lock.yaml, renovate.*,"
   },
+  "iconify.customCollectionJsonPaths": [
+    "node_modules/.unplugin-iconify/icon.json",
+    "node_modules/.unplugin-iconify/svg.json"
+  ],
+  "iconify.inplace": false,
   "nuxtr.defaultPackageManager": "pnpm",
   "nuxtr.openItemsAfterCreation": true,
   "nuxtr.piniaFiles.defaultTemplate": "setup",
   "nuxtr.vueFiles.firstTag": "script",
   "nuxtr.vueFiles.style.alwaysScoped": true,
-  "nuxtr.vueFiles.style.defaultLanguage": "scss",
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "[vue]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "vscode.css-language-features"
-  }
+  "nuxtr.vueFiles.style.defaultLanguage": "scss"
 }

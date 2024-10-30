@@ -31,6 +31,12 @@ const saleList: SalesSlip[] = [
     slipStatus: 2,
   },
 ]
+
+const handleClick = async () => {
+// 跳转到详情页
+// this.$router.push({name: 'SalesOrder', params: {id: item.id}})
+  await navigateTo('/sale/sales/order')
+}
 </script>
 
 <template>
@@ -38,8 +44,8 @@ const saleList: SalesSlip[] = [
     <div class="flex flex-col gap-[16px] px-[16px] py-[16px] col-12" uno-lg="col-8 offset-2" uno-sm="col-12">
       <!-- header -->
       <div class="flex flex-row gap-2">
-        <product-manage-company />
-        <product-filter-search />
+        <product-manage-company class="color-[#fff]" />
+        <product-filter-search class="color-[#fff]" />
       </div>
       <!-- data -->
       <div class="flex-center-between gap-2">
@@ -49,7 +55,10 @@ const saleList: SalesSlip[] = [
         <product-filter-senior />
       </div>
       <!-- cards -->
-      <sale-sales-cards :info="saleList" />
+      <sale-sales-list :info="saleList" @user-click="handleClick" />
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+</style>

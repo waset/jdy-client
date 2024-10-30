@@ -6,7 +6,12 @@ definePageMeta({
 useSeoMeta({
   title: '待办',
 })
+// const useUser = useDemo()
 
+onMounted(async () => {
+//   const data = await useUser.increment()
+//   console.log(data, 'data')
+})
 interface DemoItem { title: string, number: number }
 
 const demoList = ref<DemoItem[]>([
@@ -21,7 +26,7 @@ const demoListt = ref<DemoItem[]>([{ title: '销售金额', number: 100 }, { tit
 
 <template>
   <div class="grid-12 pb-[120px]">
-    <div class="col-12 sm:col-8 sm:offset-2  px-[16px] pt-[48px] pos-relative">
+    <div class="col-12  px-[16px] pt-[48px] pos-relative" uno-sm="col-10 offset-1" uno-lg="col-8 offset-2" uno-xl="col-6 offset-3">
       <div class="absolute right-0 top-[-10px] ">
         <nuxt-img src="/images/banner/work.png" class="w-[200px]" />
       </div>

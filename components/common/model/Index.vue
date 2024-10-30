@@ -43,27 +43,35 @@ function close() {
 
 <style lang="scss" scoped>
 .popup {
-  --uno: 'fixed left-0 right-0 top-0 bottom-0 w-[100vw] h-[100vh] z-999 overflow-hidden';
+  --uno: 'fixed left-0 right-0 bottom-0 w-[100vw] h-[100vh] z-999 overflow-hidden';
   background: rgba($color: #000, $alpha: 0.3);
+  top: calc(0 - var(--navbar-height, 0px));
+
   .center {
     background: linear-gradient(to bottom, rgba(147, 211, 245, 1), transparent);
     // margin-top: -2px;
   }
+
   .content {
     --uno: 'fixed left-0 right-0 bottom-0 sm:w-426px sm:translate-x-[-50%] sm:translate-y-[50%] sm:bottom-[50%] sm:left-[50%]';
+
     .top {
       --uno: 'relative h-34px border-rd-[20px_20px_0_0]';
       background: linear-gradient(to right, rgba(147, 211, 245, 1), rgba(56, 101, 252, 1));
+
       .close {
         --uno: 'absolute top-[10px] right-[20px]';
       }
+
       .title {
         &-img1 {
           --uno: 'absolute bottom-0 z-[3]';
         }
+
         &-img2 {
           --uno: 'z-[2] pl-[58px] absolute bottom-4px';
         }
+
         &-content {
           --uno: 'absolute left-[80px] top-[2px] z-[9] text-[rgba(255,255,255,1)] font-bold';
           transform: skewY(-6deg);
@@ -71,10 +79,10 @@ function close() {
         }
       }
     }
+
     .box {
       --uno: 'border-rd-[16px_0_0_0] bg-[rgb(236,239,246)] dark:bg-[rgba(0,0,0,0.8)] sm:border-rd-[16px_0_16px_16px] px-[30px] py-[42px]';
       margin-top: 0;
-
       .cancel-btn {
         --uno: 'mt-[24px] py-[6px] text-center border-rd-[36px] text-[16px] text-[#fff] font-bold';
         background: linear-gradient(to bottom, #1a6beb, #6ea6ff);
