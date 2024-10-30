@@ -52,8 +52,8 @@ importers:
         specifier: ^11.1.0
         version: 11.1.0(magicast@0.3.5)(nuxt@3.13.2(@parcel/watcher@2.4.1)(@types/node@22.7.7)(eslint@9.11.1(jiti@2.3.3))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.22.4)(sass@1.80.1)(terser@5.36.0)(typescript@5.6.2)(vite@5.4.8(@types/node@22.7.7)(sass@1.80.1)(terser@5.36.0))(webpack-sources@3.2.3))(rollup@4.22.4)(vue@3.5.12(typescript@5.6.2))(webpack-sources@3.2.3)
       '@waset/unplugin-iconify':
-        specifier: 1.2.0
-        version: 1.2.0(@nuxt/kit@3.13.2(magicast@0.3.5)(rollup@4.22.4)(webpack-sources@3.2.3))(@nuxt/schema@3.13.2(rollup@4.22.4)(webpack-sources@3.2.3))(esbuild@0.23.1)(rollup@4.22.4)(vite@5.4.8(@types/node@22.7.7)(sass@1.80.1)(terser@5.36.0))(webpack-sources@3.2.3)(webpack@5.95.0(esbuild@0.23.1))
+        specifier: 1.3.0
+        version: 1.3.0(@nuxt/kit@3.13.2(magicast@0.3.5)(rollup@4.22.4)(webpack-sources@3.2.3))(@nuxt/schema@3.13.2(rollup@4.22.4)(webpack-sources@3.2.3))(esbuild@0.23.1)(rollup@4.22.4)(vite@5.4.8(@types/node@22.7.7)(sass@1.80.1)(terser@5.36.0))(webpack-sources@3.2.3)(webpack@5.95.0(esbuild@0.23.1))
       eslint-plugin-format:
         specifier: ^0.1.2
         version: 0.1.2(eslint@9.11.1(jiti@2.3.3))
@@ -1772,8 +1772,8 @@ packages:
   '@vueuse/shared@11.1.0':
     resolution: {integrity: sha512-YUtIpY122q7osj+zsNMFAfMTubGz0sn5QzE5gPzAIiCmtt2ha3uQUY1+JPyL4gRCTsLPX82Y9brNbo/aqlA91w==}
 
-  '@waset/unplugin-iconify@1.2.0':
-    resolution: {integrity: sha512-hNOZ0ro3L7y0UpDqrHY+3FSMxHQwur6ngJBS5Dncha14OWEaAL1yd3sbzIivkHUGg23sTmTyrEhEtsJ4Kf9WRg==}
+  '@waset/unplugin-iconify@1.3.0':
+    resolution: {integrity: sha512-Fo1zgy8FlS3ZTXgRDN7fQGYPVvOsIZqwEUI4ssd3XCIPCKbqBc5sCaYYfWsF050QdnFiW22UOX8JXXcUtxUkNg==}
     peerDependencies:
       '@farmfe/core': '>=1'
       '@nuxt/kit': ^3
@@ -7521,7 +7521,7 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@waset/unplugin-iconify@1.2.0(@nuxt/kit@3.13.2(magicast@0.3.5)(rollup@4.22.4)(webpack-sources@3.2.3))(@nuxt/schema@3.13.2(rollup@4.22.4)(webpack-sources@3.2.3))(esbuild@0.23.1)(rollup@4.22.4)(vite@5.4.8(@types/node@22.7.7)(sass@1.80.1)(terser@5.36.0))(webpack-sources@3.2.3)(webpack@5.95.0(esbuild@0.23.1))':
+  '@waset/unplugin-iconify@1.3.0(@nuxt/kit@3.13.2(magicast@0.3.5)(rollup@4.22.4)(webpack-sources@3.2.3))(@nuxt/schema@3.13.2(rollup@4.22.4)(webpack-sources@3.2.3))(esbuild@0.23.1)(rollup@4.22.4)(vite@5.4.8(@types/node@22.7.7)(sass@1.80.1)(terser@5.36.0))(webpack-sources@3.2.3)(webpack@5.95.0(esbuild@0.23.1))':
     dependencies:
       '@iconify/tools': 4.0.7
       jsonc-parser: 3.3.1
