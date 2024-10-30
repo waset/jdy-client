@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@waset/unplugin-iconify/nuxt',
     '@nuxtjs/color-mode',
+    'nuxt-echarts',
   ],
 
   css: ['~/assets/css/main.scss'],
@@ -58,5 +59,8 @@ export default defineNuxtConfig({
     },
     iconifyIntelliSense: true,
   },
-
+  echarts: {
+    charts: ['BarChart', 'LineChart', 'PieChart'],
+    components: ['DatasetComponent', 'GridComponent', 'TooltipComponent', 'LegendComponent'],
+  },
 })
