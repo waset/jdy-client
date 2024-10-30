@@ -1,12 +1,10 @@
 <script setup lang="ts">
-// 销售单列表页
-
 useSeoMeta({
-  title: '销售单列表',
+  title: '退货明细',
 })
 
-// 测试数据。需删除替换
-const saleList: SalesSlip[] = [
+// 测试数据。待替换
+const refundDetail: SalesSlip[] = [
   {
     num: 'CZ-32493974',
     store: {
@@ -34,7 +32,6 @@ const saleList: SalesSlip[] = [
 
 const handleClick = async () => {
 // 跳转到详情页
-// this.$router.push({name: 'SalesOrder', params: {id: item.id}})
   await navigateTo('/sale/sales/order')
 }
 </script>
@@ -43,22 +40,16 @@ const handleClick = async () => {
   <div class="grid-12">
     <div class="flex flex-col gap-[16px] px-[16px] py-[16px] col-12" uno-lg="col-8 offset-2" uno-sm="col-12">
       <!-- header -->
-      <div class="flex flex-row gap-2">
-        <product-manage-company class="color-[#fff]" />
-        <product-filter-search class="color-[#fff]" />
+      <!-- 搜索 -->
+      <div class="flex flex-row gap-[12px]">
+        <product-filter-search class="color-[#fff] flex-1" />
+        <product-filter-senior class="color-[#fff]" />
       </div>
-      <!-- data -->
-      <div class="flex-center-between gap-2">
-        <div class="text-size-[14px] color-[#fff]">
-          共{{ saleList[0].store.salesVolume }}条数据
-        </div>
-        <product-filter-senior />
-      </div>
-      <!-- cards -->
-      <sale-sales-list :info="saleList" @user-click="handleClick" />
+      <!-- content -->
+      <sale-sales-refund :info="refundDetail" @user-click="handleClick" />
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 </style>
