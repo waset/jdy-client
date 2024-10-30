@@ -1,9 +1,17 @@
 <script setup lang="ts">
+// 测试数据。待删除
+interface ProductInfo {
+  name: string
+  desc: string
+}
 const props = defineProps<{
   title: string
+  info: ProductInfo[]
 }>()
 
-const folded = defineModel({ type: Boolean, default: true })
+const folded = ref(true)
+const hasCheck = defineModel({ type: Boolean, default: false })
+const hasTag = defineModel<boolean>('hasTag')
 
 const toggleFold = () => {
   folded.value = !folded.value
@@ -15,8 +23,14 @@ const toggleFold = () => {
     <!-- header -->
     <div class="flex-center-between px-[16px] py-[8px] bg-[#F1F5FE] dark:bg-[rgb(245,245,245,0.1)]">
       <div class="flex-center-row gap-[8px]">
-        <slot name="check" />
-        <slot name="tag" />
+        <template v-if="hasCheck">
+          <common-check rounded="8px" />
+        </template>
+
+        <template v-if="hasTag">
+          <common-tags type="pink" text="成品" :is-oval="true" />
+        </template>
+
         <div class="text-[14px] font-semibold color-[#1B2129] dark:color-[#fff]">
           {{ props.title }}
         </div>
@@ -28,7 +42,7 @@ const toggleFold = () => {
     </div>
     <!-- info -->
     <template v-if="folded">
-      <slot name="info" />
+      <slot :info="props.info" />
     </template>
   </div>
 </template>

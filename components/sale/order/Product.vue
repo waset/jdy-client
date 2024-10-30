@@ -1,65 +1,60 @@
 <script setup lang="ts">
-// 销售明细_产品信息_配件
+// 产品信息组件
+
+// 测试数据。待删除
+interface ProductInfo {
+  name: string
+  desc: string
+}
+const productInfo: ProductInfo[] = [
+  {
+    name: '条码',
+    desc: 's123901287',
+  },
+  {
+    name: '零售方式',
+    desc: '自提',
+  },
+  {
+    name: '零售方式',
+    desc: '自提',
+  },
+  {
+    name: '工艺',
+    desc: '特价',
+  },
+  {
+    name: '工艺',
+    desc: '特价',
+  },
+  {
+    name: '工艺',
+    desc: '特价',
+  },
+]
+
+const hasCheck = defineModel({ type: Boolean, default: false })
+const hasTag = ref(true)
 </script>
 
 <template>
   <div>
-    <sale-order-nesting title="配件">
-      <template #check>
-        <slot name="checkbox" />
-      </template>
-      <template #tag>
-        <common-tags type="orange" text="配件" :is-oval="true" />
-      </template>
-      <template #info>
+    <sale-order-nesting v-model="hasCheck" :has-tag="hasTag" title="成品" :info="productInfo">
+      <template #default="slotProps">
         <div class="flex flex-col gap-[12px] px-[16px]">
           <div class="flex flex-row gap-[12px]">
             <common-avatar :size="40" />
             <div class="grid grid-rows-4 grid-flow-col w-full place-items-start gap-y-[12px] gap-x-[auto]">
-              <div class="content">
-                <div class="left">
-                  条码
+              <template v-for="(item, index) in slotProps.info" :key="index">
+                <div class="content">
+                  <div class="left">
+                    {{ item.name }}
+                  </div>
+                  <div class="right">
+                    {{ item.desc }}
+                  </div>
                 </div>
-                <div class="text-[14px] font-medium text-[#3971F3] dark:text-[#6EA6FF]">
-                  --
-                </div>
-              </div>
-              <div class="content">
-                <div class="left">
-                  零售方式
-                </div>
-                <div class="right">
-                  自提
-                </div>
-              </div>
-              <div class="content">
-                <div class="left">
-                  零售方式
-                </div>
-                <div class="right">
-                  自提
-                </div>
-              </div>
-              <div class="content">
-                <div class="left">
-                  零售方式
-                </div>
-                <div class="right">
-                  自提
-                </div>
-              </div>
-              <div class="content">
-                <div class="left">
-                  工艺
-                </div>
-                <common-tags type="grey" text="否" />
-              </div>
-              <div class="content">
-                <div class="left">
-                  特价
-                </div>
-                <common-tags type="grey" text="否" />
-              </div>
+              </template>
             </div>
           </div>
           <div class="h-0.4 bg-[#E6E6E8] dark:bg-[rgba(230,230,232,0.3)]" />

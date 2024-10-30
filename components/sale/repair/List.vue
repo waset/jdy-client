@@ -1,12 +1,18 @@
 <script setup lang="ts">
-// 销售单列表
+// 维修单列表
 const props = defineProps<{
   info: SalesSlip[]
 }>()
 
-const emits = defineEmits(['userClick'])
+const emits = defineEmits(['sign', 'cancel', 'info'])
+const handleSign = () => {
+  emits('sign')
+}
+const handleCancel = () => {
+  emits('cancel')
+}
 const handleClick = () => {
-  emits('userClick')
+  emits('info')
 }
 </script>
 
@@ -37,9 +43,17 @@ const handleClick = () => {
               </div>
             </div>
           </template>
-          <div class="flex-center-row bg-[#F3F5FE] rounded-b-[24px] px-[16px] py-[8px] dark:bg-[rgba(243,245,254,0.1)]">
+          <div class="flex-center-between bg-[#F3F5FE] rounded-b-[24px] px-[40px] py-[8px] dark:bg-[rgba(243,245,254,0.1)]">
+            <div class="info color-[#3971F3] text-size-[14px] font-semibold dark:color-[#fff]" @click="handleSign">
+              标记
+            </div>
+            <div class="bg-[#E6E6E8] w-[1px] h-100%" />
+            <div class="info color-[#3971F3] text-size-[14px] font-semibold dark:color-[#fff]" @click="handleCancel">
+              撤销
+            </div>
+            <div class="bg-[#E6E6E8] w-[1px] h-100%" />
             <div class="info color-[#3971F3] text-size-[14px] font-semibold dark:color-[#fff]" @click="handleClick">
-              查看详情
+              详情
             </div>
           </div>
         </template>
