@@ -9,10 +9,7 @@ export const useUser = defineStore('userStore', {
   },
   actions: {
     async increment() {
-      https.setAuthToken('1111111111111')
-      await https.post('/submit', { username: 'test' }, true).then((res) => {
-        console.log(res)
-      })
+      const data = await https.post<Users>('/submit', { username: 'test' })
     },
   },
   persist: {

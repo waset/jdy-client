@@ -5,11 +5,15 @@ definePageMeta({
 
 useSeoMeta({
   title: '待办',
+
 })
 
+const user = useUser()
+user.increment()
 onMounted(async () => {
 
 })
+
 interface DemoItem { title: string, number: number }
 
 const demoList = ref<DemoItem[]>([
