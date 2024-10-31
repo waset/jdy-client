@@ -101,6 +101,32 @@ const toggleFold = () => {
                 </nuxt-link>
               </div>
             </div>
+            <!-- 收支单列表项 -->
+            <div class="flex flex-col gap-[16px] px-4">
+              <div class="text-[12px] font-semibold color-[#333] dark:color-[#fff]">
+                其他收支单
+              </div>
+              <!-- 分割线 -->
+              <div class="line" />
+              <div class="sector grid-rows-1">
+                <nuxt-link to="/sale/other/list">
+                  <div class="flex-center-row gap-[4px]">
+                    <nuxt-img src="images/sale/sales-list.png" class="w-[32px] h-[32px]" />
+                    <div class="title">
+                      其他收支单
+                    </div>
+                  </div>
+                </nuxt-link>
+                <nuxt-link to="/sale/other/info">
+                  <div class="flex-center-row gap-[4px]">
+                    <nuxt-img src="images/sale/sales-list.png" class="w-[32px] h-[32px]" />
+                    <div class="title">
+                      新增收支单
+                    </div>
+                  </div>
+                </nuxt-link>
+              </div>
+            </div>
           </div>
         </template>
       </div>
