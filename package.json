@@ -16,6 +16,7 @@
   "dependencies": {
     "@nuxt/image": "^1.8.0",
     "nuxt": "^3.13.2",
+    "pinia": "^2.2.5",
     "vue": "latest",
     "vue-router": "latest"
   },
