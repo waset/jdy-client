@@ -9,7 +9,7 @@ export const useUser = defineStore('userStore', {
   },
   actions: {
     async increment() {
-      const data = await https.post<Users>('/submit', { username: 'test' })
+      await https.post<Users>('/submit', { username: 'test' })
     },
   },
   persist: {
