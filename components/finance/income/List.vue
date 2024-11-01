@@ -1,16 +1,10 @@
 <script setup lang="ts">
-// 维修单列表
+// 收支账单列表
 const props = defineProps<{
   info: SalesSlip[]
 }>()
 
-const emits = defineEmits(['sign', 'cancel', 'info'])
-const handleSign = () => {
-  emits('sign')
-}
-const handleCancel = () => {
-  emits('cancel')
-}
+const emits = defineEmits(['info'])
 const handleClick = () => {
   emits('info')
 }
@@ -37,21 +31,13 @@ const handleClick = () => {
                   <span class="part-right">{{ result.member.phone || '--' }}</span>
                 </div>
                 <div class="part">
-                  <span class="part-left">主销</span>
+                  <span class="part-left">收银员</span>
                   <span class="part-right">{{ result.mainSalesman || '--' }}</span>
                 </div>
               </div>
             </div>
           </template>
           <div class="footer">
-            <div class="info font-semibold" @click="handleCancel">
-              撤销
-            </div>
-            <div class="bg-[#E6E6E8] w-[1px] h-100%" />
-            <div class="info font-semibold" @click="handleSign">
-              标记
-            </div>
-            <div class="bg-[#E6E6E8] w-[1px] h-100%" />
             <div class="info font-semibold" @click="handleClick">
               详情
             </div>
@@ -64,7 +50,7 @@ const handleClick = () => {
 
 <style scoped lang="scss">
 .footer {
-  --uno: 'grid grid-cols-5 gap-[12px] justify-items-center bg-[#F3F5FE] rounded-b-[24px] px-[40px] py-[8px] dark:bg-[rgba(243,245,254,0.1)]';
+  --uno: 'flex-center-row gap-[12px] justify-items-center bg-[#F3F5FE] rounded-b-[24px] px-[40px] py-[8px] dark:bg-[rgba(243,245,254,0.1)]';
 }
 .info {
   --uno: 'flex flex-col justify-items-center gap-[12px] px-[16px] color-[#3971F3] text-size-[14px] dark:color-[#fff]';
