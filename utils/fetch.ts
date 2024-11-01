@@ -11,7 +11,7 @@ class Https {
   //   middleware
   fetchApi = async (url: string, opt: any) => {
     try {
-      const { data } = await useFetch(this.BASE_URL + url, {
+      const { data, error, refresh } = await useFetch(this.BASE_URL + url, {
         onRequest({ options }) {
           // Set the request headers
           options.headers = opt.headers || {}
@@ -31,8 +31,7 @@ class Https {
           // Handle the response errors
         },
       })
-
-      return data.value
+      return { data, error, refresh }
     }
     catch (error) {
       console.error('Fetch failed:', error)
