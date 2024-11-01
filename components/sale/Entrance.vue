@@ -17,7 +17,7 @@ const toggleFold = () => {
             <div
               class="flex-center-row gap-[2px] text-[12px] color-[#808089] dark:color-[#fff]" @click="toggleFold()">
               <div>点击{{ isFold ? '展开' : '收起' }}</div>
-              <icon name="jdy:down" class="w-[12px] h-[12px] dark:color-[#fff]" />
+              <icon name="i-icon:down" size="12px" class="dark:color-[#fff]" />
             </div>
           </common-header-gradient>
         </div>
