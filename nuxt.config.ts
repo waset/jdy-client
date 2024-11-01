@@ -19,7 +19,11 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-echarts',
   ],
-
+  app: {
+    head: {
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+    },
+  },
   css: ['~/assets/css/main.scss'],
   vite: {
     css: {
