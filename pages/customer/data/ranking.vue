@@ -47,7 +47,10 @@ const transcriptTitle = ref(['排名', '姓名', '销售金额'])
     <common-dark />
     <customer-data-sumup :data="data" />
     <div class="my-4">
-      <customer-data-nav v-model="currentNav" :nav-list="navList" />
+      <tab-ellipses v-model="currentNav" :nav-list="transcriptTitle" />
+    </div>
+    <div class="my-4">
+      <tab-round v-model="currentNav" :nav-list="navList" />
     </div>
     <customer-data-transcript :transcript-list="transcriptList" :transcript-title="transcriptTitle" />
   </div>
