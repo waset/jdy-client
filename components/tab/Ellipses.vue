@@ -1,3 +1,4 @@
+<!-- 矩形选项卡 -->
 <script lang="ts" setup>
 const props = defineProps<{
   navList: string[]
@@ -11,7 +12,7 @@ function changeNav(i: number) {
 <template>
   <div class="nav">
     <template v-for="(item, index) in props.navList" :key="index">
-      <div :class="current === index ? 'selected' : 'unselect'" @click="changeNav(index)">
+      <div class="item" :class="current === index ? 'selected' : 'unselect'" @click="changeNav(index)">
         {{ item }}
       </div>
     </template>
@@ -20,7 +21,10 @@ function changeNav(i: number) {
 
 <style lang="scss" scoped>
 .nav {
-  --uno: 'grid grid-cols-3 gap-4 w-fit h-fit mx-auto';
+  --uno: 'flex gap-4 w-fit h-fit mx-auto';
+  .item {
+    --uno: 'shrink-0';
+  }
   .unselect {
     --uno: 'px-4 py-1 text-[14px] text-[#000000] font-400 bg-#FFFFFF rounded-6px h-fit';
   }
