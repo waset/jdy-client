@@ -56,14 +56,6 @@ const toggleFold = () => {
                     </div>
                   </div>
                 </nuxt-link>
-                <nuxt-link to="/finance/achievement/rules">
-                  <div class="flex-center-row gap-[4px]">
-                    <nuxt-img src="images/sale/sales-list.png" class="w-[32px] h-[32px]" />
-                    <div class="title">
-                      业绩计算规则
-                    </div>
-                  </div>
-                </nuxt-link>
               </div>
             </div>
           </div>
